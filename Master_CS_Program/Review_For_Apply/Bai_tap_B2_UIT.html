@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài tập ôn thi tiếng Anh B2 đầu vào thạc sĩ UIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --panel:#ffffff; --ink:#1d2433; --muted:#5b6475; --line:#e6e1d6;
+  --accent:#1f6f8b; --accent-d:#14526a; --accent-soft:#e3f1f5;
+  --hl:#fff4cc; --ok:#2f855a; --ok-soft:#e6f4ec; --warn:#a15c07; --warn-soft:#fdf0dc;
+  --bad:#b4332f; --bad-soft:#fbe9e8; --code:#f3f0e8;
+  --side:300px; --top:56px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Be Vietnam Pro","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-d)}
+.ipa{font-family:"Noto Sans","Segoe UI","Lucida Sans Unicode","DejaVu Sans",sans-serif;color:#7a3b00;font-size:.95em;white-space:nowrap}
+
+/* top bar */
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--top);background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 18px;z-index:60}
+.topbar .brand{font-weight:700;white-space:nowrap}
+.topbar .where{color:var(--muted);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.topbar .pct{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:44px;text-align:right}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--accent),#3aa0b8)}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:18px}
+
+/* sidebar */
+.sidebar{position:fixed;top:var(--top);left:0;bottom:0;width:var(--side);overflow-y:auto;background:var(--panel);border-right:1px solid var(--line);padding:14px 10px 40px;z-index:55}
+.sidebar h5{margin:6px 10px 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.toc-h2{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;line-height:1.35}
+.toc-h2:hover{background:#f3f1ea}
+.toc-h2.active{background:var(--accent-soft);color:var(--accent-d)}
+.toc-sub{display:none;margin:2px 0 8px 12px;border-left:2px solid var(--line)}
+.toc-group.open .toc-sub{display:block}
+.toc-sub a{display:block;padding:4px 10px;font-size:13.5px;color:var(--muted);text-decoration:none;line-height:1.4;border-radius:0 6px 6px 0}
+.toc-sub a:hover{color:var(--ink);background:#f6f4ee}
+.toc-sub a.active{color:var(--accent-d);font-weight:600;background:var(--accent-soft)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(20,25,35,.35);z-index:54}
+
+/* main */
+main{margin-left:var(--side);padding:calc(var(--top) + 28px) 36px 80px;max-width:calc(var(--side) + 1000px)}
+main>section{max-width:940px}
+h2{font-size:1.75rem;line-height:1.3;margin:64px 0 6px;padding-top:6px}
+h2 .no{display:inline-block;background:var(--accent);color:#fff;border-radius:8px;padding:0 10px;margin-right:10px;font-size:.9rem;vertical-align:middle;letter-spacing:.04em}
+h2+.lead{color:var(--muted);margin:0 0 22px;font-size:1.02rem}
+h3{font-size:1.28rem;margin:40px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h4{font-size:1.06rem;margin:0 0 10px;color:var(--accent-d)}
+p{margin:10px 0}
+ul,ol{margin:8px 0 8px 1.2em;padding-left:.8em}
+li{margin:4px 0}
+.first h2{margin-top:10px}
+
+/* components */
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout.bad{border-color:var(--bad);background:var(--bad-soft)}
+.callout b.t{display:block;margin-bottom:2px}
+.callout p:first-child{margin-top:0}.callout p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f4f1e9;font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:#fbfaf6}
+td .vi,.vi{color:var(--muted)}
+code,.formula{font-family:"Cascadia Code","Consolas","SFMono-Regular",Menlo,monospace}
+code{background:var(--code);padding:1px 6px;border-radius:5px;font-size:.88em}
+.gcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:10px 16px}
+.kv .k{font-weight:600;color:var(--muted);font-size:.9rem;padding-top:3px}
+.formula{display:block;background:var(--code);border-radius:8px;padding:6px 12px;margin:4px 0;font-size:.9rem;overflow-x:auto}
+.exs{list-style:none;margin:0;padding:0}
+.exs li{margin:6px 0;padding-left:12px;border-left:3px solid #cfe5ec}
+.exs .en{font-weight:500}
+.exs .vi{display:block;font-size:.92rem}
+.v ul{margin:0 0 0 1.1em;padding-left:.3em}
+.sig{background:var(--hl);padding:1px 6px;border-radius:5px}
+.note{margin-top:12px;font-size:.93rem;color:#4a3a05;background:var(--warn-soft);border-radius:8px;padding:8px 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.chips a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 12px;font-size:.88rem;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--accent);color:var(--accent-d)}
+.hl{background:var(--hl);padding:0 4px;border-radius:4px}
+.right{color:var(--ok);font-weight:600}.wrong{color:var(--bad);text-decoration:line-through}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.mini h4{margin-bottom:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:14px 0}
+.cards a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.cards a:hover{border-color:var(--accent);box-shadow:0 2px 10px rgba(31,111,139,.12)}
+.cards b{display:block;color:var(--accent-d)}
+.cards span{font-size:.88rem;color:var(--muted)}
+.script{background:#fffdf7;border:1px solid #ecdfae;border-radius:12px;padding:14px 18px;margin:12px 0}
+.script p{margin:8px 0}
+.script .vi{display:block;font-size:.92rem;margin-top:2px}
+.tag{display:inline-block;font-size:.76rem;border-radius:6px;padding:1px 7px;background:var(--accent-soft);color:var(--accent-d);margin-right:6px;font-weight:600}
+.fill{background:#d9f0d8;border-radius:4px;padding:0 4px;font-weight:600}
+.edit{background:#ffe3c2;border-radius:4px;padding:0 4px}
+
+/* vocab */
+.vtools{position:sticky;top:var(--top);z-index:20;background:rgba(250,248,244,.96);backdrop-filter:blur(6px);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);margin:10px 0}
+.vtools input[type=search]{flex:1;min-width:180px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.vtools label{font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none}
+.vtools .stat{font-size:.9rem;color:var(--muted)}
+.vt td.w{font-weight:600;white-space:nowrap}
+.vt td.pos{color:var(--muted);white-space:nowrap;font-style:italic}
+.vt td.n{color:var(--muted);width:34px}
+.vt td.ck{width:46px;text-align:center}
+.vt tr.done td{background:var(--ok-soft)}
+.vt tr.hide{display:none}
+.spk{border:0;background:var(--accent-soft);color:var(--accent-d);width:26px;height:26px;border-radius:50%;cursor:pointer;margin-left:6px;vertical-align:middle;padding:0}
+.spk:hover{background:#cfe5ec}
+.spk svg{width:14px;height:14px;display:block;margin:auto}
+body.quiz .vt td.mean span{filter:blur(6px);transition:filter .15s;cursor:pointer}
+body.quiz .vt td.mean span:hover,body.quiz .vt tr.peek td.mean span{filter:none}
+.tcount{font-size:.88rem;color:var(--muted);font-weight:400;margin-left:8px}
+
+.topbtn{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);display:none;z-index:40;font-size:18px}
+footer{margin:60px 0 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:16px}
+
+@media (max-width:1000px){
+  :root{--side:290px}
+  .menu-btn{display:block}
+  .sidebar{transform:translateX(-100%);transition:transform .2s}
+  body.nav-open .sidebar{transform:none;box-shadow:6px 0 24px rgba(0,0,0,.15)}
+  body.nav-open .overlay{display:block}
+  main{margin-left:0;padding:calc(var(--top) + 18px) 16px 80px}
+  .kv{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr}
+  .topbar .brand{display:none}
+  h2{font-size:1.45rem}
+}
+@media print{.topbar,.sidebar,.vtools,.topbtn{display:none}main{margin:0;padding:0}}
+/* ===== bổ sung cho file bài tập ===== */
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:12px 0}
+.qcard.done{background:#fcfcfa}
+.qhead{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.qnum{font-weight:700;color:var(--accent-d)}
+.lvtag{font-size:.76rem;font-weight:600;border-radius:6px;padding:1px 8px}
+.lvtag.l1{background:var(--ok-soft);color:var(--ok)}
+.lvtag.l2{background:var(--warn-soft);color:var(--warn)}
+.lvtag.l3{background:var(--bad-soft);color:var(--bad)}
+.qhead .tag{margin:0;background:#eeeae0;color:var(--muted)}
+.qtext{font-weight:500;margin:4px 0 8px}
+.opts{display:grid;gap:6px}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#fff}
+.opt:hover{border-color:var(--accent)}
+.opt input{margin-top:6px}
+.opt .ltr{font-weight:700;color:var(--muted);min-width:18px}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.done .opt{cursor:default}
+.qact{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.btn{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:10px;padding:7px 16px;font:inherit;font-size:.92rem;cursor:pointer}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:#fff;color:var(--accent-d)}
+.btn.ghost:hover{background:var(--accent-soft)}
+.btn.sm{padding:4px 12px;font-size:.86rem}
+.btn[hidden]{display:none}
+.res{margin-top:10px;border-radius:10px;padding:10px 14px;font-size:.95rem}
+.res.ok{background:var(--ok-soft);border-left:4px solid var(--ok)}
+.res.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.res.warn{background:var(--warn-soft);border-left:4px solid var(--warn)}
+.res.info{background:var(--accent-soft);border-left:4px solid var(--accent)}
+.res p{margin:4px 0}
+.secbar select{padding:6px 10px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.9rem;background:#fff}
+.summary{background:#fff;border:2px solid var(--accent);border-radius:14px;padding:14px 18px;margin:12px 0}
+.summary .big{font-size:1.5rem;font-weight:700;color:var(--accent-d)}
+.summary a{margin-right:8px}
+.passage{background:#fffdf7;border:1px solid #ecdfae;border-radius:12px;padding:6px 18px;margin:10px 0}
+.blank{background:var(--hl);padding:0 6px;border-radius:5px;font-weight:600;white-space:nowrap}
+.blank.fill{background:#d9f0d8}
+.blank.bad{background:#f6c9c6}
+.tin{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tin .start{font-weight:600;color:var(--accent-d)}
+.tin input[type=text],.wfin{flex:1;min-width:220px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.tin input:focus,.wfin:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+.wfin{max-width:260px;flex:none}
+.gap{border-bottom:2px solid var(--ink)}
+.qcard .tag.base{background:var(--accent);color:#fff;margin-left:6px}
+.dash{display:grid;gap:10px;margin:12px 0}
+.dash .row{display:grid;grid-template-columns:230px 1fr 190px;gap:10px;align-items:center;font-size:.93rem}
+.dash .row a{color:var(--ink);text-decoration:none;font-weight:600}
+.bar{height:9px;background:#ece8dc;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.bar i.acc{background:var(--ok)}
+.weak{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.weak span{background:var(--bad-soft);color:var(--bad);border-radius:999px;padding:2px 12px;font-size:.88rem}
+.sp-panel{margin-top:10px;border-radius:10px;padding:10px 14px;background:#fffdf7;border:1px solid #ecdfae}
+.sp-panel ul{margin:4px 0 4px 1.2em}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.1rem;min-width:56px}
+.timer.good{color:var(--ok)}.timer.over{color:var(--warn)}
+.rec-area{margin-top:10px}
+.rec-area audio{width:100%;max-width:420px;display:block;margin:6px 0}
+.rec-area textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;font-size:.92rem;background:#fff}
+.checks{display:grid;gap:4px;margin-top:10px;font-size:.92rem}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.hl-q{outline:3px solid var(--accent);outline-offset:3px}
+@media (max-width:1000px){.dash .row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Mở mục lục">&#9776;</button>
+  <span class="brand">Bài tập B2</span>
+  <span class="where" id="where">Tổng quan</span>
+  <span class="pct" id="pct">0%</span>
+  <div class="progress" id="bar"></div>
+</header>
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar" id="sidebar"><h5>Mục lục</h5><nav id="toc"></nav></aside>
+
+<main>
+
+<section id="intro" class="first">
+<h2 id="s-intro"><span class="no">0</span>Hướng dẫn và thống kê</h2>
+<p class="lead">Bộ bài tập luyện phản xạ cho kỳ thi đầu vào thạc sĩ UIT: mỗi phần có nhiều câu, rải đều ba mức độ, có nút kiểm tra và giải thích. Phần Listening bỏ qua.</p>
+
+<h3 id="s-howto">Cách làm bài</h3>
+<ul>
+<li><b>Trắc nghiệm</b>: chọn một đáp án, bấm <b>Kiểm tra</b> để xem đúng sai và giải thích. Có thể bấm <b>Chấm cả phần</b> sau khi chọn xong nhiều câu.</li>
+<li><b>Tự luận</b> (viết lại câu, word formation): gõ câu trả lời rồi bấm <b>Kiểm tra</b> hoặc nhấn Enter. Hệ thống chấp nhận nhiều cách viết đúng. Nếu bạn viết khác nhưng chắc chắn đúng, bấm <b>Câu của tôi cũng đúng</b>.</li>
+<li><b>Mức độ</b>: <span class="lvtag l1">Dễ</span> <span class="lvtag l2">Vừa</span> <span class="lvtag l3">Lắt léo</span>. Mức lắt léo có bẫy gần nghĩa, gần cấu trúc, hay gặp trong đề thật.</li>
+<li><b>Trộn câu</b>: mặc định các câu được rải đều độ khó. Bấm <b>Trộn ngẫu nhiên</b> để đổi thứ tự, <b>Làm lại</b> để xóa bài đang làm, bộ lọc để chỉ làm một mức độ hoặc chỉ các câu từng sai.</li>
+<li><b>Speaking</b>: bấm giờ, ghi âm bằng micro, xem gợi ý và bài mẫu, tự chấm bằng danh sách kiểm tra. Nếu muốn mình chấm, chép bản ghi chữ rồi gửi cho mình.</li>
+</ul>
+<div class="callout"><b class="t">Lịch luyện gợi ý mỗi ngày (khoảng 45 phút)</b>
+15 câu Vocabulary hoặc Sentence completion, 1 bài Reading hoặc Cloze, 5 câu viết lại câu, 2 câu Speaking. Làm xong hãy xem lại kỹ các câu sai và đọc lại phần tài liệu liên quan.</div>
+
+<h3 id="s-dash">Bảng thống kê của bạn</h3>
+<p>Kết quả được lưu trong trình duyệt này. Số liệu cập nhật ngay sau mỗi câu bạn kiểm tra.</p>
+<div class="dash" id="dash"></div>
+<div id="dashExtra"></div>
+<p><button class="btn ghost sm" id="resetAll">Xóa toàn bộ kết quả đã lưu</button></p>
+
+<h3 id="s-map">Đi nhanh tới từng phần</h3>
+<div class="cards">
+<a href="#s-vocab"><b>Paper 1A: Vocabulary</b><span id="cnt-vocab"></span></a>
+<a href="#s-reading"><b>Paper 1B: Reading</b><span id="cnt-reading"></span></a>
+<a href="#s-grammar"><b>Paper 2A: Sentence completion</b><span id="cnt-grammar"></span></a>
+<a href="#s-cloze"><b>Paper 2B: Cloze</b><span id="cnt-cloze"></span></a>
+<a href="#s-wordform"><b>Word formation</b><span id="cnt-wordform"></span></a>
+<a href="#s-transform"><b>Paper 2C: Viết lại câu</b><span id="cnt-transform"></span></a>
+<a href="#s-speaking"><b>Paper 4: Speaking</b><span id="cnt-speaking"></span></a>
+</div>
+</section>
+
+<section id="vocab">
+<h2 id="s-vocab"><span class="no">1</span>Paper 1A: Vocabulary</h2>
+<p class="lead">Collocation, cụm động từ, từ dễ nhầm, từ đồng nghĩa và các chủ đề công việc, công nghệ, AI, môi trường, sức khỏe. Mỗi câu 30 giây.</p>
+<div class="ex-section" data-sec="vocab"></div>
+</section>
+
+<section id="reading">
+<h2 id="s-reading"><span class="no">2</span>Paper 1B: Reading Comprehension</h2>
+<p class="lead">Bốn bài đọc, mỗi bài 5 câu: ý chính, chi tiết, suy luận, từ trong ngữ cảnh, NOT/EXCEPT, thái độ tác giả. Mỗi bài tối đa 7 đến 8 phút.</p>
+<div class="ex-section" data-sec="reading"></div>
+</section>
+
+<section id="grammar">
+<h2 id="s-grammar"><span class="no">3</span>Paper 2A: Sentence completion</h2>
+<p class="lead">Các chủ điểm: thì, điều kiện, bị động, wish, mệnh đề quan hệ, modal, V-ing và to V, so sánh, đảo ngữ, liên từ, giới từ. Mỗi câu 40 giây.</p>
+<div class="ex-section" data-sec="grammar"></div>
+</section>
+
+<section id="cloze">
+<h2 id="s-cloze"><span class="no">4</span>Paper 2B: Cloze</h2>
+<p class="lead">Ba đoạn văn, mỗi đoạn 10 chỗ trống. Sau khi kiểm tra, đáp án đúng sẽ được điền vào đoạn văn để bạn đọc lại cho mạch.</p>
+<div class="ex-section" data-sec="cloze"></div>
+</section>
+
+<section id="wordform">
+<h2 id="s-wordform"><span class="no">5</span>Word formation (tự gõ)</h2>
+<p class="lead">Điền dạng đúng của từ gốc viết hoa: danh từ, tính từ, trạng từ, tiền tố phủ định. Dạng bài này hay xuất hiện trong Vocabulary và Cloze.</p>
+<div class="ex-section" data-sec="wordform"></div>
+</section>
+
+<section id="transform">
+<h2 id="s-transform"><span class="no">6</span>Paper 2C: Sentence transformation</h2>
+<p class="lead">Viết lại câu bắt đầu bằng từ cho sẵn, giữ nguyên nghĩa. Gõ phần còn lại của câu, nhớ chia thì, dạng từ và giới từ chính xác. Chấp nhận nhiều cách viết đúng.</p>
+<div class="ex-section" data-sec="transform"></div>
+</section>
+
+<section id="speaking">
+<h2 id="s-speaking"><span class="no">7</span>Paper 4: Speaking</h2>
+<p class="lead">20 câu hỏi theo 5 nhóm. Mục tiêu mỗi câu: 45 đến 90 giây, đủ khuôn Answer, Reason, Example. Tập nói thành tiếng, ghi âm, nghe lại và tự chấm.</p>
+<div class="ex-section" data-sec="speaking"></div>
+<footer>Chúc bạn ôn thi tốt. Gửi mình đáp án tự luận, bản ghi chữ phần Speaking hoặc ảnh chụp kết quả, mình sẽ chấm và chỉ ra lỗi.</footer>
+</section>
+
+</main>
+<button class="topbtn" id="topBtn" aria-label="Lên đầu trang">&#8593;</button>
+<script>
+/* Quy ước MCQ: o[0] là đáp án đúng (hệ thống tự trộn thứ tự khi hiển thị). lv: 1 dễ, 2 vừa, 3 lắt léo */
+
+const VOCAB = [
+{q:"The company decided to ______ ten new employees this month.", o:["recruit","resign","retire","reply"], lv:1, tag:"Chủ đề Work", e:"recruit = tuyển dụng. resign = từ chức, retire = nghỉ hưu, reply = trả lời, đều không hợp nghĩa với 'ten new employees'."},
+{q:"Please ______ this form and return it by Friday.", o:["fill in","fill up","put in","take in"], lv:1, tag:"Cụm động từ", e:"fill in/out a form = điền biểu mẫu. fill up chỉ việc đổ đầy (fill up the tank), put in và take in không dùng với biểu mẫu theo nghĩa này."},
+{q:"We have run ______ of paper, so we need to order more.", o:["out","off","down","away"], lv:1, tag:"Cụm động từ", e:"run out of = hết, cạn. Các cụm run off, run down, run away có nghĩa khác (chạy trốn, chê bai...)."},
+{q:"Over 500 students took ______ in the competition.", o:["part","place","care","charge"], lv:1, tag:"Collocation", e:"take part in = tham gia. take place = diễn ra (chủ ngữ là sự kiện, không phải người)."},
+{q:"The conference will take ______ in Da Nang next month.", o:["place","part","turn","action"], lv:1, tag:"Collocation", e:"take place = diễn ra, tổ chức. Chủ ngữ là sự kiện (conference) nên không dùng take part."},
+{q:"Be careful not to ______ your passport at the airport.", o:["lose","loose","loss","lost"], lv:1, tag:"Từ dễ nhầm", e:"Sau not to cần động từ nguyên mẫu: lose /luːz/ = làm mất. loose (adj) = lỏng, loss (n) = sự mất mát, lost = đã mất."},
+{q:"He made a ______ in the calculation, so the total was wrong.", o:["mistake","wrong","failure","accident"], lv:1, tag:"Collocation", e:"make a mistake = mắc lỗi. wrong là tính từ, failure và accident không đi với make trong nghĩa này."},
+{q:"The ______ destroyed many crops because it had not rained for months.", o:["drought","flood","earthquake","typhoon"], lv:1, tag:"Chủ đề Environment", e:"drought = hạn hán, xảy ra khi lâu không mưa. flood = lũ, typhoon = bão, earthquake = động đất."},
+{q:"She has a heavy ______ this week, so she cannot join us.", o:["workload","workplace","network","homework"], lv:1, tag:"Chủ đề Work", e:"workload = khối lượng công việc. workplace là nơi làm việc, không đi với heavy theo nghĩa này."},
+{q:"He gave a ______ explanation, so the meeting ended quickly.", o:["brief","delicate","fragile","tense"], lv:1, tag:"Từ đồng nghĩa", e:"brief = ngắn gọn, nên cuộc họp kết thúc nhanh. Các từ còn lại không hợp nghĩa của 'explanation'."},
+{q:"The new law will ______ millions of people across the country.", o:["affect","effect","afford","infect"], lv:2, tag:"Từ dễ nhầm", e:"affect (v) = ảnh hưởng đến. effect thường là danh từ (an effect on), afford = đủ khả năng chi trả, infect = lây nhiễm."},
+{q:"Prices have ______ sharply since last year.", o:["risen","raised","arisen","rose"], lv:2, tag:"Từ dễ nhầm", e:"rise (rose, risen) là nội động từ, không có tân ngữ. Cấu trúc hiện tại hoàn thành cần V3 = risen. raised cần tân ngữ (raise prices)."},
+{q:"The match was ______ because of heavy rain.", o:["called off","called up","called on","called in"], lv:2, tag:"Cụm động từ", e:"call off = hủy bỏ. call up = gọi điện/triệu tập, call on = ghé thăm/kêu gọi, call in = gọi đến."},
+{q:"She ______ the job offer because the salary was too low.", o:["turned down","turned up","turned on","turned in"], lv:2, tag:"Cụm động từ", e:"turn down = từ chối. turn up = xuất hiện, turn on = bật, turn in = nộp."},
+{q:"I can't ______ a new laptop right now; it's too expensive.", o:["afford","offer","offend","effort"], lv:2, tag:"Từ dễ nhầm", e:"afford (to buy) = đủ tiền mua. offer = đề nghị, offend = xúc phạm, effort (n) = nỗ lực."},
+{q:"I'd like to ______ you on your promotion.", o:["congratulate","celebrate","greet","welcome"], lv:2, tag:"Collocation", e:"congratulate sb on sth = chúc mừng ai về điều gì. celebrate cần tân ngữ là sự kiện (celebrate the promotion)."},
+{q:"We must ______ the deadline, or the client will cancel the contract.", o:["meet","reach","arrive","catch"], lv:2, tag:"Collocation", e:"meet a deadline = kịp hạn chót. reach và catch không đi với deadline, arrive là nội động từ."},
+{q:"The manager promised to ______ the complaint as soon as possible.", o:["look into","look after","look up","look out"], lv:2, tag:"Cụm động từ", e:"look into = điều tra, xem xét. look after = chăm sóc, look up = tra cứu, look out = coi chừng."},
+{q:"She ______ a brilliant idea for the project.", o:["came up with","came across","came over","came out"], lv:2, tag:"Cụm động từ", e:"come up with = nghĩ ra. come across = tình cờ gặp, come over = ghé qua, come out = ra mắt."},
+{q:"Many students ______ from stress during exam season.", o:["suffer","bear","hurt","ache"], lv:2, tag:"Collocation", e:"suffer from + bệnh/vấn đề. bear + tân ngữ (không giới từ from); hurt, ache không đi với from stress."},
+{q:"Could you ______ me your charger for a moment?", o:["lend","borrow","rent","hire"], lv:2, tag:"Từ dễ nhầm", e:"lend sb sth = cho ai mượn. borrow = mượn (người mượn là chủ ngữ): Can I borrow your charger?"},
+{q:"A ______ internet connection is essential for remote work.", o:["reliable","reliant","reliance","relying"], lv:2, tag:"Dạng từ", e:"Trước danh từ cần tính từ: reliable = đáng tin cậy, ổn định. reliant (on) = phụ thuộc, reliance là danh từ."},
+{q:"The factory plans to ______ wages next year.", o:["raise","rise","arise","arouse"], lv:2, tag:"Từ dễ nhầm", e:"raise + tân ngữ (raise wages). rise không có tân ngữ, arise = nảy sinh, arouse = khơi dậy."},
+{q:"When ______ is higher than supply, prices usually go up.", o:["demand","profit","import","budget"], lv:2, tag:"Chủ đề Economy", e:"Quy luật cung cầu: demand cao hơn supply thì giá tăng. Các từ còn lại không đối lập với supply."},
+{q:"The data is protected by strong ______, so hackers cannot read it.", o:["encryption","automation","innovation","bandwidth"], lv:2, tag:"Chủ đề Technology", e:"encryption = mã hóa, giúp dữ liệu không đọc được. bandwidth = băng thông, automation = tự động hóa."},
+{q:"He has a ______ memory; he can recall every detail of a book after one reading.", o:["remarkable","ordinary","weak","selective"], lv:2, tag:"Từ đồng nghĩa", e:"Nhớ mọi chi tiết sau một lần đọc là điều đáng chú ý: remarkable = phi thường. ordinary và weak trái nghĩa."},
+{q:"Her proposal was ______ by the committee, so she had to start again.", o:["rejected","accepted","approved","adopted"], lv:2, tag:"Từ đồng nghĩa", e:"Vế sau 'had to start again' cho biết đề xuất không được chấp nhận: rejected = bị bác bỏ."},
+{q:"Nam is very ______; he never forgets to call his grandparents.", o:["considerate","considerable","consistent","consequent"], lv:3, tag:"Từ dễ nhầm", e:"considerate = chu đáo, biết nghĩ cho người khác. considerable = đáng kể (về số lượng), consistent = nhất quán."},
+{q:"Using public transport is a more ______ way to travel than driving a car.", o:["economical","economic","economy","economics"], lv:3, tag:"Từ dễ nhầm", e:"economical = tiết kiệm. economic = thuộc kinh tế (economic growth). economy và economics là danh từ."},
+{q:"Signing the peace treaty was a ______ moment in the country's history.", o:["historic","historical","history","historian"], lv:3, tag:"Từ dễ nhầm", e:"historic = có ý nghĩa lịch sử trọng đại. historical = thuộc về lịch sử, dùng cho sự kiện, tài liệu (historical records)."},
+{q:"It would be ______ to save some money for emergencies.", o:["sensible","sensitive","senseless","sensational"], lv:3, tag:"Từ dễ nhầm", e:"sensible = khôn ngoan, hợp lý. sensitive = nhạy cảm, senseless = vô nghĩa, sensational = giật gân."},
+{q:"Many users are worried about their online ______.", o:["privacy","piracy","private","pirate"], lv:3, tag:"Từ dễ nhầm", e:"privacy = quyền riêng tư. piracy = vi phạm bản quyền (không hợp ngữ cảnh). private là tính từ, pirate là kẻ cướp biển."},
+{q:"Floppy disks are now ______; few computers can still read them.", o:["obsolete","reliable","vulnerable","flexible"], lv:3, tag:"Chủ đề Technology", e:"obsolete = lỗi thời, không còn dùng. reliable = đáng tin cậy, vulnerable = dễ bị tổn thương, flexible = linh hoạt."},
+{q:"The AI model showed a ______ against some groups because the training data was unbalanced.", o:["bias","pattern","insight","accuracy"], lv:3, tag:"Chủ đề AI", e:"bias = thiên kiến, sai lệch (show a bias against). Dữ liệu huấn luyện lệch dẫn đến bias."},
+{q:"The company has ______ a new policy to cut paper use.", o:["adopted","adapted","adhered","admitted"], lv:3, tag:"Từ dễ nhầm", e:"adopt a policy = thông qua, áp dụng chính sách. adapt = thích nghi, điều chỉnh (adapt to), adhere to = tuân thủ."},
+{q:"She has strong moral ______ and never lies, even when it would help her.", o:["principles","principals","princes","principle"], lv:3, tag:"Từ dễ nhầm", e:"principle = nguyên tắc (đạo đức), dùng số nhiều ở đây. principal = hiệu trưởng, princes = các hoàng tử."},
+{q:"The doctor ______ him with diabetes after several blood tests.", o:["diagnosed","prescribed","treated","cured"], lv:3, tag:"Chủ đề Health", e:"diagnose sb with + bệnh = chẩn đoán ai mắc bệnh. prescribe = kê đơn, treat sb for + bệnh = điều trị, cure = chữa khỏi."},
+{q:"She suffers from ______ back pain and has to see a doctor regularly.", o:["chronic","chronicle","chronological","chronically"], lv:3, tag:"Dạng từ", e:"Trước danh từ cần tính từ: chronic = mãn tính. chronicle = biên niên sử, chronological = theo thứ tự thời gian."},
+{q:"The company is struggling to cope with the sudden increase in orders. ('cope with' is closest in meaning to ...)", o:["deal successfully with","complain about","take advantage of","get rid of"], lv:3, tag:"Từ đồng nghĩa", e:"cope with = đối phó, xoay xở được với (một tình huống khó). Cả câu: công ty đang vất vả để xoay xở với lượng đơn tăng đột ngột."},
+{q:"Water is becoming scarce in many regions. ('scarce' is closest in meaning to ...)", o:["hard to find","abundant","polluted","expensive to buy"], lv:3, tag:"Từ đồng nghĩa", e:"scarce = khan hiếm, tức là khó tìm. abundant trái nghĩa (dồi dào)."},
+{q:"The results were inevitable. ('inevitable' is closest in meaning to ...)", o:["impossible to avoid","surprising","disappointing","unclear"], lv:3, tag:"Từ đồng nghĩa", e:"inevitable = không thể tránh khỏi. Chú ý tiền tố in- ở đây không có nghĩa 'không thể xảy ra'."}
+];
+
+const READING = [
+{title:"Passage 1: Green roofs in cities", text:`<p>Green roofs, which are roofs partly or completely covered with plants, are becoming a common sight in large cities. The idea is not new: people in Scandinavia covered their homes with grass for centuries to keep out the cold. What is new is the reason. Cities now face rising temperatures, because concrete and asphalt absorb heat and release it slowly at night, a problem known as the urban heat island effect. Studies suggest that a green roof can lower the temperature of the building beneath it by several degrees in summer, and so reduce the need for air conditioning. Plants also absorb rainwater, which helps prevent flooding when storms overwhelm drains.</p>
+<p>However, green roofs are not cheap. They cost more to install than ordinary roofs because the structure must be strong enough to carry the weight of soil and water, and they need regular maintenance. Some city councils therefore offer tax reductions to owners who install them. Supporters admit that the initial cost is high, but they argue that savings on energy bills mean the investment pays for itself over time. Critics, on the other hand, say that parks would give residents more benefit for the same money, since few people can actually walk on a roof.</p>`,
+ qs:[
+ {q:"What is the passage mainly about?", o:["The benefits and costs of green roofs in cities","The history of housing in Scandinavia","How to grow plants on concrete","Why cities are getting colder"], lv:1, tag:"Ý chính", e:"Đoạn 1 nói lợi ích (giảm nhiệt, chống ngập), đoạn 2 nói chi phí và tranh luận. Lịch sử Scandinavia chỉ là chi tiết mở đầu; thành phố nóng lên chứ không lạnh đi."},
+ {q:"According to the passage, why are green roofs being installed now?", o:["To help cities deal with heat and flooding","To copy a Scandinavian tradition","To keep buildings warm in winter","To raise the price of homes"], lv:1, tag:"Chi tiết", e:"'What is new is the reason': thành phố nóng lên và dễ ngập. Giữ ấm là lý do cũ ở Scandinavia, không phải lý do hiện nay."},
+ {q:"The urban heat island effect happens because ...", o:["concrete and asphalt absorb heat and release it slowly at night","plants give off too much heat","people use air conditioners too often","tall buildings block the wind"], lv:2, tag:"Chi tiết", e:"Câu 'concrete and asphalt absorb heat and release it slowly at night, a problem known as the urban heat island effect'. Máy lạnh là thứ được giảm đi nhờ mái xanh, không phải nguyên nhân."},
+ {q:"The word 'overwhelm' in paragraph 1 is closest in meaning to ...", o:["exceed the capacity of","clean","repair","surround"], lv:3, tag:"Từ trong ngữ cảnh", e:"'storms overwhelm drains' = bão vượt quá khả năng thoát nước của cống, gây ngập."},
+ {q:"What do critics of green roofs argue?", o:["Parks would benefit residents more for the same money","Green roofs are too weak to hold plants","Tax reductions are too high","Plants damage buildings"], lv:3, tag:"Quan điểm", e:"'parks would give residents more benefit for the same money, since few people can actually walk on a roof'. Các phương án khác không được nhắc."}
+ ]},
+{title:"Passage 2: AI and energy use in data centers", text:`<p>Data centers, the large buildings that store and process the world's digital information, use a huge amount of electricity. A considerable share of this energy does not run the servers themselves but cools them, since overheated machines fail quickly. Engineers have long tried to reduce this cost by improving airflow and building centers in cold regions.</p>
+<p>In recent years, artificial intelligence has offered a new approach. In one well-known experiment, a company let a machine-learning system adjust its cooling equipment automatically. The system studied years of sensor data and learned which settings kept temperatures safe with the least energy. According to the company, cooling energy fell by around 40 percent.</p>
+<p>Still, experts urge caution. Training large AI models itself consumes enormous amounts of power, so the technology may create as much demand as it saves. Moreover, an automated system can only be as reliable as the data it learns from; if sensors give wrong readings, the system may make dangerous decisions. For this reason, most operators keep human engineers in the loop and let them override the software whenever necessary.</p>`,
+ qs:[
+ {q:"Why do data centers need cooling?", o:["Overheated machines fail quickly","Cold air makes data travel faster","Customers demand cold buildings","Electricity is cheaper at low temperatures"], lv:1, tag:"Chi tiết", e:"'since overheated machines fail quickly'. Các lý do còn lại không được nêu."},
+ {q:"What did the machine-learning system do in the experiment?", o:["It adjusted cooling equipment using patterns learned from sensor data","It replaced all the human engineers","It built a new data center in a cold region","It trained other AI models"], lv:2, tag:"Chi tiết", e:"'adjust its cooling equipment automatically ... studied years of sensor data and learned which settings kept temperatures safe'."},
+ {q:"What result does the passage report?", o:["Cooling energy fell by about 40 percent, according to the company","Total electricity use fell by 40 percent","The servers became 40 percent faster","Failures dropped by 40 percent"], lv:3, tag:"Chi tiết", e:"Con số 40% là mức giảm năng lượng làm mát (cooling energy), không phải tổng điện năng. Chú ý 'according to the company': đây là số liệu do công ty công bố."},
+ {q:"Which of the following is NOT mentioned as a reason for caution?", o:["AI systems are too expensive to buy","Training AI models uses a lot of power","Wrong sensor data can lead to dangerous decisions","The technology may increase total demand for power"], lv:3, tag:"NOT / EXCEPT", e:"Đoạn 3 nêu: huấn luyện AI tốn điện, tổng nhu cầu có thể không giảm, cảm biến sai dẫn đến quyết định nguy hiểm. Giá mua quá cao không được nhắc."},
+ {q:"What does 'keep human engineers in the loop' suggest?", o:["People continue to supervise and can overrule the software","Engineers are trained to write AI software","Engineers work in 24-hour shifts","Engineers collect the data by hand"], lv:2, tag:"Suy luận", e:"Vế sau: 'let them override the software whenever necessary', tức con người vẫn giám sát và có quyền can thiệp."}
+ ]},
+{title:"Passage 3: Why people procrastinate", text:`<p>Almost everyone has delayed an important task at some point, but psychologists say that procrastination is not simply laziness. People who put things off are often not ignoring the task; they are avoiding the unpleasant feelings it causes, such as boredom, anxiety or fear of failure. Putting the task aside gives immediate relief, which makes the habit stronger, even though the stress returns later and is usually worse.</p>
+<p>Researchers have identified several ways to break the cycle. One is to divide a large job into very small steps, so the first step feels easy. For example, instead of "write the report", a student might begin with "open the file and write one sentence". Another is to set a specific time and place for the work rather than relying on motivation, which tends to be unreliable. A third suggestion is to forgive yourself for past delays: one study found that students who did not blame themselves after postponing revision were less likely to postpone it again before the next exam.</p>
+<p>None of these methods works instantly, however. Changing a habit takes weeks of practice, and progress is rarely smooth.</p>`,
+ qs:[
+ {q:"According to psychologists, procrastination is mainly caused by ...", o:["a wish to avoid unpleasant feelings","laziness","a lack of intelligence","having too many tasks"], lv:1, tag:"Chi tiết", e:"'it is not simply laziness ... they are avoiding the unpleasant feelings it causes'."},
+ {q:"Why does procrastination become a habit?", o:["Delaying the task brings immediate relief","It saves time later","The task becomes easier over time","Other people finish the work"], lv:2, tag:"Chi tiết", e:"'Putting the task aside gives immediate relief, which makes the habit stronger'."},
+ {q:"Which example of a small first step is given?", o:["Opening the file and writing one sentence","Writing the whole report in one night","Asking a friend for help","Setting an alarm for the morning"], lv:2, tag:"Chi tiết", e:"'a student might begin with open the file and write one sentence'."},
+ {q:"What did the study of students find?", o:["Students who forgave themselves procrastinated less before the next exam","Students who blamed themselves studied harder","Students who revised early got higher marks","Forgiveness made no difference"], lv:3, tag:"Chi tiết", e:"'students who did not blame themselves ... were less likely to postpone it again'. Tự trách không giúp học chăm hơn."},
+ {q:"What is the writer's attitude in the last paragraph?", o:["Realistic: change takes time and is not always smooth","Doubtful that the methods work at all","Enthusiastic that results come at once","Critical of the researchers"], lv:3, tag:"Thái độ tác giả", e:"'None of these methods works instantly ... progress is rarely smooth': thực tế, không hoài nghi hoàn toàn và không quá lạc quan."}
+ ]},
+{title:"Passage 4: Is a cashless society a good idea?", text:`<p>In Sweden, many shops no longer accept banknotes, and buses do not take cash at all. Supporters of a cashless society say that digital payment is faster, cheaper for businesses to handle and harder to steal. It can also make it easier for governments to track illegal activity, since every transaction leaves a record.</p>
+<p>But the shift worries many people. Elderly citizens and those without bank accounts may be unable to pay for basic goods. There are also privacy concerns, as payment companies can collect detailed information about what people buy and where. In addition, a power cut or a technical failure can stop all payments at once, as happened in one city last year, when shoppers were forced to leave their baskets and go home.</p>
+<p>For these reasons, some countries have passed laws requiring shops to accept cash. Economists suggest that the sensible approach is not to choose one system or the other but to keep both, so that people have a choice and the economy has a backup.</p>`,
+ qs:[
+ {q:"Which advantage of digital payment is mentioned?", o:["It is faster and harder to steal","It protects people's privacy","It works during power cuts","It is cheaper for elderly people"], lv:1, tag:"Chi tiết", e:"'digital payment is faster, cheaper for businesses to handle and harder to steal'. Quyền riêng tư và mất điện được nêu như vấn đề, không phải ưu điểm."},
+ {q:"Who might have difficulty in a cashless society?", o:["Elderly people and people without bank accounts","Young office workers","Tourists with credit cards","Shop owners with websites"], lv:2, tag:"Chi tiết", e:"'Elderly citizens and those without bank accounts may be unable to pay for basic goods'."},
+ {q:"What does 'It' in 'It can also make it easier for governments' refer to?", o:["Digital payment","Sweden","A shop","A bus"], lv:2, tag:"Từ quy chiếu", e:"Chủ ngữ của các câu liền trước là 'digital payment': 'digital payment is faster ... It can also make it easier'."},
+ {q:"The word 'backup' in the last paragraph is closest in meaning to ...", o:["a reserve system for when the main one fails","a rival","a punishment","an advertisement"], lv:3, tag:"Từ trong ngữ cảnh", e:"Giữ cả tiền mặt và thanh toán số để nếu một hệ thống ngừng thì còn hệ thống kia: backup = hệ thống dự phòng."},
+ {q:"What do economists recommend?", o:["Keeping both cash and digital payment","Banning cash completely","Banning cards completely","Waiting for new laws"], lv:2, tag:"Quan điểm", e:"'not to choose one system or the other but to keep both'."}
+ ]}
+];
+/* Sentence completion (Paper 2A). o[0] là đáp án đúng. */
+const GRAMMAR = [
+/* ---- Thì ---- */
+{q:"Water ______ at 100 degrees Celsius.", o:["boils","is boiling","boiled","has boiled"], lv:1, tag:"Thì", e:"Sự thật khoa học dùng hiện tại đơn: boils."},
+{q:"She ______ in Hanoi since 2019.", o:["has lived","lives","lived","is living"], lv:1, tag:"Thì", e:"since + mốc thời gian là dấu hiệu của hiện tại hoàn thành: has lived."},
+{q:"Look! It ______ outside.", o:["is raining","rains","rained","has rained"], lv:1, tag:"Thì", e:"'Look!' báo hiệu việc đang diễn ra: hiện tại tiếp diễn."},
+{q:"I ______ TV when the lights went out.", o:["was watching","watched","have watched","am watching"], lv:2, tag:"Thì", e:"Hành động đang diễn ra (was watching) bị hành động khác (went out) cắt ngang."},
+{q:"When I arrived at the station, the train ______.", o:["had already left","already left","has already left","was already leaving"], lv:2, tag:"Thì", e:"Tàu rời đi trước lúc tôi đến, cả hai đều trong quá khứ: quá khứ hoàn thành (had left) cho việc xảy ra trước."},
+{q:"By the time you read this email, I ______ for Da Nang.", o:["will have left","will leave","am leaving","have left"], lv:2, tag:"Thì", e:"By the time + hiện tại đơn là mốc tương lai, việc hoàn tất trước mốc đó dùng tương lai hoàn thành."},
+{q:"How long ______ English?", o:["have you been learning","did you learn","are you learning","do you learn"], lv:2, tag:"Thì", e:"How long hỏi khoảng thời gian kéo dài đến hiện tại: hiện tại hoàn thành tiếp diễn."},
+{q:"As soon as the results ______ announced, we will let you know.", o:["are","will be","would be","being"], lv:2, tag:"Thì", e:"Mệnh đề thời gian (as soon as) dùng hiện tại đơn cho tương lai, không dùng will."},
+{q:"This is the first time I ______ such a difficult exam.", o:["have taken","took","had taken","take"], lv:3, tag:"Thì", e:"It/This is the first time + hiện tại hoàn thành."},
+{q:"He ______ here for two years when the company closed.", o:["had been working","has been working","was working","worked"], lv:3, tag:"Thì", e:"for two years + mốc trong quá khứ (khi công ty đóng cửa): quá khứ hoàn thành tiếp diễn."},
+/* ---- Điều kiện ---- */
+{q:"If it rains tomorrow, we ______ the picnic.", o:["will cancel","would cancel","cancelled","had cancelled"], lv:1, tag:"Điều kiện", e:"If + hiện tại đơn, S + will + V: điều kiện loại 1."},
+{q:"If I ______ you, I would apply for that scholarship.", o:["were","am","had been","will be"], lv:1, tag:"Điều kiện", e:"If I were you: câu điều kiện loại 2, khuyên bảo."},
+{q:"If she ______ harder, she would have passed the exam.", o:["had studied","studied","studies","would study"], lv:2, tag:"Điều kiện", e:"Vế sau would have + V3 nên vế if là loại 3: had + V3."},
+{q:"You can borrow my laptop ______ you promise to take care of it.", o:["as long as","unless","in case","although"], lv:2, tag:"Điều kiện", e:"as long as = miễn là (điều kiện). unless = trừ khi (nghĩa phủ định), in case = phòng khi."},
+{q:"Take a coat ______ it gets cold later.", o:["in case","unless","although","otherwise"], lv:2, tag:"Điều kiện", e:"in case = phòng khi (chuẩn bị trước cho điều có thể xảy ra)."},
+{q:"Unless you ______ now, you will miss the last bus.", o:["leave","don't leave","left","will leave"], lv:3, tag:"Điều kiện", e:"Unless đã mang nghĩa phủ định (= if you don't leave), nên động từ để ở dạng khẳng định hiện tại đơn."},
+{q:"______ I known about the traffic, I would have left earlier.", o:["Had","If","Were","Should"], lv:3, tag:"Điều kiện", e:"Đảo ngữ loại 3: Had + S + V3 = If I had known."},
+{q:"If I ______ the job offer last year, I would be living in Singapore now.", o:["had accepted","accepted","would accept","have accepted"], lv:3, tag:"Điều kiện", e:"Hỗn hợp: điều kiện quá khứ (last year) → kết quả hiện tại (now): If + had + V3, would + V."},
+{q:"______ for your help, I would never have finished the project.", o:["But","Unless","Despite","Even"], lv:3, tag:"Điều kiện", e:"But for + N = nếu không có (loại 3 khi vế sau là would have + V3)."},
+/* ---- Bị động ---- */
+{q:"The bridge ______ in 2015.", o:["was built","built","has built","is building"], lv:1, tag:"Bị động", e:"Chủ ngữ là vật, mốc quá khứ (in 2015): bị động quá khứ đơn."},
+{q:"The system ______ at the moment, so please wait.", o:["is being updated","is updated","has updated","updates"], lv:2, tag:"Bị động", e:"at the moment + bị động: am/is/are + being + V3."},
+{q:"He is said ______ a fortune last year.", o:["to have made","to make","making","made"], lv:2, tag:"Bị động", e:"Hành động xảy ra trước thời điểm nói (last year): is said + to have + V3."},
+{q:"I had my laptop ______ yesterday.", o:["repaired","repair","repairing","to repair"], lv:3, tag:"Bị động", e:"Thể sai khiến: have + O (vật) + V3."},
+{q:"The report needs ______ before Friday.", o:["to be finished","finish","to finish","being finished"], lv:2, tag:"Bị động", e:"need + to be + V3: vật cần được làm (report không tự làm)."},
+{q:"She hates ______ when she is speaking.", o:["being interrupted","interrupting","to interrupt","interrupted"], lv:3, tag:"Bị động", e:"hate + V-ing, và cô ấy bị ngắt lời nên dùng bị động: being + V3."},
+/* ---- Wish / would rather ---- */
+{q:"I wish I ______ more free time.", o:["had","have","would have","will have"], lv:2, tag:"Wish", e:"Ước điều trái với hiện tại: wish + quá khứ đơn."},
+{q:"I wish I ______ the exam last week.", o:["hadn't failed","didn't fail","wouldn't fail","haven't failed"], lv:2, tag:"Wish", e:"Tiếc về quá khứ (last week): wish + had + V3, ở đây dạng phủ định hadn't failed."},
+{q:"If only I ______ the answer yesterday!", o:["had known","knew","know","would know"], lv:2, tag:"Wish", e:"If only + had + V3 diễn đạt tiếc nuối về quá khứ (yesterday)."},
+{q:"I'd rather you ______ smoke in here.", o:["didn't","don't","not to","won't"], lv:3, tag:"Wish", e:"would rather + S2 + quá khứ đơn (hiện tại/tương lai): I'd rather you didn't."},
+{q:"It's high time we ______ a decision.", o:["made","make","will make","had made"], lv:3, tag:"Wish", e:"It's (high) time + S + quá khứ đơn: đã đến lúc phải làm."},
+/* ---- Mệnh đề quan hệ ---- */
+{q:"The man ______ lives next door is a doctor.", o:["who","whom","which","whose"], lv:1, tag:"Quan hệ", e:"Thay cho người, làm chủ ngữ của lives: who."},
+{q:"This is the company ______ I work.", o:["where","which","whose","who"], lv:2, tag:"Quan hệ", e:"where = at which (nơi chốn). 'which I work' thiếu giới từ."},
+{q:"The student ______ project won the prize is my cousin.", o:["whose","who","that","which"], lv:2, tag:"Quan hệ", e:"project thuộc về student: whose chỉ sự sở hữu."},
+{q:"My boss, ______ I respect a lot, is retiring.", o:["whom","that","which","whose"], lv:3, tag:"Quan hệ", e:"Mệnh đề không xác định (có dấu phẩy) không dùng that. Chỉ người, làm tân ngữ: whom."},
+{q:"He passed the test, ______ surprised everyone.", o:["which","what","that","who"], lv:3, tag:"Quan hệ", e:"which thay cho cả mệnh đề trước dấu phẩy; that và what không dùng ở vị trí này."},
+{q:"The report ______ by our team was praised.", o:["written","writing","wrote","which writing"], lv:3, tag:"Quan hệ", e:"Rút gọn mệnh đề quan hệ bị động: which was written → written."},
+{q:"She has two brothers, both of ______ are engineers.", o:["whom","who","them","which"], lv:3, tag:"Quan hệ", e:"Lượng từ + of whom: both of whom. Không dùng them vì đang nối hai mệnh đề."},
+/* ---- Modal ---- */
+{q:"You ______ have told me earlier! Now it's too late.", o:["should","must","needn't","can"], lv:2, tag:"Modal", e:"should have + V3 = lẽ ra đã nên làm (trách móc, tiếc)."},
+{q:"The lights are on, so he ______ be at home.", o:["must","can't","needn't","mightn't"], lv:2, tag:"Modal", e:"Dấu hiệu rõ ràng (đèn sáng) nên gần như chắc chắn: must be."},
+{q:"She ______ have taken your book; she wasn't even in the room.", o:["can't","mustn't","needn't","shouldn't"], lv:3, tag:"Modal", e:"Suy đoán chắc chắn là không đúng về quá khứ: can't have + V3."},
+{q:"We ______ have hurried; the meeting was postponed.", o:["needn't","mustn't","can't","shouldn't"], lv:3, tag:"Modal", e:"needn't have + V3 = đã làm nhưng thực ra không cần."},
+{q:"You ______ park here. It is forbidden.", o:["mustn't","don't have to","needn't","shouldn't"], lv:2, tag:"Modal", e:"mustn't = cấm. don't have to / needn't = không cần thiết, nghĩa hoàn toàn khác."},
+{q:"Applicants ______ submit the form online; paper forms are not accepted.", o:["have to","ought","may","used to"], lv:1, tag:"Modal", e:"Quy định bắt buộc: have to + V. ought phải có to (ought to), used to chỉ thói quen quá khứ."},
+/* ---- V-ing / to V ---- */
+{q:"She avoided ______ the question.", o:["answering","to answer","answer","answered"], lv:1, tag:"V-ing / to V", e:"avoid + V-ing."},
+{q:"I'm looking forward to ______ you soon.", o:["seeing","see","saw","be seeing"], lv:1, tag:"V-ing / to V", e:"look forward to: to ở đây là giới từ nên theo sau là V-ing."},
+{q:"He decided ______ abroad.", o:["to study","studying","study","studied"], lv:2, tag:"V-ing / to V", e:"decide + to V."},
+{q:"I remember ______ the door, so it can't have been me who left it open.", o:["locking","to lock","lock","locked"], lv:2, tag:"V-ing / to V", e:"remember + V-ing = nhớ là đã làm. remember + to V = nhớ phải làm."},
+{q:"Don't forget ______ the lights before leaving.", o:["to turn off","turning off","turn off","turned off"], lv:3, tag:"V-ing / to V", e:"forget + to V = quên không làm việc cần làm."},
+{q:"The boss made us ______ overtime.", o:["work","to work","working","worked"], lv:3, tag:"V-ing / to V", e:"make + O + V (không to). Ở bị động mới có to: We were made to work."},
+{q:"It's no use ______ over spilt milk.", o:["crying","to cry","cry","cried"], lv:3, tag:"V-ing / to V", e:"It's no use + V-ing."},
+/* ---- So sánh ---- */
+{q:"This laptop is ______ than that one.", o:["cheaper","more cheap","cheapest","the cheaper"], lv:1, tag:"So sánh", e:"Tính từ ngắn: cheap → cheaper (không dùng more)."},
+{q:"The ______ you practise, the more fluent you become.", o:["more","most","much","many"], lv:2, tag:"So sánh", e:"So sánh kép: The + so sánh hơn, the + so sánh hơn."},
+{q:"She is not ______ her sister.", o:["as tall as","so taller as","taller as","as taller than"], lv:2, tag:"So sánh", e:"not as + adj (nguyên mẫu) + as."},
+{q:"Of all the students, Lan is ______.", o:["the most hardworking","more hardworking","most hardworking","the more hardworking"], lv:3, tag:"So sánh", e:"So sánh nhất tính từ dài: the most + adj."},
+/* ---- Đảo ngữ ---- */
+{q:"Never ______ such a beautiful sunset.", o:["have I seen","I have seen","I had seen","did I seen"], lv:3, tag:"Đảo ngữ", e:"Never ở đầu câu: trợ động từ đứng trước chủ ngữ."},
+{q:"Not only ______ late, but he also forgot his documents.", o:["did he arrive","he arrived","he did arrive","arrived he"], lv:3, tag:"Đảo ngữ", e:"Not only ở đầu câu: did + S + V."},
+{q:"Hardly ______ the room when the phone rang.", o:["had she entered","she had entered","she entered","did she enter"], lv:3, tag:"Đảo ngữ", e:"Hardly + had + S + V3 + when + quá khứ đơn."},
+{q:"Under no circumstances ______ your password with anyone.", o:["should you share","you should share","you share","you sharing"], lv:3, tag:"Đảo ngữ", e:"Under no circumstances + trợ động từ + S + V."},
+/* ---- Liên từ ---- */
+{q:"______ it rained heavily, we went out.", o:["Although","Despite","Because","However"], lv:1, tag:"Liên từ", e:"Sau chỗ trống là một mệnh đề (S + V) và nghĩa nhượng bộ: Although."},
+{q:"______ the heavy rain, the match continued.", o:["Despite","Although","However","Because"], lv:2, tag:"Liên từ", e:"Sau chỗ trống là cụm danh từ (the heavy rain): Despite."},
+{q:"He was ill; ______, he went to work.", o:["nevertheless","therefore","because","so"], lv:2, tag:"Liên từ", e:"Hai vế trái ngược nhau: nevertheless = tuy nhiên. therefore/so chỉ kết quả."},
+{q:"She studied hard ______ she could pass the exam.", o:["so that","in order","so as","because of"], lv:2, tag:"Liên từ", e:"so that + mệnh đề (S + could + V) chỉ mục đích."},
+/* ---- Giới từ, lượng từ, từ loại ---- */
+{q:"She is good ______ solving problems.", o:["at","in","on","for"], lv:1, tag:"Giới từ", e:"good at + V-ing."},
+{q:"Prices depend ______ supply and demand.", o:["on","of","from","to"], lv:1, tag:"Giới từ", e:"depend on."},
+{q:"They accused him ______ stealing data.", o:["of","for","with","about"], lv:2, tag:"Giới từ", e:"accuse sb of + V-ing."},
+{q:"We congratulated her ______ passing the exam.", o:["on","for","about","at"], lv:2, tag:"Giới từ", e:"congratulate sb on + V-ing/N."},
+{q:"He has ______ friends here, so he feels lonely.", o:["few","a few","little","a little"], lv:2, tag:"Lượng từ", e:"few + danh từ đếm được số nhiều, nghĩa tiêu cực (rất ít). a few mang nghĩa tích cực (vài người)."},
+{q:"She gave me some useful ______.", o:["advice","advices","advise","advises"], lv:2, tag:"Danh từ", e:"advice là danh từ không đếm được. advise là động từ."}
+];
+/* ===== CLOZE (Paper 2B): mỗi bài 10 chỗ trống. Trong text dùng {1}..{10} để đánh dấu ===== */
+const CLOZE = [
+{title:"Cloze 1: Working from home", text:`<p>Working from home has become {1} common over the last few years. Many companies now allow staff to work remotely {2} least two days a week. Employees say they save time {3} they no longer have to travel to the office, and they can concentrate better. {4}, there are some disadvantages. People who work alone sometimes feel isolated, and it can be hard to separate work {5} private life. Managers also worry {6} new employees learn more slowly when {7} cannot watch experienced colleagues. To solve these problems, some firms {8} introduced a hybrid model, {9} employees spend part of the week in the office. This approach seems {10} keep both staff and managers satisfied.</p>`,
+ qs:[
+ {o:["increasingly","increased","increase","increasing"], lv:2, tag:"Dạng từ", e:"Cần trạng từ bổ nghĩa cho tính từ common: increasingly common = ngày càng phổ biến."},
+ {o:["at","in","on","by"], lv:1, tag:"Giới từ", e:"at least = ít nhất (cụm cố định)."},
+ {o:["because","although","unless","whereas"], lv:2, tag:"Liên từ", e:"Vế sau là lý do tiết kiệm thời gian: because."},
+ {o:["However","Therefore","Moreover","Besides"], lv:1, tag:"Liên từ", e:"Câu trước nêu ưu điểm, câu này nêu nhược điểm: However (tuy nhiên)."},
+ {o:["from","with","to","of"], lv:2, tag:"Giới từ", e:"separate A from B = tách A ra khỏi B."},
+ {o:["that","about","of","for"], lv:2, tag:"Liên từ", e:"Sau chỗ trống là một mệnh đề (new employees learn ...): worry that + S + V."},
+ {o:["they","them","their","those"], lv:1, tag:"Đại từ", e:"Thay cho new employees, làm chủ ngữ của cannot watch: they."},
+ {o:["have","are","were","will"], lv:2, tag:"Thì", e:"Có introduced (V3) nên cần trợ động từ have để tạo hiện tại hoàn thành."},
+ {o:["in which","which","what","when"], lv:3, tag:"Quan hệ", e:"in which employees spend part of the week ... = mô hình trong đó nhân viên ... Chỉ 'which' thì thiếu giới từ in, 'what' không dùng làm đại từ quan hệ."},
+ {o:["to","for","that","and"], lv:1, tag:"Cấu trúc", e:"seem + to V."}
+ ]},
+{title:"Cloze 2: Learning English today", text:`<p>It has never {1} easier to learn English than it is today. Thanks {2} the internet, learners can watch videos, listen to podcasts and chat with native speakers without {3} their homes. {4} apps even use games to keep users motivated. Nevertheless, many learners give {5} after a few weeks because they expect quick results. Experts point {6} that regular practice is far {7} important than studying for long hours. They also advise learners {8} to be afraid of making mistakes, since mistakes are part of the learning process. If you {9} twenty minutes a day for a year, you {10} be amazed at your progress.</p>`,
+ qs:[
+ {o:["been","be","being","was"], lv:1, tag:"Thì", e:"has never been = hiện tại hoàn thành của be."},
+ {o:["to","for","of","with"], lv:1, tag:"Giới từ", e:"thanks to = nhờ có."},
+ {o:["leaving","leave","to leave","left"], lv:2, tag:"V-ing / to V", e:"Sau giới từ without dùng V-ing."},
+ {o:["Some","Any","Much","Every"], lv:1, tag:"Lượng từ", e:"Some + danh từ số nhiều (apps) trong câu khẳng định. Much dùng với danh từ không đếm được, every với danh từ số ít."},
+ {o:["up","in","off","away"], lv:2, tag:"Cụm động từ", e:"give up = từ bỏ."},
+ {o:["out","up","at","to"], lv:2, tag:"Cụm động từ", e:"point out that = chỉ ra rằng."},
+ {o:["more","most","much","very"], lv:2, tag:"So sánh", e:"far more important than: so sánh hơn nhấn mạnh bằng far."},
+ {o:["not","no","don't","never"], lv:2, tag:"Cấu trúc", e:"advise + O + (not) + to V: advise learners not to be afraid."},
+ {o:["practise","will practise","would practise","practised"], lv:2, tag:"Điều kiện", e:"If + hiện tại đơn, ... will + V: điều kiện loại 1."},
+ {o:["will","would","are","have"], lv:2, tag:"Điều kiện", e:"Vế chính của loại 1: will + V (be amazed)."}
+ ]},
+{title:"Cloze 3: Smart cities", text:`<p>Many cities around the world are becoming "smart" by using technology to {1} daily life easier. Sensors {2} traffic and warn drivers about jams, while apps let residents {3} bills online. In some cities, street lights {4} on only when people are nearby, which {5} a lot of energy. However, critics point out that collecting so much data {6} serious questions about privacy. Who owns the data, and {7} can see it? In {8} to these concerns, a few cities have created rules that limit how long information can be {9}. Whether smart cities truly improve life will {10} on how carefully these tools are managed.</p>`,
+ qs:[
+ {o:["make","do","get","let"], lv:1, tag:"Collocation", e:"make + O + adj = làm cho ... trở nên: make daily life easier."},
+ {o:["monitor","admire","reserve","pretend"], lv:2, tag:"Từ vựng", e:"monitor traffic = theo dõi giao thông."},
+ {o:["pay","spend","cost","charge"], lv:1, tag:"Collocation", e:"pay bills = thanh toán hóa đơn. let + O + V (không to)."},
+ {o:["turn","put","take","set"], lv:2, tag:"Cụm động từ", e:"turn on = bật (đèn tự bật). put on không đi với chủ ngữ là đèn trong nghĩa này."},
+ {o:["saves","spares","keeps","holds"], lv:2, tag:"Từ vựng", e:"save energy = tiết kiệm năng lượng. which thay cho cả mệnh đề trước nên động từ chia số ít (saves)."},
+ {o:["raises","rises","arises","lifts"], lv:3, tag:"Từ dễ nhầm", e:"raise questions = đặt ra câu hỏi (cần tân ngữ). rise/arise không có tân ngữ."},
+ {o:["who","whom","whose","which"], lv:1, tag:"Đại từ", e:"Hỏi về người làm chủ ngữ của can see: who."},
+ {o:["response","respond","responsive","responsible"], lv:2, tag:"Dạng từ", e:"in response to = để đáp lại (sau giới từ là danh từ)."},
+ {o:["kept","keeping","to keep","keep"], lv:2, tag:"Bị động", e:"can be + V3: thông tin có thể được lưu giữ."},
+ {o:["depend","rely","insist","focus"], lv:2, tag:"Giới từ", e:"depend on how ... = tùy thuộc vào cách thức ... (rely cần tân ngữ, thường là rely on sb/sth)."}
+ ]}
+];
+
+/* ===== WORD FORMATION: tự gõ. a = các đáp án chấp nhận ===== */
+const WORDFORM = [
+{q:"The company's ______ has been very rapid in recent years.", w:"DEVELOP", a:["development"], lv:1, e:"Sau sở hữu cách 'company's' cần danh từ: development."},
+{q:"Please read the instructions ______ before you start.", w:"CARE", a:["carefully"], lv:1, e:"Bổ nghĩa cho động từ read nên cần trạng từ: carefully."},
+{q:"The lecture was so ______ that half the class fell asleep.", w:"BORE", a:["boring"], lv:1, e:"Tính chất của sự việc dùng -ing: boring."},
+{q:"She is a very ______ person; she always finishes on time.", w:"RELY", a:["reliable"], lv:2, e:"Sau very + person cần tính từ: reliable (rely → reliable)."},
+{q:"It is ______ to work without a break for ten hours.", w:"POSSIBLE", a:["impossible"], lv:2, e:"Nghĩa phủ định; tiền tố im- đứng trước p."},
+{q:"The new feature was ______ added to the system last week.", w:"SUCCESS", a:["successfully"], lv:2, e:"Bổ nghĩa cho động từ added: successfully."},
+{q:"Her ______ to solve problems impressed the manager.", w:"ABLE", a:["ability"], lv:2, e:"Sau her cần danh từ: ability (able → ability)."},
+{q:"We need to improve the ______ of our network.", w:"SECURE", a:["security"], lv:2, e:"Sau the và trước of cần danh từ: security."},
+{q:"He apologised for his ______ behaviour.", w:"POLITE", a:["impolite"], lv:2, e:"Nghĩa phủ định: impolite = bất lịch sự."},
+{q:"Her ______ ideas won first prize in the competition.", w:"CREATE", a:["creative"], lv:2, e:"Trước danh từ ideas cần tính từ: creative."},
+{q:"The ______ of the exam surprised everyone.", w:"DIFFICULT", a:["difficulty"], lv:2, e:"Sau the cần danh từ: difficulty (đổi -t thành -ty)."},
+{q:"The ______ of renewable energy is growing quickly.", w:"POPULAR", a:["popularity"], lv:2, e:"Danh từ của popular: popularity."},
+{q:"The ______ of the new system took three months.", w:"INSTALL", a:["installation"], lv:2, e:"Danh từ của install: installation."},
+{q:"He is an ______ engineer who has won several awards.", w:"EXPERIENCE", a:["experienced"], lv:2, e:"Tính từ experienced = giàu kinh nghiệm (đứng sau an, cần tính từ bắt đầu bằng nguyên âm)."},
+{q:"The ______ rate is falling as more jobs are created.", w:"EMPLOY", a:["unemployment"], lv:3, e:"Tỷ lệ thất nghiệp (unemployment rate): hai bước: thêm un- và đổi thành danh từ -ment."},
+{q:"She gave a ______ explanation that nobody could follow.", w:"CONFUSE", a:["confusing"], lv:3, e:"Tính chất của sự việc dùng -ing: confusing (confused là cảm xúc của người)."},
+{q:"Be ______ when you share personal data online.", w:"CAUTION", a:["cautious"], lv:3, e:"Sau be cần tính từ: cautious = thận trọng."},
+{q:"He regretted his ______ decision to quit the course.", w:"WISE", a:["unwise"], lv:3, e:"Nghĩa phủ định: unwise = thiếu khôn ngoan."},
+{q:"Our main ______ is to reduce costs by ten percent.", w:"OBJECT", a:["objective"], lv:3, e:"Danh từ objective = mục tiêu (object = vật thể, không hợp nghĩa)."},
+{q:"She is ______ about her future after graduation.", w:"OPTIMISM", a:["optimistic"], lv:3, e:"Sau be + about cần tính từ: optimistic = lạc quan."}
+];
+
+/* ===== SENTENCE TRANSFORMATION (Paper 2C): start = từ cho sẵn, a = các cách viết đúng đầy đủ ===== */
+const TRANSFORM = [
+{q:"She started working here five years ago.", start:"She has", a:["She has worked here for five years.","She has been working here for five years."], lv:1, tag:"Thì", e:"started ... ago = has + V3/been V-ing + for + khoảng thời gian."},
+{q:"The last time I saw her was in 2020.", start:"I haven't", a:["I haven't seen her since 2020."], lv:1, tag:"Thì", e:"The last time + S + V2 = S + haven't + V3 + since + mốc."},
+{q:"It's the first time I have eaten sushi.", start:"I have never", a:["I have never eaten sushi before."], lv:1, tag:"Thì", e:"first time + hiện tại hoàn thành = have never + V3 + before."},
+{q:"He is a good swimmer.", start:"He swims", a:["He swims well."], lv:1, tag:"Từ loại", e:"Danh từ chỉ người (swimmer) + tính từ (good) chuyển thành động từ + trạng từ (well)."},
+{q:"They say that the new manager is very strict.", start:"The new manager", a:["The new manager is said to be very strict.","The new manager is believed to be very strict.","The new manager is thought to be very strict."], lv:2, tag:"Bị động", e:"People say that S + V → S + is said + to V (cùng thời điểm)."},
+{q:"Although he studied hard, he failed the exam.", start:"Despite", a:["Despite studying hard, he failed the exam.","Despite his hard study, he failed the exam.","Despite having studied hard, he failed the exam.","Despite the fact that he studied hard, he failed the exam."], lv:2, tag:"Liên từ", e:"Despite + V-ing / N / the fact that + clause. Không dùng 'Despite of'."},
+{q:"I'm sorry I didn't accept the job offer.", start:"I wish", a:["I wish I had accepted the job offer."], lv:2, tag:"Wish", e:"Tiếc về quá khứ: wish + had + V3."},
+{q:"He is too young to drive.", start:"He is not", a:["He is not old enough to drive."], lv:2, tag:"Too / enough", e:"too + adj ≈ not + trái nghĩa adj + enough."},
+{q:"People believe that she left the country last night.", start:"She", a:["She is believed to have left the country last night."], lv:2, tag:"Bị động", e:"Hành động xảy ra trước thời điểm nói: is believed + to have + V3."},
+{q:"A technician repaired my laptop yesterday.", start:"I had", a:["I had my laptop repaired yesterday.","I had my laptop repaired by a technician yesterday."], lv:2, tag:"Thể sai khiến", e:"have + O + V3 = nhờ người khác làm gì."},
+{q:"I advise you to see a doctor.", start:"You", a:["You should see a doctor.","You had better see a doctor.","You ought to see a doctor."], lv:2, tag:"Modal", e:"advise + O + to V ≈ should / had better + V."},
+{q:"It takes me an hour to get to work.", start:"I spend", a:["I spend an hour getting to work.","I spend an hour travelling to work.","I spend an hour travelling to the office."], lv:2, tag:"V-ing / to V", e:"It takes + O + time + to V = S + spend + time + V-ing."},
+{q:"Tom is taller than any other boy in his class.", start:"Tom is", a:["Tom is the tallest boy in his class."], lv:2, tag:"So sánh", e:"So sánh hơn với any other + N = so sánh nhất."},
+{q:"If you don't hurry, you'll miss the bus.", start:"Unless", a:["Unless you hurry, you will miss the bus."], lv:2, tag:"Điều kiện", e:"Unless = if ... not; bỏ not ở vế điều kiện."},
+{q:"He is so tired that he can't drive home.", start:"He is too", a:["He is too tired to drive home."], lv:2, tag:"Too / enough", e:"so ... that ... can't = too + adj + to V."},
+{q:"The film was so boring that we left early.", start:"It was", a:["It was such a boring film that we left early."], lv:2, tag:"So / such", e:"so + adj = such + a + adj + N."},
+{q:"She said, \"I will call you tomorrow.\"", start:"She said", a:["She said she would call me the next day.","She said that she would call me the next day.","She said she would call me the following day.","She said that she would call me the following day."], lv:2, tag:"Tường thuật", e:"will → would; you → me; tomorrow → the next day / the following day."},
+{q:"\"Where do you live?\" he asked me.", start:"He asked me", a:["He asked me where I lived."], lv:2, tag:"Tường thuật", e:"Câu hỏi Wh: không đảo ngữ, lùi thì (do live → lived), you → I."},
+{q:"\"Don't touch the screen,\" the teacher told us.", start:"The teacher told us", a:["The teacher told us not to touch the screen."], lv:2, tag:"Tường thuật", e:"Câu mệnh lệnh phủ định: told + O + not to V."},
+{q:"It was raining heavily, so we stayed at home.", start:"Because", a:["Because it was raining heavily, we stayed at home.","Because of the heavy rain, we stayed at home.","Because of the rain, we stayed at home."], lv:2, tag:"Liên từ", e:"Because + clause hoặc Because of + N."},
+{q:"I met a woman. She works at VNG.", start:"I met a woman", a:["I met a woman who works at VNG.","I met a woman that works at VNG."], lv:2, tag:"Quan hệ", e:"Nối bằng who/that thay cho she (chủ ngữ chỉ người)."},
+{q:"This is the best holiday I have ever had.", start:"I have never", a:["I have never had a better holiday.","I have never had a better holiday than this."], lv:3, tag:"So sánh", e:"So sánh nhất + ever = never + so sánh hơn."},
+{q:"She had just entered the room when the phone rang.", start:"Hardly", a:["Hardly had she entered the room when the phone rang."], lv:3, tag:"Đảo ngữ", e:"Hardly + had + S + V3 + when + quá khứ đơn."},
+{q:"As soon as she got home, she turned on the computer.", start:"No sooner", a:["No sooner had she got home than she turned on the computer.","No sooner had she gotten home than she turned on the computer."], lv:3, tag:"Đảo ngữ", e:"No sooner + had + S + V3 + than + quá khứ đơn."},
+{q:"I haven't visited my hometown for three years.", start:"I last", a:["I last visited my hometown three years ago."], lv:3, tag:"Thì", e:"haven't + V3 + for + khoảng = last + V2 + khoảng + ago."},
+{q:"He didn't study hard, so he failed the exam.", start:"If he had", a:["If he had studied hard, he would not have failed the exam.","If he had studied hard, he would have passed the exam."], lv:3, tag:"Điều kiện", e:"Điều kiện loại 3: If + had + V3, would (not) have + V3."},
+{q:"Without your help, I would have failed.", start:"If it", a:["If it hadn't been for your help, I would have failed.","If it had not been for your help, I would have failed."], lv:3, tag:"Điều kiện", e:"Without + N = If it hadn't been for + N (loại 3)."},
+{q:"It's not necessary for you to bring a laptop.", start:"You", a:["You needn't bring a laptop.","You don't have to bring a laptop.","You do not need to bring a laptop.","You don't need to bring a laptop."], lv:3, tag:"Modal", e:"not necessary = needn't / don't have to / don't need to."},
+{q:"Perhaps she is waiting outside.", start:"She", a:["She may be waiting outside.","She might be waiting outside.","She could be waiting outside."], lv:3, tag:"Modal", e:"Perhaps = có thể: may/might/could + be + V-ing."},
+{q:"I'm sure he didn't take your phone.", start:"He", a:["He can't have taken your phone.","He couldn't have taken your phone."], lv:3, tag:"Modal", e:"Chắc chắn là không (về quá khứ): can't / couldn't have + V3."},
+{q:"I would prefer you not to smoke here.", start:"I would rather", a:["I would rather you didn't smoke here.","I would rather you did not smoke here."], lv:3, tag:"Wish", e:"would rather + S2 + quá khứ đơn (didn't)."},
+{q:"\"Why don't we go to the cinema?\" she said.", start:"She suggested", a:["She suggested going to the cinema.","She suggested that we go to the cinema.","She suggested that we should go to the cinema."], lv:3, tag:"Tường thuật", e:"suggest + V-ing hoặc suggest (that) + S + (should) + V. Không dùng suggest + to V."},
+{q:"Nobody in the team is more experienced than Lan.", start:"Lan is", a:["Lan is the most experienced person in the team.","Lan is the most experienced member of the team.","Lan is the most experienced in the team."], lv:3, tag:"So sánh", e:"Không ai hơn Lan = Lan là the most + adj dài."},
+{q:"She managed to finish the work on time.", start:"She succeeded", a:["She succeeded in finishing the work on time."], lv:3, tag:"V-ing / to V", e:"manage to V = succeed in + V-ing."},
+{q:"The woman is my aunt. She is sitting next to John.", start:"The woman", a:["The woman sitting next to John is my aunt.","The woman who is sitting next to John is my aunt."], lv:3, tag:"Quan hệ", e:"Rút gọn mệnh đề quan hệ chủ động: who is sitting → sitting."},
+{q:"Her English is better than mine.", start:"My English", a:["My English is not as good as hers.","My English isn't as good as hers.","My English is not so good as hers."], lv:3, tag:"So sánh", e:"A better than B = B not as good as A. mine → hers."},
+{q:"It's a pity that I didn't know about the meeting.", start:"I wish", a:["I wish I had known about the meeting."], lv:3, tag:"Wish", e:"It's a pity + didn't + V = wish + had + V3."},
+{q:"They will announce the results next week.", start:"The results", a:["The results will be announced next week."], lv:1, tag:"Bị động", e:"will + V → will be + V3; tân ngữ the results làm chủ ngữ."},
+{q:"I don't have enough money, so I can't buy this laptop.", start:"If I", a:["If I had enough money, I could buy this laptop.","If I had enough money, I would buy this laptop."], lv:3, tag:"Điều kiện", e:"Trái với hiện tại: điều kiện loại 2 (If + V2, could/would + V)."}
+];
+/* ===== SPEAKING: q = câu hỏi, idea = gợi ý ý tưởng (Answer, Reason, Example), ph = cụm từ nên dùng, s = bài mẫu, vi = ý chính tiếng Việt ===== */
+const SPEAKING = [
+{grp:"Giới thiệu bản thân", q:"Please introduce yourself.", lv:1,
+ idea:["Tên, quê quán","Học vấn: UIT, ngành Mạng máy tính và Truyền thông dữ liệu","Công việc: system engineer tại VNG data center hơn một năm","Lý do học thạc sĩ: AI và công nghệ"],
+ ph:["I graduated from ... where I majored in ...","I have been working as ... for more than a year.","I would like to ... because ..."],
+ s:"My name is [name], and I come from [hometown]. I graduated from UIT, where I majored in Computer Networks and Data Communications. I have been working as a system engineer at the VNG data center for more than a year. I would like to study for a master's degree because I want to improve my knowledge of AI and technology.",
+ vi:"Giới thiệu theo thứ tự: tên, học vấn, công việc, lý do học."},
+{grp:"Giới thiệu bản thân", q:"Why do you want to study a master's degree at UIT?", lv:1,
+ idea:["Answer: muốn nâng cao kiến thức về AI","Reason: dữ liệu ở data center rất lớn, AI giúp dự đoán sự cố","Example: một việc ở công việc hiện tại có thể cải thiện bằng AI"],
+ ph:["The main reason is that ...","I am already familiar with ...","This program will help me ..."],
+ s:"The main reason is that I want to deepen my knowledge of AI. In my job, I see a huge amount of data from servers every day, and I believe AI can help us predict failures before they happen. Since I graduated from UIT, I already know the teaching style, so I can focus on learning new skills.",
+ vi:"Nêu lý do gắn với công việc thực tế và lý do chọn đúng trường."},
+{grp:"Giới thiệu bản thân", q:"Where do you see yourself in five years?", lv:2,
+ idea:["Answer: kỹ sư AI hoặc dữ liệu","Reason: nối hạ tầng với AI","Example: kế hoạch để đạt mục tiêu (học, dự án, tiếng Anh)"],
+ ph:["In five years, I hope to ...","To reach this goal, I plan to ...","My long-term goal is to ..."],
+ s:"In five years, I hope to work as an AI or data engineer. I would like to design systems that use AI to operate infrastructure more efficiently. To reach this goal, I plan to finish my master's degree, join some research projects and keep improving my English.",
+ vi:"Mục tiêu năm năm và các bước để đạt được."},
+{grp:"Công việc", q:"Can you tell me about your job?", lv:1,
+ idea:["Vị trí và nơi làm việc","Nhiệm vụ chính hằng ngày","Một ví dụ: xử lý một cảnh báo hay sự cố"],
+ ph:["I am responsible for ...","On a typical day, I ...","For example, when an alert appears, I ..."],
+ s:"I work as a system engineer at the VNG data center. My main job is to keep the servers and the network running smoothly. For example, when an alert appears, I check the logs, find the cause and fix the problem as quickly as possible.",
+ vi:"Nói vị trí, nhiệm vụ, ví dụ cụ thể."},
+{grp:"Công việc", q:"What is the most difficult part of your job?", lv:2,
+ idea:["Answer: xử lý sự cố khi bị áp lực thời gian","Reason: nhiều người dùng bị ảnh hưởng","Example: bạn kể chuyện thật của mình, cách bình tĩnh và cải tiến quy trình"],
+ ph:["The most challenging part is ...","This is because ...","What I have learned is that ..."],
+ s:"The most challenging part is solving incidents under time pressure. When a service goes down, many users are affected, so I have to stay calm and follow a clear process. What I have learned is that good documentation helps the whole team respond faster next time.",
+ vi:"Thử thách + lý do + bài học."},
+{grp:"Công việc", q:"Do you prefer working in a team or alone? Why?", lv:2,
+ idea:["Answer: một lựa chọn rõ ràng","Reason: chia sẻ ý tưởng, xử lý nhanh hơn / hoặc tập trung hơn","Example: một sự cố được nhiều kỹ sư cùng xử lý"],
+ ph:["I prefer ... because ...","On the other hand, ...","For instance, ..."],
+ s:"I prefer working in a team because we can share ideas and solve problems faster. For instance, many incidents in my job are solved by several engineers working together. On the other hand, I also need quiet time alone to focus on analysing logs.",
+ vi:"Chọn một phía, đưa lý do, có thể thừa nhận mặt còn lại."},
+{grp:"Công việc", q:"How will you balance work and study?", lv:3,
+ idea:["Answer: lập kế hoạch thời gian","Reason: tránh quá tải","Example: làm việc gấp trước, học buổi tối, trao đổi với quản lý về lịch linh hoạt"],
+ ph:["I will plan my time carefully.","I intend to ...","If necessary, I will talk to my manager about ..."],
+ s:"I will plan my time carefully. I usually finish urgent tasks at work first, then use the evenings and weekends for study. If necessary, I will talk to my manager about a flexible schedule when I have important classes or exams.",
+ vi:"Kế hoạch cụ thể: ưu tiên, thời gian học, trao đổi với quản lý."},
+{grp:"Học tập và AI", q:"What subject did you enjoy most at university, and why?", lv:1,
+ idea:["Answer: một môn như Computer Networks","Reason: thú vị và ứng dụng thực tế","Example: một đồ án hoặc thực hành bạn nhớ"],
+ ph:["I enjoyed ... most because ...","It was practical because ...","I still remember a project in which ..."],
+ s:"I enjoyed Computer Networks most because it was very practical. We built small networks and solved real connection problems. I still use many of those skills in my job today.",
+ vi:"Môn học + lý do + ví dụ."},
+{grp:"Học tập và AI", q:"Do you think AI will take over many jobs?", lv:2,
+ idea:["Answer: thay đổi hơn là thay thế hoàn toàn","Reason: việc lặp lại được tự động hóa, nghề mới xuất hiện","Example: AI engineer, data analyst"],
+ ph:["In my opinion, ...","On the one hand ... on the other hand ...","The best way is to keep learning."],
+ s:"In my opinion, AI will change many jobs rather than completely replace them. Routine tasks, such as monitoring or sorting data, will probably be automated. On the other hand, new jobs will appear, for example AI engineers or data analysts, so the best way is to keep learning.",
+ vi:"Nêu quan điểm, hai mặt, kết luận."},
+{grp:"Học tập và AI", q:"How has technology changed the way people learn?", lv:2,
+ idea:["Answer: học mọi lúc mọi nơi","Reason: video, ứng dụng, khóa học trực tuyến","Example: học ngôn ngữ bằng ứng dụng"],
+ ph:["Thanks to technology, ...","It has become much easier to ...","However, ... can be a problem."],
+ s:"Thanks to technology, people can learn almost anywhere and at any time. For example, I use videos and apps to study English during my commute. However, it can be hard to stay focused, because there are so many distractions online.",
+ vi:"Lợi ích và một hạn chế."},
+{grp:"Học tập và AI", q:"What are the risks of using AI?", lv:3,
+ idea:["Answer: thiên kiến, quyền riêng tư, phụ thuộc","Reason: dữ liệu huấn luyện lệch, dữ liệu cá nhân","Example: hệ thống tuyển dụng thiên vị"],
+ ph:["One major risk is that ...","This could lead to ...","To reduce this risk, we should ..."],
+ s:"One major risk is bias. If the training data is unbalanced, the system may treat some groups unfairly. Another concern is privacy, because AI often needs large amounts of personal data. To reduce these risks, companies should be transparent and test their systems carefully.",
+ vi:"Hai rủi ro + cách giảm thiểu."},
+{grp:"Học tập và AI", q:"What would you do if you did not get a place in the program?", lv:3,
+ idea:["Answer: sẽ thử lại hoặc tìm lộ trình khác","Reason: mục tiêu vẫn còn nguyên","Example: học khóa trực tuyến, làm dự án, cải thiện tiếng Anh"],
+ ph:["If that happened, I would ...","I would not give up because ...","In the meantime, I could ..."],
+ s:"If that happened, I would try to find out where I needed to improve and apply again next year. I would not give up because my goal is still the same. In the meantime, I could take online courses in AI and keep working on my English.",
+ vi:"Dùng điều kiện loại 2: If ... would ..."},
+{grp:"Đời sống", q:"What do you usually do in your free time?", lv:1,
+ idea:["Answer: sở thích của bạn","Reason: giúp thư giãn sau giờ làm","Example: tần suất, thời gian"],
+ ph:["In my free time, I enjoy ...","It helps me relax because ...","I usually do it on weekends."],
+ s:"In my free time, I enjoy [your hobby]. It helps me relax after a stressful week at work. I usually do it on weekends with my friends.",
+ vi:"Thay [your hobby] bằng sở thích thật của bạn."},
+{grp:"Đời sống", q:"What do you like and dislike about living in your city?", lv:2,
+ idea:["Like: nhiều cơ hội việc làm, tiện nghi","Dislike: kẹt xe, ô nhiễm","Example: giờ cao điểm"],
+ ph:["What I like most is ...","What I don't like is ...","Overall, I think ..."],
+ s:"What I like most about Ho Chi Minh City is the number of job opportunities and the variety of food. However, I don't like the heavy traffic, especially at rush hour. Overall, I think it is a great place for young people to build a career.",
+ vi:"Một mặt tốt, một mặt xấu, kết luận."},
+{grp:"Đời sống", q:"What can individuals do to protect the environment?", lv:2,
+ idea:["Answer: những hành động nhỏ","Reason: cộng lại thành tác động lớn","Example: tái chế, tiết kiệm điện, giảm nhựa"],
+ ph:["Even small actions can ...","For example, we can ...","If everyone ..., the result would be ..."],
+ s:"Even small actions can make a big difference. For example, we can reduce plastic bags, save electricity and use public transport. If everyone made these changes, the environment would improve a lot.",
+ vi:"Hành động nhỏ, ví dụ, kết quả nếu nhiều người làm."},
+{grp:"Đời sống", q:"Do you think governments should ban plastic bags? Why or why not?", lv:3,
+ idea:["Answer: ủng hộ có lộ trình hoặc phản đối","Reason: ô nhiễm so với thói quen và giá thành","Example: nước đã áp dụng thuế túi nilon"],
+ ph:["I strongly believe that ...","While it is true that ..., ...","A better solution might be ..."],
+ s:"I believe governments should limit plastic bags gradually. While it is true that a ban may be inconvenient at first, plastic waste causes serious pollution. A better solution might be to charge a small fee and offer cheap reusable bags.",
+ vi:"Dùng While it is true that ... để nhượng bộ, rồi nêu giải pháp."},
+{grp:"Đời sống", q:"How do you relax after a stressful week?", lv:1,
+ idea:["Answer: một hoạt động","Reason: giảm căng thẳng","Example: ngủ đủ, chơi thể thao, gặp bạn bè"],
+ ph:["I usually ... to relax.","It takes my mind off work.","After that, I feel ..."],
+ s:"To relax after a stressful week, I usually sleep a little longer and then play sports or meet friends. It takes my mind off work, and afterwards I feel ready for the next week.",
+ vi:"Hoạt động + cảm giác sau đó."},
+{grp:"Quan điểm", q:"Do you think people today have enough free time?", lv:3,
+ idea:["Answer: không đủ, vì công việc và điện thoại","Reason: làm thêm, thông báo liên tục","Example: tin nhắn công việc ngoài giờ"],
+ ph:["I tend to think that ...","One reason is that ...","As a result, ..."],
+ s:"I tend to think that many people do not have enough free time. One reason is that work often continues after office hours because of messages and emails. As a result, people feel tired and have less time for family and hobbies.",
+ vi:"Nêu quan điểm, lý do, hệ quả."},
+{grp:"Quan điểm", q:"Is it better to study abroad or in your own country?", lv:3,
+ idea:["Answer: chọn một và nêu điều kiện","Reason: chi phí, trải nghiệm, ngôn ngữ","Example: chương trình trong nước chất lượng, gần công việc"],
+ ph:["It depends on ...","The main advantage of ... is ...","Personally, I would choose ... because ..."],
+ s:"It depends on your goals and budget. The main advantage of studying abroad is the international experience, but it is also expensive. Personally, I would choose to study in my own country because I can keep working and use what I learn immediately.",
+ vi:"Dùng It depends on ... rồi chọn phương án và lý do."},
+{grp:"Quan điểm", q:"What advice would you give to someone who wants to learn English?", lv:2,
+ idea:["Answer: học đều mỗi ngày","Reason: ngôn ngữ cần luyện thường xuyên","Example: 20 phút mỗi ngày, nghe và nói lại"],
+ ph:["My advice is to ...","You should ... rather than ...","Don't be afraid of making mistakes."],
+ s:"My advice is to practise a little every day rather than a lot once a week. For example, twenty minutes of listening and speaking daily works better than three hours on Sunday. Most importantly, don't be afraid of making mistakes.",
+ vi:"Lời khuyên + so sánh + động viên."}
+];
+/* ================= ENGINE BÀI TẬP ================= */
+(function(){
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* ---------- lưu trữ ---------- */
+  const KEY = 'uitb2.ex.v1';
+  let store = {};
+  try { store = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { store = {}; }
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e) {} };
+
+  /* ---------- tiện ích ---------- */
+  function rng(seed){ return function(){ seed|=0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed>>>15, 1|seed); t = t + Math.imul(t ^ t>>>7, 61|t) ^ t; return ((t ^ t>>>14)>>>0) / 4294967296; }; }
+  function shuffle(a, r){ r = r || Math.random; a = a.slice(); for (let i=a.length-1;i>0;i--){ const j = Math.floor(r()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; }
+  function spread(items){
+    const r = rng(20261024), b = {1:[],2:[],3:[]};
+    items.forEach(it => b[it.lv].push(it));
+    [1,2,3].forEach(k => b[k] = shuffle(b[k], r));
+    const pat = [2,1,3,2,3,1], out = []; let p = 0;
+    while (out.length < items.length) {
+      let lv = pat[p++ % pat.length];
+      if (!b[lv].length) lv = [1,2,3].find(x => b[x].length);
+      out.push(b[lv].shift());
+    }
+    return out;
+  }
+  function norm(s){
+    s = String(s).toLowerCase().replace(/[’‘`]/g, "'");
+    s = s.replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not').replace(/\bwon't\b/g,'will not')
+         .replace(/n't\b/g,' not').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are').replace(/'m\b/g,' am');
+    s = s.replace(/[.,!?;:"“”()]/g,' ').replace(/\s+/g,' ').trim();
+    return s;
+  }
+  const lvName = {1:'Dễ', 2:'Vừa', 3:'Lắt léo'};
+  const lvTag = lv => `<span class="lvtag l${lv}">${lvName[lv]}</span>`;
+
+  /* ---------- đăng ký dữ liệu ---------- */
+  const REG = {};      // id -> item
+  const SEC = {};      // key -> {type, items | groups}
+  function reg(sec, it){ it.sec = sec; REG[it.id] = it; return it; }
+
+  SEC.vocab = {type:'mcq', items: VOCAB.map((q,i) => reg('vocab', Object.assign({}, q, {id:'v'+i})))};
+  SEC.grammar = {type:'mcq', items: GRAMMAR.map((q,i) => reg('grammar', Object.assign({}, q, {id:'g'+i})))};
+  SEC.wordform = {type:'wf', items: WORDFORM.map((q,i) => reg('wordform', Object.assign({}, q, {id:'w'+i, tag:'Word formation'})))};
+  SEC.transform = {type:'tr', items: TRANSFORM.map((q,i) => reg('transform', Object.assign({}, q, {id:'t'+i})))};
+  SEC.reading = {type:'groups', groups: READING.map((g,gi) => Object.assign({}, g, {gid:'r'+gi, qs: g.qs.map((q,i) => reg('reading', Object.assign({}, q, {id:'r'+gi+'_'+i, n:i+1})))}))};
+  SEC.cloze = {type:'groups', cloze:true, groups: CLOZE.map((g,gi) => Object.assign({}, g, {gid:'c'+gi, qs: g.qs.map((q,i) => reg('cloze', Object.assign({}, q, {id:'c'+gi+'_'+i, n:i+1, gi:gi})))}))};
+  SEC.speaking = {type:'speak', items: SPEAKING.map((q,i) => reg('speaking', Object.assign({}, q, {id:'s'+i, tag:q.grp})))};
+
+  function secIds(key){
+    const s = SEC[key];
+    return s.groups ? s.groups.flatMap(g => g.qs.map(q => q.id)) : s.items.map(i => i.id);
+  }
+
+  /* ---------- ghi nhận kết quả ---------- */
+  function record(id, ok){
+    const prev = store[id] || {};
+    store[id] = {ok: ok ? 1 : 0, n: (prev.n||0) + 1, t: Date.now()};
+    persist(); renderDash(); updateSecStat(REG[id].sec);
+  }
+
+  /* ---------- thẻ trắc nghiệm ---------- */
+  function mcqCard(it, label){
+    const order = shuffle(it.o.map((t,i) => ({t:t, ok:i===0})));
+    return `<article class="qcard" id="q-${it.id}" data-id="${it.id}" data-lv="${it.lv}" data-type="mcq">
+      <div class="qhead"><span class="qnum">${label}</span>${lvTag(it.lv)}<span class="tag">${esc(it.tag||'')}</span></div>
+      ${it.q ? `<div class="qtext">${esc(it.q)}</div>` : ''}
+      <div class="opts">${order.map((o,k) => `<label class="opt" data-ok="${o.ok?1:0}"><input type="radio" name="${it.id}" value="${k}"><span class="ltr">${'ABCD'[k]}</span><span class="otext">${esc(o.t)}</span></label>`).join('')}</div>
+      <div class="qact"><button class="btn" data-act="check">Kiểm tra</button><button class="btn ghost" data-act="retry" hidden>Làm lại câu này</button></div>
+      <div class="res" hidden></div>
+    </article>`;
+  }
+  function showRes(card, cls, html){
+    const r = $('.res', card); r.className = 'res ' + cls; r.innerHTML = html; r.hidden = false;
+  }
+  function checkMcq(card, silent){
+    const sel = $('input:checked', card);
+    if (!sel) { if (!silent) showRes(card, 'warn', 'Hãy chọn một đáp án trước khi bấm Kiểm tra.'); return null; }
+    const it = REG[card.dataset.id];
+    const lab = sel.closest('.opt'); const ok = lab.dataset.ok === '1';
+    $$('.opt', card).forEach(l => { l.classList.remove('sel'); if (l.dataset.ok === '1') l.classList.add('right'); });
+    if (!ok) lab.classList.add('wrong');
+    $$('input', card).forEach(i => i.disabled = true);
+    card.classList.add('done');
+    const right = $$('.opt', card).find(l => l.dataset.ok === '1');
+    const rl = $('.ltr', right).textContent, rt = $('.otext', right).textContent;
+    showRes(card, ok ? 'ok' : 'no',
+      (ok ? '<b>Chính xác.</b> ' : `<b>Chưa đúng.</b> Đáp án đúng: <b>${rl}. ${esc(rt)}</b>. `) + esc(it.e || ''));
+    $('[data-act=check]', card).hidden = true; $('[data-act=retry]', card).hidden = false;
+    if (it.sec === 'cloze') {
+      const bl = $('#blank-' + it.gi + '-' + it.n);
+      if (bl) { bl.textContent = rt; bl.className = 'blank ' + (ok ? 'fill' : 'bad'); }
+    }
+    record(it.id, ok);
+    return ok;
+  }
+  function resetCard(card){
+    const it = REG[card.dataset.id];
+    const holder = document.createElement('div');
+    holder.innerHTML = it.sec === 'cloze' || it.sec === 'reading' ? mcqCard(it, $('.qnum', card).textContent) : cardHTML(it, $('.qnum', card).textContent);
+    card.replaceWith(holder.firstElementChild);
+    if (it.sec === 'cloze') { const bl = $('#blank-' + it.gi + '-' + it.n); if (bl) { bl.textContent = '(' + it.n + ')'; bl.className = 'blank'; } }
+  }
+
+  /* ---------- thẻ tự luận ---------- */
+  function wfCard(it, label){
+    return `<article class="qcard" id="q-${it.id}" data-id="${it.id}" data-lv="${it.lv}" data-type="wf">
+      <div class="qhead"><span class="qnum">${label}</span>${lvTag(it.lv)}<span class="tag">Word formation</span><span class="tag base">${esc(it.w)}</span></div>
+      <div class="qtext">${esc(it.q).replace('______','<span class="gap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>')}</div>
+      <input class="wfin" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Gõ từ đúng">
+      <div class="qact"><button class="btn" data-act="check">Kiểm tra</button><button class="btn ghost" data-act="show">Xem đáp án</button><button class="btn ghost" data-act="retry" hidden>Làm lại câu này</button></div>
+      <div class="res" hidden></div>
+    </article>`;
+  }
+  function trCard(it, label){
+    return `<article class="qcard" id="q-${it.id}" data-id="${it.id}" data-lv="${it.lv}" data-type="tr">
+      <div class="qhead"><span class="qnum">${label}</span>${lvTag(it.lv)}<span class="tag">${esc(it.tag||'')}</span></div>
+      <div class="qtext">${esc(it.q)}</div>
+      <div class="tin"><span class="start">${esc(it.start)}</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="... viết tiếp phần còn lại của câu"></div>
+      <div class="qact"><button class="btn" data-act="check">Kiểm tra</button><button class="btn ghost" data-act="show">Xem đáp án</button><button class="btn ghost" data-act="retry" hidden>Làm lại câu này</button></div>
+      <div class="res" hidden></div>
+    </article>`;
+  }
+  function fullAnswer(it, v){
+    if (it.sec === 'wordform') return v;
+    const nv = norm(v), ns = norm(it.start);
+    return nv.startsWith(ns) ? v : (it.start + ' ' + v);
+  }
+  function lockTyped(card){ $$('input[type=text]', card).forEach(i => i.disabled = true); card.classList.add('done'); $('[data-act=check]', card).hidden = true; $('[data-act=show]', card).hidden = true; $('[data-act=retry]', card).hidden = false; }
+  function answersHTML(it){
+    if (it.sec === 'wordform') return `Đáp án: <b>${esc(it.a.join(' / '))}</b>.`;
+    return `<p>Đáp án mẫu: <b>${esc(it.a[0])}</b></p>` + (it.a.length > 1 ? `<p>Cũng được chấp nhận: ${it.a.slice(1).map(esc).join(' | ')}</p>` : '');
+  }
+  function checkTyped(card, silent){
+    const it = REG[card.dataset.id]; const inp = $('input[type=text]', card);
+    const v = inp.value.trim();
+    if (!v) { if (!silent) showRes(card, 'warn', 'Hãy gõ câu trả lời trước khi bấm Kiểm tra.'); return null; }
+    const full = fullAnswer(it, v);
+    const ok = it.a.some(a => norm(a) === norm(full));
+    lockTyped(card);
+    if (ok) {
+      showRes(card, 'ok', `<b>Chính xác.</b> ${esc(it.e||'')}`);
+    } else {
+      showRes(card, 'no', `<b>Chưa khớp đáp án.</b> Bạn viết: <i>${esc(full)}</i>${answersHTML(it)}<p>${esc(it.e||'')}</p><p class="vi">Nếu câu của bạn đúng nghĩa và đúng ngữ pháp dù viết khác, bấm nút dưới đây.</p><button class="btn ghost sm" data-act="override">Câu của tôi cũng đúng</button>`);
+    }
+    record(it.id, ok);
+    return ok;
+  }
+  function showTyped(card){
+    const it = REG[card.dataset.id];
+    lockTyped(card);
+    showRes(card, 'info', `${answersHTML(it)}<p>${esc(it.e||'')}</p><p class="vi">Câu này chưa được tính vào kết quả. Bấm Làm lại câu này để tự thử.</p>`);
+  }
+
+  /* ---------- thẻ Speaking ---------- */
+  const CHECKS = ['Trả lời thẳng vào câu hỏi ngay câu đầu','Có lý do rõ ràng (because, one reason is ...)','Có ví dụ cụ thể từ công việc hoặc đời sống','Nói liền mạch, không dừng quá 3 giây','Phát âm rõ âm cuối (-s, -ed) và nhấn đúng trọng âm'];
+  function spCard(it, label){
+    const done = store[it.id] && store[it.id].ok;
+    return `<article class="qcard" id="q-${it.id}" data-id="${it.id}" data-lv="${it.lv}" data-type="sp" data-grp="${esc(it.grp)}">
+      <div class="qhead"><span class="qnum">${label}</span>${lvTag(it.lv)}<span class="tag">${esc(it.grp)}</span></div>
+      <div class="qtext">${esc(it.q)}</div>
+      <div class="qact">
+        <button class="btn ghost sm" data-act="hear">Nghe câu hỏi</button>
+        <button class="btn ghost sm" data-act="idea">Gợi ý ý tưởng</button>
+        <button class="btn sm" data-act="rec">Bắt đầu nói</button>
+        <span class="timer" data-timer>0:00</span>
+        <button class="btn ghost sm" data-act="sample">Xem bài mẫu</button>
+      </div>
+      <div class="sp-panel" data-panel="idea" hidden>
+        <b>Khuôn Answer, Reason, Example:</b><ul>${it.idea.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        <b>Cụm từ nên dùng:</b><ul>${it.ph.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+      </div>
+      <div class="rec-area" hidden>
+        <audio controls hidden></audio>
+        <textarea placeholder="Bản ghi chữ (nếu trình duyệt hỗ trợ nhận dạng giọng nói, chữ sẽ hiện ở đây). Bạn cũng có thể tự gõ lại những gì đã nói."></textarea>
+        <button class="btn ghost sm" data-act="copy">Sao chép bản ghi để gửi cho mình chấm</button>
+      </div>
+      <div class="sp-panel" data-panel="sample" hidden>
+        <p><b>Bài mẫu:</b> ${esc(it.s)}</p><p class="vi">${esc(it.vi)}</p>
+      </div>
+      <div class="checks"><b>Tự chấm sau khi nói (tích đủ 5 mục là hoàn thành câu này):</b>
+        ${CHECKS.map((c,i) => `<label><input type="checkbox" data-chk="${i}" ${done?'checked':''}> ${esc(c)}</label>`).join('')}
+      </div>
+    </article>`;
+  }
+
+  let rec = null;   // phiên ghi âm đang chạy
+  function stopRec(){
+    if (!rec) return;
+    clearInterval(rec.tm);
+    try { rec.mr && rec.mr.state !== 'inactive' && rec.mr.stop(); } catch(e) {}
+    try { rec.sr && rec.sr.stop(); } catch(e) {}
+    const b = $('[data-act=rec]', rec.card); if (b) b.textContent = 'Nói lại';
+    rec = null;
+  }
+  async function startRec(card){
+    stopRec();
+    const area = $('.rec-area', card); area.hidden = false;
+    const ta = $('textarea', card), audio = $('audio', card), timerEl = $('[data-timer]', card);
+    audio.hidden = true; ta.value = '';
+    const s = {card:card, sec:0, mr:null, sr:null, tm:null};
+    rec = s;
+    $('[data-act=rec]', card).textContent = 'Dừng';
+    s.tm = setInterval(() => {
+      s.sec++; timerEl.textContent = Math.floor(s.sec/60) + ':' + String(s.sec%60).padStart(2,'0');
+      timerEl.className = 'timer' + (s.sec >= 45 && s.sec <= 90 ? ' good' : (s.sec > 90 ? ' over' : ''));
+    }, 1000);
+    timerEl.textContent = '0:00'; timerEl.className = 'timer';
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+      const mr = new MediaRecorder(stream); const chunks = [];
+      mr.ondataavailable = e => chunks.push(e.data);
+      mr.onstop = () => { audio.src = URL.createObjectURL(new Blob(chunks, {type: mr.mimeType})); audio.hidden = false; stream.getTracks().forEach(t => t.stop()); };
+      mr.start(); s.mr = mr;
+    } catch(e) {
+      if (!ta.value) ta.placeholder = 'Không bật được micro. Bạn vẫn có thể bấm giờ, nói thành tiếng rồi tự gõ lại bản ghi chữ vào đây.';
+    }
+    try {
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SR) {
+        const sr = new SR(); sr.lang = 'en-US'; sr.continuous = true; sr.interimResults = false;
+        sr.onresult = ev => { for (let i = ev.resultIndex; i < ev.results.length; i++) if (ev.results[i].isFinal) ta.value += (ta.value ? ' ' : '') + ev.results[i][0].transcript.trim(); };
+        sr.onerror = () => {};
+        sr.start(); s.sr = sr;
+      }
+    } catch(e) {}
+  }
+
+  /* ---------- hiển thị một thẻ theo loại ---------- */
+  function cardHTML(it, label){
+    if (it.sec === 'wordform') return wfCard(it, label);
+    if (it.sec === 'transform') return trCard(it, label);
+    if (it.sec === 'speaking') return spCard(it, label);
+    return mcqCard(it, label);
+  }
+
+  /* ---------- điều khiển từng phần ---------- */
+  const state = {};  // key -> {order}
+  function controlsHTML(key){
+    const s = SEC[key];
+    if (s.type === 'speak') {
+      const groups = Array.from(new Set(s.items.map(i => i.grp)));
+      return `<div class="vtools secbar" data-sec="${key}">
+        <select data-sf="grp"><option value="">Tất cả nhóm</option>${groups.map(g => `<option>${esc(g)}</option>`).join('')}</select>
+        <select data-sf="lv"><option value="0">Mọi mức độ</option><option value="1">Dễ</option><option value="2">Vừa</option><option value="3">Lắt léo</option></select>
+        <button class="btn ghost sm" data-sa="random">Chọn ngẫu nhiên một câu</button>
+        <label><input type="checkbox" data-sf="todo"> Chỉ câu chưa luyện</label>
+        <span class="stat" data-sstat></span></div>`;
+    }
+    const grouped = s.type === 'groups';
+    return `<div class="vtools secbar" data-sec="${key}">
+      <button class="btn sm" data-sa="grade">Chấm cả phần</button>
+      <button class="btn ghost sm" data-sa="restart">Làm lại</button>
+      ${grouped ? '' : '<button class="btn ghost sm" data-sa="shuffle">Trộn ngẫu nhiên</button><button class="btn ghost sm" data-sa="spread">Rải đều độ khó</button>'}
+      <select data-sf="lv"><option value="0">Mọi mức độ</option><option value="1">Dễ</option><option value="2">Vừa</option><option value="3">Lắt léo</option></select>
+      <label><input type="checkbox" data-sf="wrong"> Chỉ câu từng sai</label>
+      <span class="stat" data-sstat></span></div>
+      <div class="summary" data-summary hidden></div>`;
+  }
+  function renderSection(key, mode){
+    const el = $(`.ex-section[data-sec="${key}"]`); const s = SEC[key];
+    if (!el.dataset.ready) { el.innerHTML = controlsHTML(key) + '<div class="qlist"></div>'; el.dataset.ready = 1; }
+    const list = $('.qlist', el);
+    const sum = $('[data-summary]', el); if (sum) sum.hidden = true;
+    state[key] = state[key] || {};
+    if (s.type === 'groups') {
+      let h = '';
+      s.groups.forEach((g, gi) => {
+        let text = g.text;
+        if (s.cloze) text = text.replace(/\{(\d+)\}/g, (m, n) => `<span class="blank" id="blank-${gi}-${n}">(${n})</span>`);
+        h += `<h3 id="${g.gid}-title">${esc(g.title)}</h3><div class="passage">${text}</div>`;
+        g.qs.forEach(q => { h += mcqCard(q, s.cloze ? 'Chỗ trống (' + q.n + ')' : 'Câu ' + q.n); });
+      });
+      list.innerHTML = h;
+    } else {
+      let items = s.items;
+      if (mode === 'shuffle') items = shuffle(items);
+      else if (mode === 'keep' && state[key].order) items = state[key].order;
+      else if (s.type !== 'speak') items = spread(items);
+      state[key].order = items;
+      list.innerHTML = items.map((it, i) => cardHTML(it, 'Câu ' + (i+1))).join('');
+      // khôi phục tích tự chấm Speaking đã lưu
+      if (s.type === 'speak') $$('.qcard', list).forEach(c => { if (store[c.dataset.id] && store[c.dataset.id].ok) $$('input[data-chk]', c).forEach(i => i.checked = true); });
+    }
+    applyFilters(key); updateSecStat(key);
+  }
+  function applyFilters(key){
+    const el = $(`.ex-section[data-sec="${key}"]`); if (!el) return;
+    const bar = $('.secbar', el);
+    const lv = +($('[data-sf=lv]', bar).value || 0);
+    const wr = $('[data-sf=wrong]', bar), grp = $('[data-sf=grp]', bar), todo = $('[data-sf=todo]', bar);
+    $$('.qcard', el).forEach(c => {
+      const id = c.dataset.id; let show = true;
+      if (lv && +c.dataset.lv !== lv) show = false;
+      if (wr && wr.checked && !(store[id] && !store[id].ok) && !c.classList.contains('wrongnow')) show = false;
+      if (grp && grp.value && c.dataset.grp !== grp.value) show = false;
+      if (todo && todo.checked && store[id] && store[id].ok) show = false;
+      c.style.display = show ? '' : 'none';
+    });
+  }
+  function updateSecStat(key){
+    const el = $(`.ex-section[data-sec="${key}"]`); if (!el) return;
+    const ids = secIds(key); const st = $('[data-sstat]', el); if (!st) return;
+    const done = ids.filter(id => store[id]).length, ok = ids.filter(id => store[id] && store[id].ok).length;
+    st.textContent = SEC[key].type === 'speak' ? `Đã luyện ${ok}/${ids.length} câu` : `Đã làm ${done}/${ids.length} · đúng ${ok}`;
+  }
+  function gradeSection(key){
+    const el = $(`.ex-section[data-sec="${key}"]`);
+    let checked = 0, correct = 0, empty = 0; const wrongs = [];
+    $$('.qcard', el).forEach(c => {
+      if (c.style.display === 'none') return;
+      if (!c.classList.contains('done')) {
+        const t = c.dataset.type;
+        const r = t === 'mcq' ? checkMcq(c, true) : checkTyped(c, true);
+        if (r === null) { empty++; return; }
+      }
+      checked++;
+      const ok = c.querySelector('.res.ok') !== null;
+      if (ok) correct++; else wrongs.push(c);
+    });
+    const sum = $('[data-summary]', el);
+    const pct = checked ? Math.round(correct / checked * 100) : 0;
+    const msg = pct >= 80 ? 'Rất tốt. Hãy tăng tốc độ làm bài và thử mức Lắt léo.' : pct >= 60 ? 'Khá ổn. Xem lại các câu sai, đọc lại phần tài liệu liên quan.' : 'Cần ôn thêm. Đọc lại tài liệu của chủ điểm sai, rồi bấm Làm lại.';
+    sum.innerHTML = `<div class="big">${correct}/${checked} câu đúng (${pct}%)</div>
+      <p>${empty ? `Còn ${empty} câu chưa trả lời. ` : ''}${msg}</p>
+      ${wrongs.length ? `<p><b>Các câu sai:</b> ${wrongs.map(c => `<a href="#${c.id}">${esc($('.qnum', c).textContent)}</a>`).join(' ')}</p>` : '<p>Không có câu sai.</p>'}`;
+    sum.hidden = false;
+    wrongs.forEach(c => c.classList.add('wrongnow'));
+    sum.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  /* ---------- bảng thống kê ---------- */
+  const SEC_NAMES = {vocab:'Paper 1A: Vocabulary', reading:'Paper 1B: Reading', grammar:'Paper 2A: Sentence completion', cloze:'Paper 2B: Cloze', wordform:'Word formation', transform:'Paper 2C: Viết lại câu', speaking:'Paper 4: Speaking (đã luyện)'};
+  function renderDash(){
+    let h = '';
+    Object.keys(SEC_NAMES).forEach(k => {
+      const ids = secIds(k), done = ids.filter(id => store[id]).length, ok = ids.filter(id => store[id] && store[id].ok).length;
+      const cnt = $('#cnt-' + k); if (cnt) cnt.textContent = `${ids.length} câu`;
+      const acc = done ? Math.round(ok / done * 100) : 0;
+      h += `<div class="row"><a href="#s-${k}">${SEC_NAMES[k]}</a><div class="bar"><i style="width:${ids.length ? done/ids.length*100 : 0}%"></i></div><span>${k==='speaking' ? `${ok}/${ids.length} câu` : `${done}/${ids.length} câu · đúng ${acc}%`}</span></div>`;
+    });
+    $('#dash').innerHTML = h;
+    // chủ điểm yếu và độ chính xác theo mức
+    const tag = {}, lv = {1:{c:0,t:0},2:{c:0,t:0},3:{c:0,t:0}};
+    Object.keys(store).forEach(id => {
+      const it = REG[id]; if (!it || it.sec === 'speaking') return;
+      const k = it.tag || 'Khác'; tag[k] = tag[k] || {c:0,t:0};
+      tag[k].t++; if (store[id].ok) tag[k].c++;
+      lv[it.lv].t++; if (store[id].ok) lv[it.lv].c++;
+    });
+    const weak = Object.keys(tag).filter(k => tag[k].t >= 2).map(k => ({k:k, p: tag[k].c / tag[k].t, t: tag[k].t}))
+      .filter(x => x.p < 0.75).sort((a,b) => a.p - b.p).slice(0, 8);
+    let ex = '';
+    const lvLine = [1,2,3].filter(l => lv[l].t).map(l => `${lvName[l]}: ${Math.round(lv[l].c/lv[l].t*100)}% (${lv[l].t} câu)`).join(' · ');
+    if (lvLine) ex += `<p><b>Độ chính xác theo mức:</b> ${lvLine}</p>`;
+    ex += weak.length ? `<p><b>Chủ điểm cần ôn thêm</b> (đúng dưới 75%):</p><div class="weak">${weak.map(x => `<span>${esc(x.k)} · ${Math.round(x.p*100)}% (${x.t} câu)</span>`).join('')}</div>` : (Object.keys(store).length ? '<p>Chưa có chủ điểm nào dưới 75%. Tiếp tục luyện thêm câu mức Lắt léo.</p>' : '<p>Bắt đầu làm bài để xem thống kê chủ điểm mạnh và yếu.</p>');
+    $('#dashExtra').innerHTML = ex;
+  }
+
+  /* ---------- sự kiện ---------- */
+  const main = $('main');
+  main.addEventListener('change', e => {
+    const t = e.target;
+    if (t.type === 'radio') { const card = t.closest('.qcard'); $$('.opt', card).forEach(l => l.classList.toggle('sel', l.contains(t))); return; }
+    if (t.dataset && t.dataset.chk !== undefined) {
+      const card = t.closest('.qcard'), all = $$('input[data-chk]', card).every(i => i.checked);
+      const id = card.dataset.id;
+      if (all) { record(id, true); } else if (store[id]) { delete store[id]; persist(); renderDash(); updateSecStat('speaking'); }
+      return;
+    }
+    if (t.dataset && t.dataset.sf !== undefined) applyFilters(t.closest('.secbar').dataset.sec);
+  });
+  main.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.matches('.qcard input[type=text]')) { e.preventDefault(); const c = e.target.closest('.qcard'); if (!c.classList.contains('done')) checkTyped(c); }
+  });
+  main.addEventListener('click', e => {
+    const sa = e.target.closest('[data-sa]');
+    if (sa) {
+      const key = sa.closest('.secbar').dataset.sec, a = sa.dataset.sa;
+      if (a === 'grade') gradeSection(key);
+      else if (a === 'restart') renderSection(key, 'keep');
+      else if (a === 'shuffle') renderSection(key, 'shuffle');
+      else if (a === 'spread') renderSection(key, 'spread');
+      else if (a === 'random') {
+        const cards = $$(`.ex-section[data-sec="${key}"] .qcard`).filter(c => c.style.display !== 'none');
+        if (cards.length) { const c = cards[Math.floor(Math.random() * cards.length)]; $$('.hl-q').forEach(x => x.classList.remove('hl-q')); c.classList.add('hl-q'); c.scrollIntoView({behavior:'smooth', block:'center'}); }
+      }
+      return;
+    }
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    const card = b.closest('.qcard'), act = b.dataset.act;
+    if (act === 'check') { card.dataset.type === 'mcq' ? checkMcq(card) : checkTyped(card); }
+    else if (act === 'retry') { if (card.dataset.type === 'sp') return; resetCard(card); }
+    else if (act === 'show') showTyped(card);
+    else if (act === 'override') { record(card.dataset.id, true); showRes(card, 'ok', '<b>Đã ghi nhận là đúng.</b> ' + esc(REG[card.dataset.id].e || '')); }
+    else if (act === 'hear') { try { const u = new SpeechSynthesisUtterance(REG[card.dataset.id].q); u.lang = 'en-US'; u.rate = 0.9; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch(err) {} }
+    else if (act === 'idea') { const p = $('[data-panel=idea]', card); p.hidden = !p.hidden; }
+    else if (act === 'sample') { const p = $('[data-panel=sample]', card); p.hidden = !p.hidden; }
+    else if (act === 'rec') { rec && rec.card === card ? stopRec() : startRec(card); }
+    else if (act === 'copy') { const ta = $('textarea', card); try { navigator.clipboard.writeText('Câu hỏi: ' + REG[card.dataset.id].q + '\nCâu trả lời: ' + ta.value); b.textContent = 'Đã sao chép'; } catch(err) { ta.select(); b.textContent = 'Hãy nhấn Ctrl+C'; } }
+  });
+
+  let confirmReset = false;
+  $('#resetAll').addEventListener('click', e => {
+    if (!confirmReset) { confirmReset = true; e.target.textContent = 'Bấm lần nữa để xác nhận xóa'; setTimeout(() => { confirmReset = false; e.target.textContent = 'Xóa toàn bộ kết quả đã lưu'; }, 4000); return; }
+    store = {}; persist(); confirmReset = false; e.target.textContent = 'Xóa toàn bộ kết quả đã lưu';
+    Object.keys(SEC).forEach(k => renderSection(k, 'keep')); renderDash();
+  });
+
+  /* ---------- khởi tạo ---------- */
+  Object.keys(SEC).forEach(k => renderSection(k, 'spread'));
+  renderDash();
+
+  /* ---------- mục lục, tiến độ ---------- */
+  const toc = $('#toc'); const groups = [];
+  $$('main h2').forEach(h2 => {
+    const sec = h2.closest('section');
+    const g = document.createElement('div'); g.className = 'toc-group';
+    const a = document.createElement('a'); a.className = 'toc-h2'; a.href = '#' + h2.id;
+    a.textContent = h2.textContent.replace(/^(\d+)(?=\S)/, m => m + '. ');
+    g.appendChild(a);
+    const sub = document.createElement('div'); sub.className = 'toc-sub';
+    const subs = $$('h3', sec).map(h3 => { const l = document.createElement('a'); l.href = '#' + h3.id; l.textContent = h3.textContent; sub.appendChild(l); return {h:h3, a:l}; });
+    g.appendChild(sub); toc.appendChild(g); groups.push({h:h2, a:a, g:g, subs:subs});
+  });
+  const items = [];
+  groups.forEach(gr => { items.push({h:gr.h, a:gr.a, gr:gr, lvl:2}); gr.subs.forEach(s => items.push({h:s.h, a:s.a, gr:gr, lvl:3})); });
+  const bar = $('#bar'), pct = $('#pct'), where = $('#where'), topBtn = $('#topBtn');
+  let ticking = false;
+  function onScroll(){
+    ticking = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 0;
+    bar.style.width = p + '%'; pct.textContent = Math.round(p) + '%';
+    topBtn.style.display = window.scrollY > 600 ? 'block' : 'none';
+    let cur = items[0];
+    for (const it of items) { if (it.h.getBoundingClientRect().top <= 110) cur = it; else break; }
+    if (cur) {
+      items.forEach(it => it.a.classList.toggle('active', it === cur || (it.lvl === 2 && it.gr === cur.gr)));
+      groups.forEach(gr => gr.g.classList.toggle('open', gr === cur.gr));
+      const t2 = cur.gr.h.textContent.replace(/^\d+/, '').trim();
+      where.textContent = cur.lvl === 3 ? t2 + '  ›  ' + cur.h.textContent : t2;
+      const sb = $('#sidebar'), r = cur.a.getBoundingClientRect(), sr = sb.getBoundingClientRect();
+      if (r.top < sr.top + 40 || r.bottom > sr.bottom - 40) sb.scrollTop += r.top - sr.top - sr.height / 3;
+    }
+  }
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  window.addEventListener('resize', onScroll); onScroll();
+  const body = document.body;
+  $('#menuBtn').addEventListener('click', () => body.classList.toggle('nav-open'));
+  $('#overlay').addEventListener('click', () => body.classList.remove('nav-open'));
+  toc.addEventListener('click', e => { if (e.target.closest('a')) body.classList.remove('nav-open'); });
+  topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
+</script>
+</body>
+</html>
