@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ôn thi tiếng Anh B2 đầu vào thạc sĩ UIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --panel:#ffffff; --ink:#1d2433; --muted:#5b6475; --line:#e6e1d6;
+  --accent:#1f6f8b; --accent-d:#14526a; --accent-soft:#e3f1f5;
+  --hl:#fff4cc; --ok:#2f855a; --ok-soft:#e6f4ec; --warn:#a15c07; --warn-soft:#fdf0dc;
+  --bad:#b4332f; --bad-soft:#fbe9e8; --code:#f3f0e8;
+  --side:300px; --top:56px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Be Vietnam Pro","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-d)}
+.ipa{font-family:"Noto Sans","Segoe UI","Lucida Sans Unicode","DejaVu Sans",sans-serif;color:#7a3b00;font-size:.95em;white-space:nowrap}
+
+/* top bar */
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--top);background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 18px;z-index:60}
+.topbar .brand{font-weight:700;white-space:nowrap}
+.topbar .where{color:var(--muted);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.topbar .pct{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:44px;text-align:right}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--accent),#3aa0b8)}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:18px}
+
+/* sidebar */
+.sidebar{position:fixed;top:var(--top);left:0;bottom:0;width:var(--side);overflow-y:auto;background:var(--panel);border-right:1px solid var(--line);padding:14px 10px 40px;z-index:55}
+.sidebar h5{margin:6px 10px 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.toc-h2{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;line-height:1.35}
+.toc-h2:hover{background:#f3f1ea}
+.toc-h2.active{background:var(--accent-soft);color:var(--accent-d)}
+.toc-sub{display:none;margin:2px 0 8px 12px;border-left:2px solid var(--line)}
+.toc-group.open .toc-sub{display:block}
+.toc-sub a{display:block;padding:4px 10px;font-size:13.5px;color:var(--muted);text-decoration:none;line-height:1.4;border-radius:0 6px 6px 0}
+.toc-sub a:hover{color:var(--ink);background:#f6f4ee}
+.toc-sub a.active{color:var(--accent-d);font-weight:600;background:var(--accent-soft)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(20,25,35,.35);z-index:54}
+
+/* main */
+main{margin-left:var(--side);padding:calc(var(--top) + 28px) 36px 80px;max-width:calc(var(--side) + 1000px)}
+main>section{max-width:940px}
+h2{font-size:1.75rem;line-height:1.3;margin:64px 0 6px;padding-top:6px}
+h2 .no{display:inline-block;background:var(--accent);color:#fff;border-radius:8px;padding:0 10px;margin-right:10px;font-size:.9rem;vertical-align:middle;letter-spacing:.04em}
+h2+.lead{color:var(--muted);margin:0 0 22px;font-size:1.02rem}
+h3{font-size:1.28rem;margin:40px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h4{font-size:1.06rem;margin:0 0 10px;color:var(--accent-d)}
+p{margin:10px 0}
+ul,ol{margin:8px 0 8px 1.2em;padding-left:.8em}
+li{margin:4px 0}
+.first h2{margin-top:10px}
+
+/* components */
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout.bad{border-color:var(--bad);background:var(--bad-soft)}
+.callout b.t{display:block;margin-bottom:2px}
+.callout p:first-child{margin-top:0}.callout p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f4f1e9;font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:#fbfaf6}
+td .vi,.vi{color:var(--muted)}
+code,.formula{font-family:"Cascadia Code","Consolas","SFMono-Regular",Menlo,monospace}
+code{background:var(--code);padding:1px 6px;border-radius:5px;font-size:.88em}
+.gcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:10px 16px}
+.kv .k{font-weight:600;color:var(--muted);font-size:.9rem;padding-top:3px}
+.formula{display:block;background:var(--code);border-radius:8px;padding:6px 12px;margin:4px 0;font-size:.9rem;overflow-x:auto}
+.exs{list-style:none;margin:0;padding:0}
+.exs li{margin:6px 0;padding-left:12px;border-left:3px solid #cfe5ec}
+.exs .en{font-weight:500}
+.exs .vi{display:block;font-size:.92rem}
+.v ul{margin:0 0 0 1.1em;padding-left:.3em}
+.sig{background:var(--hl);padding:1px 6px;border-radius:5px}
+.note{margin-top:12px;font-size:.93rem;color:#4a3a05;background:var(--warn-soft);border-radius:8px;padding:8px 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.chips a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 12px;font-size:.88rem;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--accent);color:var(--accent-d)}
+.hl{background:var(--hl);padding:0 4px;border-radius:4px}
+.right{color:var(--ok);font-weight:600}.wrong{color:var(--bad);text-decoration:line-through}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.mini h4{margin-bottom:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:14px 0}
+.cards a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.cards a:hover{border-color:var(--accent);box-shadow:0 2px 10px rgba(31,111,139,.12)}
+.cards b{display:block;color:var(--accent-d)}
+.cards span{font-size:.88rem;color:var(--muted)}
+.script{background:#fffdf7;border:1px solid #ecdfae;border-radius:12px;padding:14px 18px;margin:12px 0}
+.script p{margin:8px 0}
+.script .vi{display:block;font-size:.92rem;margin-top:2px}
+.tag{display:inline-block;font-size:.76rem;border-radius:6px;padding:1px 7px;background:var(--accent-soft);color:var(--accent-d);margin-right:6px;font-weight:600}
+.fill{background:#d9f0d8;border-radius:4px;padding:0 4px;font-weight:600}
+.edit{background:#ffe3c2;border-radius:4px;padding:0 4px}
+
+/* vocab */
+.vtools{position:sticky;top:var(--top);z-index:20;background:rgba(250,248,244,.96);backdrop-filter:blur(6px);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);margin:10px 0}
+.vtools input[type=search]{flex:1;min-width:180px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.vtools label{font-size:.9rem;display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none}
+.vtools .stat{font-size:.9rem;color:var(--muted)}
+.vt td.w{font-weight:600;white-space:nowrap}
+.vt td.pos{color:var(--muted);white-space:nowrap;font-style:italic}
+.vt td.n{color:var(--muted);width:34px}
+.vt td.ck{width:46px;text-align:center}
+.vt tr.done td{background:var(--ok-soft)}
+.vt tr.hide{display:none}
+.spk{border:0;background:var(--accent-soft);color:var(--accent-d);width:26px;height:26px;border-radius:50%;cursor:pointer;margin-left:6px;vertical-align:middle;padding:0}
+.spk:hover{background:#cfe5ec}
+.spk svg{width:14px;height:14px;display:block;margin:auto}
+body.quiz .vt td.mean span{filter:blur(6px);transition:filter .15s;cursor:pointer}
+body.quiz .vt td.mean span:hover,body.quiz .vt tr.peek td.mean span{filter:none}
+.tcount{font-size:.88rem;color:var(--muted);font-weight:400;margin-left:8px}
+
+.topbtn{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);display:none;z-index:40;font-size:18px}
+footer{margin:60px 0 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:16px}
+
+@media (max-width:1000px){
+  :root{--side:290px}
+  .menu-btn{display:block}
+  .sidebar{transform:translateX(-100%);transition:transform .2s}
+  body.nav-open .sidebar{transform:none;box-shadow:6px 0 24px rgba(0,0,0,.15)}
+  body.nav-open .overlay{display:block}
+  main{margin-left:0;padding:calc(var(--top) + 18px) 16px 80px}
+  .kv{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr}
+  .topbar .brand{display:none}
+  h2{font-size:1.45rem}
+}
+@media print{.topbar,.sidebar,.vtools,.topbtn{display:none}main{margin:0;padding:0}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Mở mục lục">&#9776;</button>
+  <span class="brand">B2 UIT</span>
+  <span class="where" id="where">Tổng quan</span>
+  <span class="pct" id="pct">0%</span>
+  <div class="progress" id="bar"></div>
+</header>
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar" id="sidebar"><h5>Mục lục</h5><nav id="toc"></nav></aside>
+
+<main>
+
+<!-- ================= TỔNG QUAN ================= -->
+<section id="intro" class="first">
+<h2 id="s-intro"><span class="no">0</span>Tổng quan và cách dùng</h2>
+<p class="lead">Tài liệu ôn tập B2 cho kỳ thi đầu vào thạc sĩ UIT: từ vựng, ngữ pháp, viết lại câu và Speaking. Phần Listening bỏ qua theo yêu cầu của bạn.</p>
+
+<h3 id="s-structure">Cấu trúc đề thi</h3>
+<p>Thời lượng tối đa 120 phút (gồm thời gian chuyển tiếp). Đạt khi tổng điểm 4 kỹ năng từ <b>50/100</b>, không có điểm liệt từng phần.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Paper</th><th>Nội dung</th><th>Số câu</th><th>Điểm</th><th>File này có</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td>Vocabulary (Part A) và Reading (Part B)</td><td>10 + 10</td><td>20</td><td>Phần 1: từ vựng theo chủ đề</td></tr>
+<tr><td><b>2</b></td><td>Sentence completion, Cloze, Sentence transformation (Writing)</td><td>15 + 10 + 5</td><td>40</td><td>Phần 2 và 3: ngữ pháp, viết lại câu</td></tr>
+<tr><td><b>3</b></td><td>Listening</td><td>10 + 5 + 5</td><td>20</td><td>Bỏ qua</td></tr>
+<tr><td><b>4</b></td><td>Speaking: tự giới thiệu (5) và guided conversation (15)</td><td>2 phần</td><td>20</td><td>Phần 4: bài giới thiệu, cách nói</td></tr>
+</tbody></table></div>
+<p>Đọc và Viết làm liên tục 90 phút. Gợi ý chia: khoảng 30 phút cho Paper 1 và 60 phút cho Paper 2.</p>
+
+<h3 id="s-howto">Cách dùng file</h3>
+<ul>
+<li>Cột bên trái là mục lục. Bấm vào mục nào thì nhảy tới mục đó, thanh trên cùng cho biết bạn đang ở đâu và đã đọc được bao nhiêu phần trăm.</li>
+<li>Ở phần từ vựng: bấm nút loa để nghe phát âm, tích ô vuông khi đã thuộc từ (trình duyệt nhớ giúp bạn), bật "Ẩn nghĩa" để tự kiểm tra, ô tìm kiếm lọc từ theo chữ hoặc theo nghĩa.</li>
+<li>Ở phần ngữ pháp: mỗi cấu trúc có bốn mục cố định: <b>Cấu trúc</b>, <b>Dùng cho</b>, <b>Dấu hiệu nhận biết</b> (tô vàng) và <b>Ví dụ</b>.</li>
+<li>Phần cuối là phụ lục: động từ bất quy tắc, giới từ đi kèm, cụm động từ, collocation.</li>
+</ul>
+
+<h3 id="s-strategy">Chiến lược nhanh cho từng phần</h3>
+<div class="grid2">
+<div class="mini"><h4>Paper 1A: Vocabulary</h4><ul>
+<li>Xác định loại từ cần điền trước.</li>
+<li>Tìm từ đi kèm (collocation): <code>make a decision</code>, <code>do research</code>.</li>
+<li>Loại đáp án sai collocation, rồi mới so nghĩa.</li>
+<li>Mỗi câu tối đa 30 giây.</li></ul></div>
+<div class="mini"><h4>Paper 1B: Reading</h4><ul>
+<li>Đọc câu hỏi trước, gạch từ khóa.</li>
+<li>Đáp án thường là cách diễn đạt khác của câu trong bài.</li>
+<li>Đáp án có always, never, only, all thường sai.</li>
+<li>Mỗi câu tối đa 1,5 phút.</li></ul></div>
+<div class="mini"><h4>Paper 2A và 2B</h4><ul>
+<li>Nhìn dấu hiệu thì, chủ ngữ, rồi nghĩa của câu.</li>
+<li>Cloze: phần lớn là từ chức năng (giới từ, mạo từ, liên từ, đại từ quan hệ).</li>
+<li>Đọc cả đoạn một lần trước khi điền, rồi đọc lại sau khi điền.</li></ul></div>
+<div class="mini"><h4>Paper 2C: Viết lại câu</h4><ul>
+<li>Nhận ra dạng cấu trúc (xem phần 3).</li>
+<li>Giữ nguyên nghĩa, kiểm tra thì và dạng từ.</li>
+<li>Chép lại cả câu, không bỏ trống.</li></ul></div>
+</div>
+
+<h3 id="s-map">Đi nhanh tới từng phần</h3>
+<div class="cards">
+<a href="#s-vocab"><b>1. Từ vựng</b><span>10 chủ đề, mỗi chủ đề 20 từ, phiên âm, loại từ, nghĩa</span></a>
+<a href="#s-grammar"><b>2. Ngữ pháp</b><span>Thì, điều kiện, bị động, wish, quan hệ, modal, tính từ, trạng từ</span></a>
+<a href="#s-transform"><b>3. Viết lại câu</b><span>Tường thuật và bảng các dạng viết lại thường gặp</span></a>
+<a href="#s-speaking"><b>4. Speaking</b><span>Bài giới thiệu theo hồ sơ của bạn, cách nói, từ nên dùng</span></a>
+<a href="#s-appendix"><b>Phụ lục</b><span>Động từ bất quy tắc, giới từ, cụm động từ, IPA</span></a>
+</div>
+</section>
+
+<!-- ================= TỪ VỰNG ================= -->
+<section id="vocab">
+<h2 id="s-vocab"><span class="no">1</span>Từ vựng theo chủ đề</h2>
+<p class="lead">10 chủ đề hay gặp trong đề B2 và trong phỏng vấn, mỗi chủ đề 20 từ phổ biến. Phiên âm theo giọng Mỹ (IPA).</p>
+
+<div class="callout"><b class="t">Ký hiệu loại từ</b>
+<code>n</code> danh từ &nbsp; <code>v</code> động từ &nbsp; <code>adj</code> tính từ &nbsp; <code>adv</code> trạng từ &nbsp; <code>n phr</code> cụm danh từ.
+Dấu <code>ˈ</code> đặt trước âm tiết mang trọng âm chính, ví dụ <span class="ipa">/dɪˈlɪvər/</span> nhấn âm thứ hai.
+Những từ vừa là danh từ vừa là động từ (research, export, import...) đổi trọng âm theo loại từ, phiên âm ghi cả hai.</div>
+
+<div class="vtools" id="vtools">
+  <input type="search" id="vsearch" placeholder="Tìm từ hoặc nghĩa (ví dụ: server, thất nghiệp)">
+  <label><input type="checkbox" id="quizMode"> Ẩn nghĩa (tự kiểm tra)</label>
+  <label><input type="checkbox" id="hideDone"> Ẩn từ đã thuộc</label>
+  <span class="stat" id="vstat"></span>
+</div>
+
+<div id="vocab-root"></div>
+
+<div class="callout ok"><b class="t">Cách học 200 từ trong 4 tuần</b>
+Mỗi ngày học 8 từ (1 chủ đề trong khoảng 2 đến 3 ngày). Cuối mỗi chủ đề bật "Ẩn nghĩa" và tự nhớ lại nghĩa, sau đó đặt một câu với mỗi từ khó. Ôn lại chủ đề cũ vào đầu tuần kế tiếp. Từ nào sai hai lần thì ghi vào sổ riêng.</div>
+</section>
+
+<!-- ================= NGỮ PHÁP ================= -->
+<section id="grammar">
+<h2 id="s-grammar"><span class="no">2</span>Ngữ pháp</h2>
+<p class="lead">Mỗi cấu trúc gồm: công thức, dùng cho việc gì, dấu hiệu nhận biết (tô vàng) và ví dụ có dịch. Đây là phần quyết định Paper 2A, 2B và 2C, tổng cộng 40 điểm.</p>
+
+<!-- Thì -->
+<h3 id="g-tenses">2.1 Các thì (12 thì)</h3>
+<p>Cách làm: tìm dấu hiệu thời gian trong câu, rồi chọn thì. Bấm vào chip để nhảy tới từng thì.</p>
+<div class="chips">
+<a href="#t1">Hiện tại đơn</a><a href="#t2">Hiện tại tiếp diễn</a><a href="#t3">Hiện tại hoàn thành</a><a href="#t4">HT hoàn thành tiếp diễn</a>
+<a href="#t5">Quá khứ đơn</a><a href="#t6">Quá khứ tiếp diễn</a><a href="#t7">Quá khứ hoàn thành</a><a href="#t8">QK hoàn thành tiếp diễn</a>
+<a href="#t9">Tương lai đơn</a><a href="#t10">Be going to</a><a href="#t11">Tương lai tiếp diễn</a><a href="#t12">Tương lai hoàn thành</a>
+</div>
+<div data-cards="tenses"></div>
+
+<h4 style="margin-top:26px">Những cặp dễ nhầm</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Cặp</th><th>Khác nhau</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Quá khứ đơn và hiện tại hoàn thành</td><td>Quá khứ đơn: có mốc thời gian đã qua. Hiện tại hoàn thành: thời gian không nói rõ, hoặc còn liên quan đến hiện tại.</td><td>I <b>finished</b> the report yesterday. / I <b>have finished</b> the report.</td></tr>
+<tr><td>since và for</td><td>since + mốc thời gian; for + khoảng thời gian.</td><td>since 2022, since Monday / for two years, for a long time</td></tr>
+<tr><td>Quá khứ đơn và quá khứ hoàn thành</td><td>Việc xảy ra trước dùng quá khứ hoàn thành, việc sau dùng quá khứ đơn.</td><td>When I <b>arrived</b>, the meeting <b>had started</b>.</td></tr>
+<tr><td>will và be going to</td><td>will: quyết định tức thời, dự đoán chủ quan. be going to: dự định có sẵn, dự đoán có căn cứ.</td><td>I'll have tea. / I'm going to study abroad.</td></tr>
+<tr><td>Hiện tại đơn và tiếp diễn</td><td>Đơn: thói quen, chân lý. Tiếp diễn: đang xảy ra hoặc tạm thời.</td><td>He <b>works</b> at VNG. / He <b>is working</b> on a new project.</td></tr>
+</tbody></table></div>
+
+<div class="callout warn"><b class="t">Quy tắc thì trong mệnh đề thời gian và điều kiện</b>
+Sau when, as soon as, after, before, until, while, if, unless dùng <b>hiện tại đơn</b> (hoặc hiện tại hoàn thành) cho nghĩa tương lai. Ví dụ: <i>I will call you as soon as I arrive.</i> (không dùng will arrive.)</div>
+
+<h4>Dấu hiệu nhận biết nhanh (bảng tóm tắt)</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Thì</th><th>Cấu trúc</th><th>Dấu hiệu</th></tr></thead>
+<tbody>
+<tr><td>Hiện tại đơn</td><td>V(s/es)</td><td><span class="sig">always</span> <span class="sig">usually</span> <span class="sig">often</span> <span class="sig">every day</span> <span class="sig">never</span></td></tr>
+<tr><td>Hiện tại tiếp diễn</td><td>am/is/are + V-ing</td><td><span class="sig">now</span> <span class="sig">at the moment</span> <span class="sig">Look!</span> <span class="sig">currently</span></td></tr>
+<tr><td>Hiện tại hoàn thành</td><td>have/has + V3</td><td><span class="sig">already</span> <span class="sig">yet</span> <span class="sig">since</span> <span class="sig">for</span> <span class="sig">ever</span> <span class="sig">so far</span></td></tr>
+<tr><td>Quá khứ đơn</td><td>V2/V-ed</td><td><span class="sig">yesterday</span> <span class="sig">ago</span> <span class="sig">last ...</span> <span class="sig">in 2020</span></td></tr>
+<tr><td>Quá khứ tiếp diễn</td><td>was/were + V-ing</td><td><span class="sig">while</span> <span class="sig">at 8 p.m. yesterday</span> <span class="sig">when (bị cắt ngang)</span></td></tr>
+<tr><td>Quá khứ hoàn thành</td><td>had + V3</td><td><span class="sig">by the time</span> <span class="sig">before</span> <span class="sig">after</span> <span class="sig">already</span></td></tr>
+<tr><td>Tương lai đơn</td><td>will + V</td><td><span class="sig">tomorrow</span> <span class="sig">next ...</span> <span class="sig">I think</span> <span class="sig">probably</span></td></tr>
+<tr><td>Tương lai hoàn thành</td><td>will have + V3</td><td><span class="sig">by + mốc tương lai</span> <span class="sig">by the time</span></td></tr>
+</tbody></table></div>
+
+<!-- Điều kiện -->
+<h3 id="g-cond">2.2 Câu điều kiện (If)</h3>
+<p>Câu điều kiện hay xuất hiện ở cả Sentence completion lẫn Sentence transformation. Xác định loại bằng vế "if": hiện tại đơn là loại 1, quá khứ đơn là loại 2, quá khứ hoàn thành là loại 3.</p>
+<div data-cards="cond"></div>
+
+<!-- Bị động -->
+<h3 id="g-passive">2.3 Câu bị động (Passive Voice)</h3>
+<p><b>Công thức chung:</b> <code>S + be + V3 (+ by agent)</code>. Chủ động: <i>The company stores data.</i> Bị động: <i>Data is stored by the company.</i> Dùng bị động khi tác nhân không quan trọng, không biết hoặc cần nhấn vào đối tượng bị tác động.</p>
+<p><b>Cách đổi:</b> (1) lấy tân ngữ làm chủ ngữ; (2) giữ nguyên thì của động từ, đổi thành be + V3 (be chia theo thì); (3) chủ ngữ cũ thành by + tác nhân (bỏ nếu không cần).</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Thì / Dạng</th><th>Bị động</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Hiện tại đơn</td><td>am/is/are + V3</td><td>Data <b>is stored</b> in the cloud.</td></tr>
+<tr><td>Hiện tại tiếp diễn</td><td>am/is/are + being + V3</td><td>The system <b>is being updated</b>.</td></tr>
+<tr><td>Hiện tại hoàn thành</td><td>has/have + been + V3</td><td>The bug <b>has been fixed</b>.</td></tr>
+<tr><td>Quá khứ đơn</td><td>was/were + V3</td><td>The email <b>was sent</b> yesterday.</td></tr>
+<tr><td>Quá khứ tiếp diễn</td><td>was/were + being + V3</td><td>The room <b>was being cleaned</b>.</td></tr>
+<tr><td>Quá khứ hoàn thành</td><td>had + been + V3</td><td>The file <b>had been deleted</b> before I arrived.</td></tr>
+<tr><td>Tương lai đơn</td><td>will + be + V3</td><td>The results <b>will be announced</b> next week.</td></tr>
+<tr><td>Be going to</td><td>am/is/are + going to + be + V3</td><td>A new lab <b>is going to be built</b>.</td></tr>
+<tr><td>Tương lai hoàn thành</td><td>will + have + been + V3</td><td>The work <b>will have been completed</b> by Friday.</td></tr>
+<tr><td>Modal</td><td>modal + be + V3</td><td>The task <b>must be finished</b> today.</td></tr>
+<tr><td>Modal perfect</td><td>modal + have + been + V3</td><td>The server <b>should have been updated</b>.</td></tr>
+<tr><td>Nguyên mẫu / V-ing</td><td>to be + V3; being + V3</td><td>I want <b>to be informed</b>. She hates <b>being interrupted</b>.</td></tr>
+</tbody></table></div>
+<p>Các thì tiếp diễn hoàn thành (present perfect continuous, past perfect continuous) và tương lai tiếp diễn hiếm khi dùng bị động.</p>
+<div data-cards="passive"></div>
+
+<!-- Wish -->
+<h3 id="g-wish">2.4 Wish, If only, would rather, it's time, as if</h3>
+<p>Nhóm "ước muốn và giả định". Lưu ý động từ lùi một thì so với thực tế: hiện tại thật dùng quá khứ, quá khứ thật dùng quá khứ hoàn thành.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Thực tế</th><th>Cấu trúc</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Hiện tại, tương lai</td><td>wish + S + V2 / were</td><td>I don't have a car. → I wish I <b>had</b> a car.</td></tr>
+<tr><td>Quá khứ</td><td>wish + S + had + V3</td><td>I didn't study. → I wish I <b>had studied</b>.</td></tr>
+<tr><td>Phàn nàn, mong thay đổi</td><td>wish + S + would + V</td><td>I wish he <b>would stop</b> talking.</td></tr>
+</tbody></table></div>
+<div data-cards="wish"></div>
+
+<!-- Quan hệ -->
+<h3 id="g-rel">2.5 Mệnh đề quan hệ (Relative Clauses)</h3>
+<p>Dùng để nối hai câu, bổ nghĩa cho danh từ. Bước đầu: tìm danh từ đứng trước và xem nó đóng vai trò gì trong mệnh đề (chủ ngữ, tân ngữ, sở hữu, nơi chốn, thời gian, lý do).</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Từ</th><th>Thay cho</th><th>Vai trò</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>who</td><td>người</td><td>chủ ngữ</td><td>The man <b>who</b> called you is my boss.</td></tr>
+<tr><td>whom</td><td>người</td><td>tân ngữ</td><td>The man (<b>whom</b>) you met is my boss.</td></tr>
+<tr><td>which</td><td>vật</td><td>chủ ngữ hoặc tân ngữ</td><td>The system <b>which</b> we use is secure.</td></tr>
+<tr><td>that</td><td>người hoặc vật</td><td>chủ ngữ hoặc tân ngữ (xác định)</td><td>The tool <b>that</b> I use is free.</td></tr>
+<tr><td>whose</td><td>người hoặc vật</td><td>sở hữu</td><td>The man <b>whose</b> car was stolen called the police.</td></tr>
+<tr><td>where</td><td>nơi chốn</td><td>= in/at/on which</td><td>The house <b>where</b> I live is old.</td></tr>
+<tr><td>when</td><td>thời gian</td><td>= in/on/at which</td><td>I remember the day <b>when</b> we met.</td></tr>
+<tr><td>why</td><td>lý do (reason)</td><td>= for which</td><td>That's the reason <b>why</b> I called.</td></tr>
+</tbody></table></div>
+<div data-cards="rel"></div>
+
+<!-- Modal -->
+<h3 id="g-modal">2.6 Động từ khiếm khuyết (Modal verbs)</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Modal</th><th>Dùng cho</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>can / could</td><td>khả năng; xin phép; yêu cầu lịch sự (could)</td><td>Could you send me the file?</td></tr>
+<tr><td>may / might</td><td>có thể xảy ra; xin phép trang trọng (may)</td><td>It may rain this evening. May I come in?</td></tr>
+<tr><td>must</td><td>bắt buộc (chủ quan); chắc chắn là đúng</td><td>You must finish the report today.</td></tr>
+<tr><td>have to</td><td>bắt buộc theo quy định bên ngoài</td><td>I have to wear a uniform at work.</td></tr>
+<tr><td>mustn't</td><td>cấm</td><td>You mustn't use phones in the exam.</td></tr>
+<tr><td>don't have to / needn't</td><td>không cần thiết</td><td>You don't have to come early.</td></tr>
+<tr><td>should / ought to</td><td>lời khuyên, điều nên làm</td><td>You should get more sleep.</td></tr>
+<tr><td>had better + V</td><td>khuyên mạnh, có hậu quả nếu không làm</td><td>You had better back up your data.</td></tr>
+<tr><td>be able to</td><td>có khả năng (dùng được ở mọi thì)</td><td>I will be able to join you next week.</td></tr>
+<tr><td>used to + V</td><td>thói quen, trạng thái trong quá khứ nay đã hết</td><td>I used to play games every day.</td></tr>
+<tr><td>be used to + V-ing</td><td>đã quen với</td><td>I am used to getting up early.</td></tr>
+<tr><td>would</td><td>giả định; thói quen quá khứ; đề nghị lịch sự</td><td>Would you like some tea?</td></tr>
+</tbody></table></div>
+<div data-cards="modal"></div>
+
+<!-- Gerund / infinitive -->
+<h3 id="g-ger">2.7 V-ing hay to V (Gerund và Infinitive)</h3>
+<div data-cards="ger"></div>
+
+<!-- So sánh -->
+<h3 id="g-comp">2.8 So sánh (Comparison)</h3>
+<div data-cards="comp"></div>
+
+<!-- Đảo ngữ -->
+<h3 id="g-inv">2.9 Đảo ngữ (Inversion)</h3>
+<p>Đảo ngữ để nhấn mạnh, thường dùng trong văn viết trang trọng và đề viết lại câu. Khi đưa trạng từ phủ định hoặc hạn định lên đầu câu, trợ động từ đứng trước chủ ngữ: <code>Trạng từ + trợ động từ + S + V</code>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Mở đầu bằng</th><th>Cấu trúc</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Never, Rarely, Seldom, Little</td><td>+ trợ động từ + S + V</td><td>Never have I seen such a beautiful view.</td></tr>
+<tr><td>Hardly / Scarcely ... when</td><td>Hardly + had + S + V3 + when + S + V2</td><td>Hardly had she entered the room when the phone rang.</td></tr>
+<tr><td>No sooner ... than</td><td>No sooner + had + S + V3 + than + S + V2</td><td>No sooner had he sat down than the lights went out.</td></tr>
+<tr><td>Not only ... but also</td><td>Not only + trợ động từ + S + V, but + S also + V</td><td>Not only did he arrive late, but he also forgot his documents.</td></tr>
+<tr><td>Not until</td><td>Not until + mệnh đề + trợ động từ + S + V</td><td>Not until I got home did I realise I had lost my keys.</td></tr>
+<tr><td>Only when / Only after / Only by</td><td>Only + cụm + trợ động từ + S + V</td><td>Only when I arrived did I know the truth.</td></tr>
+<tr><td>Under no circumstances, At no time, In no way, On no account</td><td>+ trợ động từ + S + V</td><td>Under no circumstances should you share your password.</td></tr>
+<tr><td>So + adj ... that / Such ... that</td><td>So + adj + be + S + that ...</td><td>So difficult was the test that many students failed.</td></tr>
+<tr><td>Neither / Nor</td><td>Neither/Nor + trợ động từ + S</td><td>She didn't call; nor did she email.</td></tr>
+<tr><td>Should / Were / Had (điều kiện)</td><td>xem phần 2.2</td><td>Had I known, I would have told you.</td></tr>
+</tbody></table></div>
+
+<!-- Liên từ -->
+<h3 id="g-link">2.10 Liên từ và từ nối (Linking words)</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Ý nghĩa</th><th>Từ + cấu trúc</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Tương phản</td><td>although, though, even though + S + V<br>despite, in spite of + N / V-ing<br>however, nevertheless (đầu câu, có dấu phẩy)<br>while, whereas + S + V (hai vế đối lập)</td><td>Although it rained, we went out.<br>Despite the rain, we went out.<br>It rained. However, we went out.</td></tr>
+<tr><td>Lý do</td><td>because, since, as + S + V<br>because of, due to, owing to, thanks to + N / V-ing</td><td>Because he was ill, he stayed home.<br>Because of his illness, he stayed home.</td></tr>
+<tr><td>Kết quả</td><td>so + S + V<br>therefore, consequently, as a result + dấu phẩy<br>so ... that, such ... that</td><td>He was ill, so he stayed home.<br>He was ill. As a result, he stayed home.</td></tr>
+<tr><td>Mục đích</td><td>to V, in order to V, so as to V<br>so that + S + can/could/will/would + V</td><td>She studies hard to pass the exam.</td></tr>
+<tr><td>Bổ sung</td><td>moreover, furthermore, in addition, besides, what is more</td><td>The course is cheap. Moreover, it is flexible.</td></tr>
+<tr><td>Thứ tự</td><td>first, then, next, after that, finally; meanwhile</td><td>First, collect the data. Then, clean it.</td></tr>
+<tr><td>Ví dụ, tóm lại</td><td>for example, for instance, such as; in conclusion, to sum up</td><td>Many languages, such as Python and Java, are popular.</td></tr>
+</tbody></table></div>
+
+<!-- Danh từ, mạo từ -->
+<h3 id="g-noun">2.11 Mạo từ, danh từ và lượng từ</h3>
+<div data-cards="noun"></div>
+
+<!-- Tính từ -->
+<h3 id="g-adj">2.12 Tính từ: trật tự và cách dùng</h3>
+<div data-cards="adjorder"></div>
+
+<!-- Trạng từ -->
+<h3 id="g-adv">2.13 Trạng từ (Adverbs)</h3>
+<div data-cards="adv"></div>
+
+<!-- Cấu tạo từ -->
+<h3 id="g-wordform">2.14 Cấu tạo từ (Word formation)</h3>
+<p>Phần Vocabulary và Cloze hay hỏi dạng từ phù hợp với vị trí trong câu. Đọc vị trí: sau mạo từ, tính từ sở hữu thì là danh từ; sau be hoặc linking verb thì là tính từ; trước tính từ thì là trạng từ; sau modal thì là động từ.</p>
+<div class="grid2">
+<div class="mini"><h4>Hậu tố danh từ</h4>
+<p><code>-tion/-sion</code> information, decision<br><code>-ment</code> development, management<br><code>-ness</code> happiness, awareness<br><code>-ity</code> security, ability<br><code>-ance/-ence</code> importance, difference<br><code>-er/-or/-ist</code> developer, instructor, scientist<br><code>-ship</code> relationship, friendship<br><code>-ism</code> tourism, capitalism</p></div>
+<div class="mini"><h4>Hậu tố tính từ</h4>
+<p><code>-ful</code> useful, careful<br><code>-less</code> useless, careless<br><code>-able/-ible</code> reliable, possible<br><code>-al</code> national, economic<br><code>-ous</code> dangerous, famous<br><code>-ive</code> creative, active<br><code>-ic</code> scientific, basic<br><code>-ent/-ant</code> different, important</p></div>
+<div class="mini"><h4>Hậu tố động từ và trạng từ</h4>
+<p><code>-ize/-ise</code> organize, modernize<br><code>-en</code> widen, strengthen<br><code>-ify</code> simplify, clarify<br><code>-ate</code> create, generate<br><code>-ly (trạng từ)</code> carefully, easily</p></div>
+<div class="mini"><h4>Tiền tố phủ định và thông dụng</h4>
+<p><code>un-</code> unhappy, unable<br><code>in-</code> incorrect, inactive<br><code>im-</code> (trước b, m, p) impossible<br><code>il-</code> (trước l) illegal<br><code>ir-</code> (trước r) irregular<br><code>dis-</code> disagree, disadvantage<br><code>mis-</code> misunderstand<br><code>re-</code> rewrite, rebuild<br><code>over-/under-</code> overwork, underestimate</p></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Danh từ</th><th>Động từ</th><th>Tính từ</th><th>Trạng từ</th></tr></thead>
+<tbody>
+<tr><td>success</td><td>succeed</td><td>successful, unsuccessful</td><td>successfully</td></tr>
+<tr><td>decision</td><td>decide</td><td>decisive</td><td>decisively</td></tr>
+<tr><td>creation, creativity</td><td>create</td><td>creative</td><td>creatively</td></tr>
+<tr><td>importance</td><td>(none)</td><td>important</td><td>importantly</td></tr>
+<tr><td>development, developer</td><td>develop</td><td>developed, developing</td><td>(none)</td></tr>
+<tr><td>reliability</td><td>rely</td><td>reliable</td><td>reliably</td></tr>
+<tr><td>economy, economist</td><td>economize</td><td>economic, economical</td><td>economically</td></tr>
+<tr><td>safety</td><td>(none)</td><td>safe</td><td>safely</td></tr>
+<tr><td>difference</td><td>differ</td><td>different</td><td>differently</td></tr>
+<tr><td>employment, employer</td><td>employ</td><td>employed, unemployed</td><td>(none)</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- ================= VIẾT LẠI CÂU ================= -->
+<section id="transform">
+<h2 id="s-transform"><span class="no">3</span>Viết lại câu (Sentence transformation)</h2>
+<p class="lead">Paper 2C: 5 câu, mỗi câu viết lại sao cho nghĩa không đổi, thường bắt đầu bằng từ cho sẵn. Bắt đầu với câu tường thuật, sau đó là bảng các dạng viết lại hay gặp.</p>
+
+<h3 id="t-reported">3.1 Câu tường thuật (Reported Speech)</h3>
+<p>Khi thuật lại lời nói của người khác, ta đổi: <b>(1) thì</b> (lùi một bậc), <b>(2) đại từ</b>, <b>(3) trạng từ chỉ thời gian và nơi chốn</b>, và bỏ dấu ngoặc kép.</p>
+
+<div class="grid2">
+<div>
+<h4>Lùi thì</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Lời nói trực tiếp</th><th>Câu tường thuật</th></tr></thead>
+<tbody>
+<tr><td>Hiện tại đơn</td><td>Quá khứ đơn</td></tr>
+<tr><td>Hiện tại tiếp diễn</td><td>Quá khứ tiếp diễn</td></tr>
+<tr><td>Hiện tại hoàn thành</td><td>Quá khứ hoàn thành</td></tr>
+<tr><td>Quá khứ đơn</td><td>Quá khứ hoàn thành</td></tr>
+<tr><td>will</td><td>would</td></tr>
+<tr><td>can</td><td>could</td></tr>
+<tr><td>may</td><td>might</td></tr>
+<tr><td>must</td><td>had to</td></tr>
+<tr><td>should, could, would, might</td><td>giữ nguyên</td></tr>
+</tbody></table></div>
+</div>
+<div>
+<h4>Đổi trạng từ</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Trực tiếp</th><th>Gián tiếp</th></tr></thead>
+<tbody>
+<tr><td>now</td><td>then, at that time</td></tr>
+<tr><td>today</td><td>that day</td></tr>
+<tr><td>tonight</td><td>that night</td></tr>
+<tr><td>tomorrow</td><td>the next day, the following day</td></tr>
+<tr><td>yesterday</td><td>the day before, the previous day</td></tr>
+<tr><td>ago</td><td>before</td></tr>
+<tr><td>next week</td><td>the following week</td></tr>
+<tr><td>last week</td><td>the previous week, the week before</td></tr>
+<tr><td>this, these</td><td>that, those</td></tr>
+<tr><td>here</td><td>there</td></tr>
+</tbody></table></div>
+</div>
+</div>
+<div class="callout warn"><b class="t">Khi nào không lùi thì</b>
+Động từ tường thuật ở hiện tại (He says that ...); nói về chân lý hoặc sự thật hiển nhiên (She said the Earth goes round the Sun); sự việc vẫn còn đúng ở hiện tại (He said he lives in Hanoi, khi anh ấy vẫn sống ở đó). Lúc đó đề thường chấp nhận cả hai cách, nhưng khi đề yêu cầu theo công thức thì nên lùi thì.</div>
+
+<div data-cards="reported"></div>
+
+<h4>Động từ tường thuật theo mẫu câu</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Mẫu</th><th>Động từ</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>V + to V</td><td>agree, offer, promise, refuse, threaten, decide, demand</td><td>"I'll help you." → He offered to help me.</td></tr>
+<tr><td>V + O + to V</td><td>advise, ask, tell, order, remind, warn, invite, encourage, beg, persuade</td><td>"Don't touch it." → She warned me not to touch it.</td></tr>
+<tr><td>V + V-ing</td><td>suggest, admit, deny, recommend, mention</td><td>"Let's go home." → He suggested going home.</td></tr>
+<tr><td>V + (O) + preposition + V-ing</td><td>accuse + O + of, blame + O + for, apologize for, thank + O + for, congratulate + O + on, insist on, warn + O + against</td><td>"I'm sorry I'm late." → She apologized for being late.</td></tr>
+<tr><td>V + that + clause</td><td>say, tell, explain, claim, add, complain, announce, mention</td><td>"It's raining." → He said it was raining.</td></tr>
+</tbody></table></div>
+<div class="callout"><b class="t">Mẹo suggest</b>
+Các cấu trúc có thể dùng: <code>suggest + V-ing</code> hoặc <code>suggest (that) + S + (should) + V</code>. Không nói suggest + to V và không nói suggest + O + to V.</div>
+
+<h3 id="t-patterns">3.2 Bảng các dạng viết lại hay gặp</h3>
+<p>Dùng bảng này như danh sách kiểm tra: đọc câu gốc, nhận ra dạng, áp dụng công thức ở cột giữa, rồi kiểm tra thì, giới từ, dạng từ và chính tả.</p>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Dạng</th><th>Công thức</th><th>Câu gốc</th><th>Câu viết lại</th></tr></thead>
+<tbody>
+<tr><td rowspan="4"><b>Thì</b></td><td>The last time + S + V2 = S + haven't/hasn't + V3 + since ...</td><td>The last time I saw her was in 2020.</td><td>I haven't seen her since 2020.</td></tr>
+<tr><td>S + started/began + V-ing + ago = S + have been + V-ing + for ...</td><td>She started working here five years ago.</td><td>She has been working here for five years.</td></tr>
+<tr><td>It's the first time + S + have V3 = S + have never V3 + before</td><td>It's the first time I have eaten sushi.</td><td>I have never eaten sushi before.</td></tr>
+<tr><td>When did you last ...? = How long is it since you ...?</td><td>When did you last visit your hometown?</td><td>How long is it since you visited your hometown?</td></tr>
+<tr><td rowspan="3"><b>Bị động</b></td><td>Bị động thường</td><td>They will announce the results next week.</td><td>The results will be announced next week.</td></tr>
+<tr><td>Bị động với say, believe, think</td><td>People believe that he is a genius.</td><td>He is believed to be a genius.</td></tr>
+<tr><td>Thể sai khiến</td><td>I asked a mechanic to fix my car.</td><td>I had my car fixed.</td></tr>
+<tr><td rowspan="5"><b>Điều kiện</b></td><td>Câu điều kiện loại 2 ↔ wish</td><td>I'm sorry I don't have time.</td><td>I wish I had time.</td></tr>
+<tr><td>Unless = If ... not</td><td>If you don't hurry, you will miss the bus.</td><td>Unless you hurry, you will miss the bus.</td></tr>
+<tr><td>Imperative, or / otherwise + S + will/would</td><td>Hurry up, or you will be late.</td><td>If you don't hurry up, you will be late.</td></tr>
+<tr><td>Without / But for + N = If it weren't for / hadn't been for</td><td>Without your help, I would have failed.</td><td>If it hadn't been for your help, I would have failed.</td></tr>
+<tr><td>Đảo ngữ câu điều kiện</td><td>If I had known, I would have told you.</td><td>Had I known, I would have told you.</td></tr>
+<tr><td rowspan="4"><b>Wish</b></td><td>I'm sorry + S + V (hiện tại) → I wish + S + V2</td><td>I'm sorry I can't swim.</td><td>I wish I could swim.</td></tr>
+<tr><td>I regret / It's a pity + S + didn't + V → I wish + S + had + V3</td><td>I regret not studying harder.</td><td>I wish I had studied harder.</td></tr>
+<tr><td>It's time + S + V2</td><td>You should leave now.</td><td>It's time you left.</td></tr>
+<tr><td>would rather</td><td>I prefer you not to smoke here.</td><td>I'd rather you didn't smoke here.</td></tr>
+<tr><td rowspan="3"><b>So sánh</b></td><td>so sánh nhất ↔ so sánh hơn</td><td>No other building here is taller than this one.</td><td>This is the tallest building here.</td></tr>
+<tr><td>not as ... as ↔ so sánh hơn</td><td>This phone is cheaper than that one.</td><td>That phone is not as cheap as this one.</td></tr>
+<tr><td>The + so sánh hơn, the + so sánh hơn</td><td>As you practise more, you speak better.</td><td>The more you practise, the better you speak.</td></tr>
+<tr><td rowspan="4"><b>Quan hệ</b></td><td>Nối hai câu bằng who/which/whose</td><td>I met a woman. She works at VNG.</td><td>I met a woman who works at VNG.</td></tr>
+<tr><td>Giới từ + whom/which</td><td>The company employs 500 people. He works for it.</td><td>The company for which he works employs 500 people.</td></tr>
+<tr><td>Rút gọn</td><td>The man who is standing there is my boss.</td><td>The man standing there is my boss.</td></tr>
+<tr><td>which cho cả mệnh đề</td><td>He passed the exam. This surprised everyone.</td><td>He passed the exam, which surprised everyone.</td></tr>
+<tr><td rowspan="5"><b>Tương phản, lý do, kết quả</b></td><td>Although + clause = Despite / In spite of + N or V-ing or the fact that</td><td>Although he studied hard, he failed.</td><td>Despite studying hard, he failed. / In spite of his hard study, he failed.</td></tr>
+<tr><td>Because + clause = Because of / Due to + N</td><td>Because it was raining, we stayed in.</td><td>Because of the rain, we stayed in.</td></tr>
+<tr><td>so ... that = such ... that = too/enough ... to</td><td>He is so tired that he can't drive.</td><td>He is too tired to drive.</td></tr>
+<tr><td>enough ↔ too</td><td>She is not old enough to vote.</td><td>She is too young to vote.</td></tr>
+<tr><td>so ↔ therefore, consequently</td><td>He was ill, so he stayed home.</td><td>He was ill; therefore, he stayed home.</td></tr>
+<tr><td rowspan="6"><b>Modal</b></td><td>It's possible that = may/might</td><td>Perhaps he is at home.</td><td>He may be at home.</td></tr>
+<tr><td>I'm sure that = must; I'm sure ... not = can't</td><td>I'm sure she was tired.</td><td>She must have been tired.</td></tr>
+<tr><td>It's not necessary = needn't / don't have to</td><td>It is not necessary for you to come.</td><td>You needn't come.</td></tr>
+<tr><td>It's wrong to / You are not allowed to = mustn't</td><td>You are not allowed to park here.</td><td>You mustn't park here.</td></tr>
+<tr><td>It was a mistake not to V = should have V3</td><td>It was a mistake not to listen to him.</td><td>I should have listened to him.</td></tr>
+<tr><td>Advise = should / had better</td><td>I advise you to see a doctor.</td><td>You should see a doctor.</td></tr>
+<tr><td rowspan="6"><b>V-ing, to V</b></td><td>It takes + O + time + to V = S + spend + time + V-ing</td><td>It takes me an hour to get to work.</td><td>I spend an hour getting to work.</td></tr>
+<tr><td>S + be + adj + to V = It's + adj + (for O) + to V</td><td>Learning English is difficult for me.</td><td>It is difficult for me to learn English.</td></tr>
+<tr><td>prefer + V-ing to V-ing = would rather V than V</td><td>I prefer walking to cycling.</td><td>I would rather walk than cycle.</td></tr>
+<tr><td>It's no use / no good + V-ing</td><td>It is useless to argue with him.</td><td>It's no use arguing with him.</td></tr>
+<tr><td>be worth + V-ing</td><td>It's a good idea to visit this museum.</td><td>This museum is worth visiting.</td></tr>
+<tr><td>Why don't you ...? = suggest V-ing</td><td>"Why don't we go out?" he said.</td><td>He suggested going out.</td></tr>
+<tr><td rowspan="5"><b>Từ loại, cụm từ</b></td><td>adj + noun ↔ be + adj + at</td><td>He is a good singer.</td><td>He sings well. / He is good at singing.</td></tr>
+<tr><td>manage to V = succeed in V-ing</td><td>She managed to pass the test.</td><td>She succeeded in passing the test.</td></tr>
+<tr><td>be interested in = take an interest in</td><td>She is interested in AI.</td><td>She takes an interest in AI.</td></tr>
+<tr><td>prevent O from V-ing = stop O V-ing</td><td>The rain stopped us from going out.</td><td>The rain prevented us from going out.</td></tr>
+<tr><td>as soon as ↔ no sooner ... than ↔ hardly ... when</td><td>As soon as she sat down, the lights went out.</td><td>No sooner had she sat down than the lights went out.</td></tr>
+<tr><td rowspan="3"><b>Đảo ngữ</b></td><td>Never / Rarely / Seldom</td><td>I have never seen such a beautiful view.</td><td>Never have I seen such a beautiful view.</td></tr>
+<tr><td>Not only ... but also</td><td>He is not only intelligent but also hardworking.</td><td>Not only is he intelligent, but he is also hardworking.</td></tr>
+<tr><td>Hardly / Scarcely ... when</td><td>She had just entered the room when the phone rang.</td><td>Hardly had she entered the room when the phone rang.</td></tr>
+</tbody></table></div>
+
+<h3 id="t-steps">3.3 Quy trình 4 bước khi làm viết lại câu</h3>
+<ol>
+<li><b>Đọc từ cho sẵn</b> ở đầu câu mới. Từ đó cho biết cấu trúc: Despite → danh từ hoặc V-ing; Hardly → đảo ngữ; I wish → lùi thì.</li>
+<li><b>Giữ nguyên thông tin</b>: không thêm, không bỏ ý nào.</li>
+<li><b>Áp dụng công thức</b> ở bảng trên, chú ý thì, giới từ, dạng từ.</li>
+<li><b>Kiểm tra lại</b>: chủ ngữ và động từ hòa hợp, có đủ dấu chấm, chữ cái đầu viết hoa, chính tả.</li>
+</ol>
+<div class="callout bad"><b class="t">Lỗi hay mất điểm</b>
+Bỏ sót ý, dùng sai thì (đặc biệt trong wish và điều kiện), quên giới từ (despite of là sai), dùng sai dạng từ sau despite (phải là N hoặc V-ing), chép sai từ cho sẵn, viết thiếu chủ ngữ hoặc động từ.</div>
+</section>
+
+<!-- ================= SPEAKING ================= -->
+<section id="speaking">
+<h2 id="s-speaking"><span class="no">4</span>Speaking</h2>
+<p class="lead">Khoảng 15 phút: 5 đến 7 phút chuẩn bị, khoảng 10 phút hỏi thi. Tổng 20 điểm: tự giới thiệu 5 điểm, guided conversation 15 điểm.</p>
+
+<h3 id="sp-intro">4.1 Bài tự giới thiệu (đã điền theo hồ sơ của bạn)</h3>
+<div class="callout"><b class="t">Cách dùng</b>
+Phần <span class="fill">tô xanh</span> là thông tin lấy từ hồ sơ bạn đưa. Phần <span class="edit">tô cam</span> là chỗ bạn thay bằng thông tin thật (họ tên, quê, sở thích, nhiệm vụ cụ thể). Học thuộc ý và khung câu, không cần thuộc từng chữ. Bài đủ khoảng 1 đến 1,5 phút khi nói tự nhiên.</div>
+
+<h4>Bản đầy đủ (khoảng 1 đến 1,5 phút)</h4>
+<div class="script">
+<p>Good morning. Thank you for giving me this opportunity.</p>
+<p>My name is <span class="edit">[Họ tên]</span>, and I come from <span class="edit">[quê quán]</span>. I graduated from the <span class="fill">University of Information Technology, Vietnam National University Ho Chi Minh City (UIT)</span>, where I majored in <span class="fill">Computer Networks and Data Communications</span>.</p>
+<p>After graduation, I started working as a <span class="fill">system engineer at the VNG data center</span>, and I have been working there for <span class="fill">more than a year</span>. In my daily work, I am responsible for <span class="edit">monitoring servers, maintaining the network infrastructure and solving technical incidents</span>. This job has taught me how to work under pressure and how important it is to keep systems stable and secure.</p>
+<p>I would like to study for a master's degree because I want to <span class="fill">improve my knowledge of artificial intelligence in particular and technology in general</span>. I believe AI can help us manage and operate data centers more efficiently, for example by predicting failures before they happen.</p>
+<p>In my free time, I enjoy <span class="edit">[sở thích: playing football, reading tech news, watching movies...]</span>, which helps me relax after work. In the future, I hope to apply what I learn to real projects and become an engineer who can connect infrastructure with AI.</p>
+<p>Thank you very much.</p>
+</div>
+
+<details open>
+<summary><b>Bản dịch tiếng Việt</b></summary>
+<p class="vi">Chào buổi sáng. Cảm ơn thầy cô đã cho tôi cơ hội này. Tôi tên là [Họ tên], quê ở [quê quán]. Tôi tốt nghiệp Trường Đại học Công nghệ Thông tin, Đại học Quốc gia TP.HCM (UIT), chuyên ngành Mạng máy tính và Truyền thông dữ liệu. Sau khi tốt nghiệp, tôi làm kỹ sư hệ thống tại data center của VNG và đã làm ở đó hơn một năm. Trong công việc hằng ngày, tôi phụ trách giám sát máy chủ, bảo trì hạ tầng mạng và xử lý sự cố kỹ thuật. Công việc này dạy tôi cách làm việc dưới áp lực và tầm quan trọng của việc giữ hệ thống ổn định và an toàn. Tôi muốn học thạc sĩ để nâng cao kiến thức về trí tuệ nhân tạo nói riêng và công nghệ nói chung. Tôi tin AI có thể giúp vận hành data center hiệu quả hơn, ví dụ dự đoán sự cố trước khi xảy ra. Lúc rảnh, tôi thích [sở thích], giúp tôi thư giãn sau giờ làm. Trong tương lai, tôi hy vọng áp dụng những gì đã học vào các dự án thực tế và trở thành một kỹ sư kết nối được hạ tầng với AI. Xin cảm ơn.</p>
+</details>
+
+<h4>Bản ngắn (khoảng 30 đến 40 giây, dùng khi bị giới hạn thời gian)</h4>
+<div class="script">
+<p>Hello, my name is <span class="edit">[Họ tên]</span>. I graduated from UIT with a degree in Computer Networks and Data Communications. I have been working as a system engineer at the VNG data center for more than a year. I want to do a master's degree to improve my knowledge of AI and technology, so that I can build more intelligent and reliable systems. Thank you.</p>
+</div>
+
+<h4>Phân tích các cấu trúc dùng trong bài (học để dùng lại)</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Câu trong bài</th><th>Cấu trúc</th><th>Dùng thay cho</th></tr></thead>
+<tbody>
+<tr><td>I graduated from ... where I majored in ...</td><td>graduate from + trường; major in + ngành; where (mệnh đề quan hệ)</td><td>I study at ...</td></tr>
+<tr><td>I have been working there for more than a year.</td><td>Present perfect continuous + for + khoảng thời gian</td><td>I work there one year.</td></tr>
+<tr><td>I am responsible for monitoring ...</td><td>be responsible for + V-ing</td><td>My job is ...</td></tr>
+<tr><td>I would like to study ... because I want to ...</td><td>would like to + V (lịch sự), because + S + V</td><td>I want to study ...</td></tr>
+<tr><td>to improve my knowledge of AI in particular and technology in general</td><td>in particular and ... in general (nêu cái hẹp trước rồi cái rộng)</td><td>to learn more</td></tr>
+<tr><td>for example, by predicting failures before they happen</td><td>for example + by + V-ing</td><td>such as</td></tr>
+<tr><td>In the future, I hope to + V</td><td>hope to + V</td><td>I will</td></tr>
+</tbody></table></div>
+
+<h3 id="sp-qa">4.2 Câu hỏi thường gặp và câu trả lời mẫu (theo hồ sơ của bạn)</h3>
+<p>Mỗi câu trả lời theo khuôn <b>Answer, Reason, Example</b> (ARE): trả lời thẳng, nêu lý do, đưa ví dụ cụ thể. Khoảng 3 đến 5 câu.</p>
+
+<div class="script">
+<p><span class="tag">Công việc</span> <b>Can you tell me about your job?</b></p>
+<p>Sure. I work as a system engineer at the VNG data center. My main job is to keep the servers and the network running smoothly. For example, when an alert appears, I check the logs, find the cause and fix the problem as quickly as possible. It can be stressful, but I enjoy it because every incident teaches me something new.<span class="vi">Tôi làm kỹ sư hệ thống tại data center của VNG. Việc chính là giữ cho máy chủ và mạng chạy ổn định. Ví dụ khi có cảnh báo, tôi kiểm tra log, tìm nguyên nhân và xử lý nhanh nhất có thể. Công việc đôi khi áp lực nhưng tôi thích vì mỗi sự cố đều dạy tôi điều mới.</span></p>
+</div>
+<div class="script">
+<p><span class="tag">Lý do học</span> <b>Why do you want to study a master's degree?</b></p>
+<p>I want to deepen my knowledge, especially in AI. At work, I see that data centers produce a huge amount of data, and AI can use it to predict problems and save energy. However, I only know the basics, so I need a systematic program to understand the theory and practise on real projects.<span class="vi">Tôi muốn đào sâu kiến thức, nhất là về AI. Ở nơi làm việc, data center sinh ra lượng dữ liệu rất lớn, AI có thể dùng nó để dự đoán sự cố và tiết kiệm năng lượng. Nhưng tôi mới biết phần cơ bản nên cần một chương trình bài bản.</span></p>
+</div>
+<div class="script">
+<p><span class="tag">Vì sao UIT</span> <b>Why did you choose UIT?</b></p>
+<p>I am a graduate of UIT, so I know the teaching quality and the lecturers well. The school also specialises in information technology. I think studying here will let me build on what I already know and get support from teachers who understand my background.<span class="vi">Tôi là cựu sinh viên UIT nên hiểu rõ chất lượng giảng dạy. Trường chuyên về công nghệ thông tin. Học ở đây giúp tôi phát triển tiếp trên nền tảng cũ.</span></p>
+</div>
+<div class="script">
+<p><span class="tag">Thử thách</span> <b>What is the biggest challenge in your job?</b></p>
+<p>I think it is solving incidents under time pressure. When a service goes down, many users are affected, so I have to stay calm and follow a clear process. Last year, I helped fix a network issue that lasted several hours, and afterwards we wrote a guide so that the team could respond faster next time.<span class="vi">Thử thách lớn nhất là xử lý sự cố khi bị áp lực thời gian. Khi một dịch vụ ngừng, nhiều người dùng bị ảnh hưởng nên tôi phải bình tĩnh và theo quy trình. (Ví dụ minh họa: bạn thay bằng câu chuyện thật của mình.)</span></p>
+</div>
+<div class="script">
+<p><span class="tag">AI</span> <b>Do you think AI will take over many jobs?</b></p>
+<p>In my opinion, AI will change many jobs rather than completely replace them. Routine tasks, such as monitoring or sorting data, will probably be automated. On the other hand, new jobs will appear, for example AI engineers or data analysts. So I think the best way is to keep learning and adapt.<span class="vi">Theo tôi AI sẽ thay đổi nhiều nghề chứ không thay thế hoàn toàn. Việc lặp đi lặp lại sẽ được tự động hóa, nhưng sẽ có nghề mới. Vì vậy cách tốt nhất là học liên tục.</span></p>
+</div>
+<div class="script">
+<p><span class="tag">Tương lai</span> <b>Where do you see yourself in five years?</b></p>
+<p>In five years, I hope to be working as an AI or data engineer. I would like to design systems that use AI to operate infrastructure more efficiently. To reach this goal, I plan to finish my master's degree, join some research projects and keep improving my English.<span class="vi">Năm năm nữa tôi hy vọng làm kỹ sư AI hoặc dữ liệu, thiết kế hệ thống dùng AI để vận hành hạ tầng hiệu quả hơn.</span></p>
+</div>
+<div class="script">
+<p><span class="tag">Làm việc và học</span> <b>How will you balance work and study?</b></p>
+<p>I will plan my time carefully. I usually finish urgent tasks at work first, then use the evenings and weekends for study. I also plan to talk to my manager about a flexible schedule when I have important classes or exams.<span class="vi">Tôi sẽ lên kế hoạch thời gian cẩn thận: xong việc gấp trước, dành tối và cuối tuần cho học, và trao đổi với quản lý về lịch linh hoạt khi có lớp hoặc thi quan trọng.</span></p>
+</div>
+
+<div class="callout warn"><b class="t">Lưu ý về tính trung thực</b>
+Các ví dụ cụ thể (sự cố, dự án, thời gian) trong bài mẫu chỉ để minh họa cách trả lời. Khi thi, bạn kể chuyện thật của mình, vì giám khảo có thể hỏi thêm chi tiết.</div>
+
+<h3 id="sp-how">4.3 Cách nói: cấu trúc một câu trả lời</h3>
+<ol>
+<li><b>Mở đầu ngắn</b> (1 câu): trả lời thẳng vào câu hỏi, không im lặng quá 3 giây.</li>
+<li><b>Lý do</b> (1 đến 2 câu): dùng because, since, that's why.</li>
+<li><b>Ví dụ</b> (1 câu): từ công việc, học tập hoặc đời sống của bạn.</li>
+<li><b>Kết ngắn</b> (không bắt buộc): nối lại với câu hỏi.</li>
+</ol>
+<div class="callout ok"><b class="t">Mẫu</b>
+<i>"Do you prefer working alone or in a team?"</i><br>
+Answer: <b>I prefer working in a team.</b> Reason: <b>This is because we can share ideas and solve problems faster.</b> Example: <b>For instance, in my job, many incidents are solved by several engineers working together.</b></div>
+
+<h3 id="sp-phrases">4.4 Cụm từ nên dùng theo chức năng</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Chức năng</th><th>Nên dùng</th><th>Tránh</th></tr></thead>
+<tbody>
+<tr><td>Mở đầu câu trả lời</td><td>Well, I would say that ...<br>To be honest, ...<br>That's an interesting question. I think ...</td><td>Ừm (kéo dài), I don't know (nói rồi im)</td></tr>
+<tr><td>Nêu ý kiến</td><td>In my opinion, ...<br>From my point of view, ...<br>As far as I'm concerned, ...<br>I tend to think that ...</td><td>I very think; I am think</td></tr>
+<tr><td>Nêu lý do</td><td>This is because ...<br>One reason is that ...<br>The main reason is that ...<br>That's why ...</td><td>Because... (đứng riêng thành một câu)</td></tr>
+<tr><td>Đưa ví dụ</td><td>For example, ...<br>For instance, ...<br>Take my job as an example, ...<br>Last year, I ...</td><td>Example is ...</td></tr>
+<tr><td>Bổ sung ý</td><td>Also, ...<br>In addition, ...<br>Besides, ...<br>Not only that, but ...</td><td>And and and ... (lặp liên tục)</td></tr>
+<tr><td>Đối lập</td><td>However, ...<br>On the other hand, ...<br>Although ..., ...<br>That said, ...</td><td>But (câu nào cũng bắt đầu)</td></tr>
+<tr><td>Đồng ý</td><td>I totally agree.<br>That's true.<br>I couldn't agree more.</td><td>Yes yes</td></tr>
+<tr><td>Đồng ý một phần</td><td>I partly agree, but ...<br>That's true to some extent, but ...</td><td>Not agree</td></tr>
+<tr><td>Không đồng ý lịch sự</td><td>I see your point, but I'm afraid I disagree.<br>I'm not sure I agree because ...</td><td>No, you are wrong. I am not agree.</td></tr>
+<tr><td>Câu giờ khi đang nghĩ</td><td>Let me think for a moment.<br>That's a good question.<br>How can I put it?<br>Well, ...</td><td>Im lặng lâu</td></tr>
+<tr><td>Nhờ nhắc lại</td><td>Sorry, could you repeat that, please?<br>Could you say that again, please?<br>Sorry, I didn't catch that.</td><td>What? Huh?</td></tr>
+<tr><td>Nhờ giải thích</td><td>Could you explain what you mean by ...?<br>Do you mean ...?</td><td>I don't understand (rồi dừng)</td></tr>
+<tr><td>Tự sửa lời</td><td>Sorry, what I mean is ...<br>Let me rephrase that.</td><td>No no no</td></tr>
+<tr><td>Nói về kế hoạch</td><td>I'm planning to ...<br>I hope to ...<br>My goal is to ...<br>I'd like to ...</td><td>I will to ...</td></tr>
+<tr><td>Nói về kinh nghiệm</td><td>I have been working as ... for ...<br>I've had experience in ...<br>I'm responsible for ...</td><td>I have working ...</td></tr>
+<tr><td>Kết thúc câu trả lời</td><td>So, that's my view.<br>That's why I think ...<br>Overall, ...</td><td>Thế thôi (dừng đột ngột)</td></tr>
+</tbody></table></div>
+
+<h3 id="sp-register">4.5 Chọn từ cho phù hợp văn cảnh thi (trang trọng vừa phải)</h3>
+<p>Trong phỏng vấn thi đầu vào, nói lịch sự, rõ ràng, tránh tiếng lóng và tránh rút gọn quá mức. Dùng rút gọn thông thường (I'm, don't) vẫn tự nhiên, nhưng không dùng gonna, wanna, kinda.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Thay vì</th><th>Nên nói</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>I want to</td><td>I would like to / I am hoping to</td><td>lịch sự hơn</td></tr>
+<tr><td>very good</td><td>excellent, outstanding, impressive</td><td>tránh lặp very</td></tr>
+<tr><td>very bad</td><td>terrible, poor, unacceptable</td><td></td></tr>
+<tr><td>very important</td><td>essential, crucial, vital</td><td></td></tr>
+<tr><td>very big</td><td>huge, enormous, significant</td><td></td></tr>
+<tr><td>a lot of</td><td>plenty of, a great deal of, numerous</td><td>numerous cho đếm được</td></tr>
+<tr><td>I think</td><td>In my view, From my perspective, I believe</td><td>thay đổi để tránh lặp</td></tr>
+<tr><td>thing</td><td>aspect, factor, issue, element</td><td>nói rõ hơn</td></tr>
+<tr><td>get</td><td>obtain, receive, become, understand (tùy nghĩa)</td><td>get dùng quá nhiều</td></tr>
+<tr><td>make better</td><td>improve, enhance, upgrade</td><td></td></tr>
+<tr><td>It's good because it's good</td><td>It's beneficial because it saves time and reduces errors.</td><td>luôn nêu lý do cụ thể</td></tr>
+<tr><td>so so</td><td>fairly good, not bad</td><td></td></tr>
+<tr><td>I don't know</td><td>I'm not entirely sure, but I think ...</td><td>không bỏ trống</td></tr>
+</tbody></table></div>
+
+<h3 id="sp-mistakes">4.6 Lỗi người Việt hay mắc khi nói</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Sai</th><th>Đúng</th><th>Lý do</th></tr></thead>
+<tbody>
+<tr><td class="wrong">I am agree.</td><td class="right">I agree.</td><td>agree là động từ</td></tr>
+<tr><td class="wrong">I have 25 years old.</td><td class="right">I am 25 years old.</td><td>tuổi dùng be</td></tr>
+<tr><td class="wrong">I very like football.</td><td class="right">I like football very much.</td><td>very không bổ nghĩa động từ</td></tr>
+<tr><td class="wrong">more better</td><td class="right">better</td><td>không dùng more với so sánh -er</td></tr>
+<tr><td class="wrong">discuss about</td><td class="right">discuss</td><td>discuss là ngoại động từ</td></tr>
+<tr><td class="wrong">depend of</td><td class="right">depend on</td><td>giới từ cố định</td></tr>
+<tr><td class="wrong">informations, advices</td><td class="right">information, advice</td><td>danh từ không đếm được</td></tr>
+<tr><td class="wrong">I work in VNG.</td><td class="right">I work at VNG.</td><td>at + công ty</td></tr>
+<tr><td class="wrong">I live in 12 Le Loi street.</td><td class="right">I live at 12 Le Loi Street.</td><td>at + địa chỉ cụ thể</td></tr>
+<tr><td class="wrong">I graduated UIT.</td><td class="right">I graduated from UIT.</td><td>graduate from</td></tr>
+<tr><td class="wrong">I'm working here since 2024.</td><td class="right">I have been working here since 2024.</td><td>since cần thì hoàn thành</td></tr>
+<tr><td class="wrong">She don't like it.</td><td class="right">She doesn't like it.</td><td>he, she, it + doesn't</td></tr>
+</tbody></table></div>
+
+<h3 id="sp-pron">4.7 Phát âm: những điểm dễ mất điểm</h3>
+<ul>
+<li><b>Âm cuối</b>: phát âm rõ -s, -ed, -t, -k, -d. Nói <i>works</i> /wɜːrks/ chứ không phải "wơ". Nói <i>developed</i> /dɪˈveləpt/.</li>
+<li><b>Trọng âm từ</b>: nhấn đúng âm tiết. Từ 2 âm tiết là danh từ thường nhấn âm đầu (<i>ˈrecord</i>), là động từ thường nhấn âm sau (<i>reˈcord</i>). Tra phiên âm các từ mới và nghe lại phát âm.</li>
+<li><b>Ngữ điệu</b>: xuống giọng cuối câu khẳng định và câu hỏi Wh-; lên giọng cuối câu hỏi Yes/No.</li>
+<li><b>Nối âm</b>: nói liền các từ như <i>an hour</i>, <i>first of all</i>, <i>work_at</i> thay vì tách từng từ.</li>
+<li><b>Tốc độ</b>: nói chậm hơn bình thường một chút, ngắt hơi sau mỗi ý.</li>
+</ul>
+<h4>Từ công nghệ hay đọc sai</h4>
+<div class="tablewrap"><table>
+<thead><tr><th>Từ</th><th>Phiên âm</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>data</td><td><span class="ipa">/ˈdeɪtə/</span> hoặc <span class="ipa">/ˈdætə/</span></td><td>cả hai đều đúng</td></tr>
+<tr><td>server</td><td><span class="ipa">/ˈsɜːrvər/</span></td><td>nhấn âm đầu</td></tr>
+<tr><td>Linux</td><td><span class="ipa">/ˈlɪnəks/</span></td><td></td></tr>
+<tr><td>cache</td><td><span class="ipa">/kæʃ/</span></td><td>đọc như cash</td></tr>
+<tr><td>queue</td><td><span class="ipa">/kjuː/</span></td><td>đọc như chữ Q</td></tr>
+<tr><td>algorithm</td><td><span class="ipa">/ˈælɡərɪðəm/</span></td><td>nhấn âm đầu</td></tr>
+<tr><td>infrastructure</td><td><span class="ipa">/ˈɪnfrəstrʌktʃər/</span></td><td>nhấn âm đầu</td></tr>
+<tr><td>engineer</td><td><span class="ipa">/ˌendʒɪˈnɪr/</span></td><td>nhấn âm cuối</td></tr>
+<tr><td>deploy</td><td><span class="ipa">/dɪˈplɔɪ/</span></td><td>nhấn âm sau</td></tr>
+<tr><td>incident</td><td><span class="ipa">/ˈɪnsɪdənt/</span></td><td>nhấn âm đầu</td></tr>
+</tbody></table></div>
+
+<h3 id="sp-plan">4.8 Kế hoạch luyện nói mỗi ngày (20 phút)</h3>
+<ol>
+<li>2 phút: đọc to bài tự giới thiệu, bấm giờ.</li>
+<li>8 phút: chọn 2 câu hỏi, trả lời theo ARE, ghi âm điện thoại.</li>
+<li>5 phút: nghe lại, ghi lỗi (ngữ pháp, từ lặp, ngập ngừng).</li>
+<li>5 phút: nói lại câu trả lời, sửa lỗi vừa ghi.</li>
+</ol>
+</section>
+
+<!-- ================= PHỤ LỤC ================= -->
+<section id="appendix">
+<h2 id="s-appendix"><span class="no">PL</span>Phụ lục</h2>
+<p class="lead">Bảng tra cứu nhanh: động từ bất quy tắc, giới từ đi kèm, cụm động từ, collocation, IPA.</p>
+
+<h3 id="ap-irreg">A. Động từ bất quy tắc thường gặp</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Nghĩa</th><th>V1</th><th>V2</th><th>V3</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td>be</td><td>was/were</td><td>been</td><td>thì, là</td><td>lend</td><td>lent</td><td>lent</td><td>cho mượn</td></tr>
+<tr><td>become</td><td>became</td><td>become</td><td>trở nên</td><td>let</td><td>let</td><td>let</td><td>để, cho phép</td></tr>
+<tr><td>begin</td><td>began</td><td>begun</td><td>bắt đầu</td><td>lose</td><td>lost</td><td>lost</td><td>mất, thua</td></tr>
+<tr><td>break</td><td>broke</td><td>broken</td><td>làm vỡ</td><td>make</td><td>made</td><td>made</td><td>làm, tạo</td></tr>
+<tr><td>bring</td><td>brought</td><td>brought</td><td>mang đến</td><td>mean</td><td>meant</td><td>meant</td><td>nghĩa là</td></tr>
+<tr><td>build</td><td>built</td><td>built</td><td>xây dựng</td><td>meet</td><td>met</td><td>met</td><td>gặp</td></tr>
+<tr><td>buy</td><td>bought</td><td>bought</td><td>mua</td><td>pay</td><td>paid</td><td>paid</td><td>trả tiền</td></tr>
+<tr><td>catch</td><td>caught</td><td>caught</td><td>bắt, kịp</td><td>put</td><td>put</td><td>put</td><td>đặt</td></tr>
+<tr><td>choose</td><td>chose</td><td>chosen</td><td>chọn</td><td>read</td><td>read</td><td>read</td><td>đọc (phát âm /red/ ở V2, V3)</td></tr>
+<tr><td>come</td><td>came</td><td>come</td><td>đến</td><td>ride</td><td>rode</td><td>ridden</td><td>cưỡi, đi (xe)</td></tr>
+<tr><td>cost</td><td>cost</td><td>cost</td><td>có giá</td><td>rise</td><td>rose</td><td>risen</td><td>tăng, mọc</td></tr>
+<tr><td>cut</td><td>cut</td><td>cut</td><td>cắt</td><td>run</td><td>ran</td><td>run</td><td>chạy</td></tr>
+<tr><td>do</td><td>did</td><td>done</td><td>làm</td><td>say</td><td>said</td><td>said</td><td>nói</td></tr>
+<tr><td>draw</td><td>drew</td><td>drawn</td><td>vẽ</td><td>see</td><td>saw</td><td>seen</td><td>thấy</td></tr>
+<tr><td>drink</td><td>drank</td><td>drunk</td><td>uống</td><td>sell</td><td>sold</td><td>sold</td><td>bán</td></tr>
+<tr><td>drive</td><td>drove</td><td>driven</td><td>lái xe</td><td>send</td><td>sent</td><td>sent</td><td>gửi</td></tr>
+<tr><td>eat</td><td>ate</td><td>eaten</td><td>ăn</td><td>set</td><td>set</td><td>set</td><td>đặt, thiết lập</td></tr>
+<tr><td>fall</td><td>fell</td><td>fallen</td><td>ngã, rơi</td><td>show</td><td>showed</td><td>shown</td><td>cho xem</td></tr>
+<tr><td>feel</td><td>felt</td><td>felt</td><td>cảm thấy</td><td>sing</td><td>sang</td><td>sung</td><td>hát</td></tr>
+<tr><td>find</td><td>found</td><td>found</td><td>tìm thấy</td><td>sit</td><td>sat</td><td>sat</td><td>ngồi</td></tr>
+<tr><td>fly</td><td>flew</td><td>flown</td><td>bay</td><td>sleep</td><td>slept</td><td>slept</td><td>ngủ</td></tr>
+<tr><td>forget</td><td>forgot</td><td>forgotten</td><td>quên</td><td>speak</td><td>spoke</td><td>spoken</td><td>nói</td></tr>
+<tr><td>get</td><td>got</td><td>got / gotten</td><td>nhận, trở nên</td><td>spend</td><td>spent</td><td>spent</td><td>tiêu, dành</td></tr>
+<tr><td>give</td><td>gave</td><td>given</td><td>cho</td><td>stand</td><td>stood</td><td>stood</td><td>đứng</td></tr>
+<tr><td>go</td><td>went</td><td>gone</td><td>đi</td><td>steal</td><td>stole</td><td>stolen</td><td>ăn trộm</td></tr>
+<tr><td>grow</td><td>grew</td><td>grown</td><td>lớn, trồng</td><td>swim</td><td>swam</td><td>swum</td><td>bơi</td></tr>
+<tr><td>have</td><td>had</td><td>had</td><td>có</td><td>take</td><td>took</td><td>taken</td><td>lấy, mất (thời gian)</td></tr>
+<tr><td>hear</td><td>heard</td><td>heard</td><td>nghe thấy</td><td>teach</td><td>taught</td><td>taught</td><td>dạy</td></tr>
+<tr><td>hold</td><td>held</td><td>held</td><td>cầm, tổ chức</td><td>tell</td><td>told</td><td>told</td><td>kể, bảo</td></tr>
+<tr><td>keep</td><td>kept</td><td>kept</td><td>giữ</td><td>think</td><td>thought</td><td>thought</td><td>nghĩ</td></tr>
+<tr><td>know</td><td>knew</td><td>known</td><td>biết</td><td>throw</td><td>threw</td><td>thrown</td><td>ném</td></tr>
+<tr><td>lead</td><td>led</td><td>led</td><td>dẫn dắt</td><td>understand</td><td>understood</td><td>understood</td><td>hiểu</td></tr>
+<tr><td>learn</td><td>learnt / learned</td><td>learnt / learned</td><td>học</td><td>wear</td><td>wore</td><td>worn</td><td>mặc, đeo</td></tr>
+<tr><td>leave</td><td>left</td><td>left</td><td>rời đi, để lại</td><td>win</td><td>won</td><td>won</td><td>thắng</td></tr>
+<tr><td>write</td><td>wrote</td><td>written</td><td>viết</td><td>wake</td><td>woke</td><td>woken</td><td>thức dậy</td></tr>
+</tbody></table></div>
+
+<h3 id="ap-prep">B. Giới từ đi kèm (Dependent prepositions)</h3>
+<div class="grid2">
+<div class="mini"><h4>Tính từ + giới từ</h4>
+<p>afraid <b>of</b> · good/bad <b>at</b> · interested <b>in</b> · keen <b>on</b> · famous <b>for</b> · responsible <b>for</b> · capable <b>of</b> · aware <b>of</b> · proud <b>of</b> · tired <b>of</b> · similar <b>to</b> · different <b>from</b> · familiar <b>with</b> · satisfied <b>with</b> · worried <b>about</b> · angry <b>with</b> (người) / <b>about</b> (việc) · married <b>to</b> · afraid <b>of</b> · suitable <b>for</b> · dependent <b>on</b> · short <b>of</b> · full <b>of</b></p></div>
+<div class="mini"><h4>Động từ + giới từ</h4>
+<p>depend <b>on</b> · rely <b>on</b> · agree <b>with</b> (người) / <b>to</b> (đề nghị) · apply <b>for</b> (công việc) / <b>to</b> (nơi) · believe <b>in</b> · belong <b>to</b> · consist <b>of</b> · listen <b>to</b> · look <b>for</b> · wait <b>for</b> · pay <b>for</b> · suffer <b>from</b> · succeed <b>in</b> · concentrate <b>on</b> · participate <b>in</b> · refer <b>to</b> · result <b>in</b> · prevent ... <b>from</b> · blame ... <b>for</b> · thank ... <b>for</b> · accuse ... <b>of</b> · congratulate ... <b>on</b></p></div>
+<div class="mini"><h4>Danh từ + giới từ</h4>
+<p>reason <b>for</b> · cause <b>of</b> · solution <b>to</b> · increase <b>in</b> · decrease <b>in</b> · demand <b>for</b> · need <b>for</b> · attitude <b>to/towards</b> · interest <b>in</b> · difficulty <b>in</b> · experience <b>in</b> · knowledge <b>of</b> · access <b>to</b> · effect <b>on</b> · influence <b>on</b> · relationship <b>between/with</b></p></div>
+<div class="mini"><h4>Giới từ chỉ thời gian và nơi chốn</h4>
+<p><b>at</b> + giờ (at 7 a.m.), điểm (at the station), cụm cố định (at night, at the weekend)<br><b>on</b> + ngày (on Monday, on 5 May), mặt phẳng (on the table), phương tiện (on the bus)<br><b>in</b> + tháng, năm, mùa (in May, in 2026), khoảng không gian (in the room, in a city), in the morning<br><b>by</b> + hạn chót (by Friday), phương tiện (by bus), tác nhân (by Lan)<br><b>for</b> + khoảng thời gian; <b>since</b> + mốc thời gian; <b>during</b> + sự kiện</p></div>
+</div>
+
+<h3 id="ap-phrasal">C. Cụm động từ (Phrasal verbs) thường gặp</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>break down</td><td>hỏng (máy móc); suy sụp</td><td>The server broke down at midnight.</td></tr>
+<tr><td>bring up</td><td>nuôi dưỡng; đề cập</td><td>She was brought up in Da Lat.</td></tr>
+<tr><td>call off</td><td>hủy</td><td>They called off the meeting.</td></tr>
+<tr><td>carry out</td><td>thực hiện</td><td>We carried out a survey.</td></tr>
+<tr><td>come up with</td><td>nghĩ ra</td><td>She came up with a solution.</td></tr>
+<tr><td>cut down on</td><td>cắt giảm</td><td>I'm cutting down on coffee.</td></tr>
+<tr><td>deal with</td><td>xử lý, giải quyết</td><td>I deal with network incidents.</td></tr>
+<tr><td>figure out</td><td>tìm ra, hiểu ra</td><td>I figured out the problem.</td></tr>
+<tr><td>fill in / fill out</td><td>điền (biểu mẫu)</td><td>Please fill in this form.</td></tr>
+<tr><td>find out</td><td>tìm hiểu, phát hiện</td><td>I'll find out the result tomorrow.</td></tr>
+<tr><td>get along with</td><td>hòa hợp với</td><td>I get along with my colleagues.</td></tr>
+<tr><td>get over</td><td>vượt qua, hồi phục</td><td>He got over the flu.</td></tr>
+<tr><td>give up</td><td>từ bỏ</td><td>Don't give up learning English.</td></tr>
+<tr><td>go on</td><td>tiếp tục; xảy ra</td><td>What's going on?</td></tr>
+<tr><td>hold on</td><td>chờ máy; giữ chặt</td><td>Hold on a moment.</td></tr>
+<tr><td>keep up with</td><td>theo kịp</td><td>I read news to keep up with technology.</td></tr>
+<tr><td>look after</td><td>chăm sóc</td><td>She looks after her parents.</td></tr>
+<tr><td>look forward to</td><td>mong chờ (+ V-ing)</td><td>I look forward to hearing from you.</td></tr>
+<tr><td>look into</td><td>điều tra, xem xét</td><td>We are looking into the issue.</td></tr>
+<tr><td>make up</td><td>bịa; trang điểm; làm lành</td><td>He made up an excuse.</td></tr>
+<tr><td>point out</td><td>chỉ ra</td><td>She pointed out a mistake.</td></tr>
+<tr><td>put off</td><td>hoãn lại</td><td>Don't put off the work.</td></tr>
+<tr><td>run out of</td><td>hết, cạn</td><td>We ran out of storage.</td></tr>
+<tr><td>set up</td><td>thiết lập, thành lập</td><td>He set up a new server.</td></tr>
+<tr><td>show up</td><td>xuất hiện</td><td>He didn't show up.</td></tr>
+<tr><td>take off</td><td>cất cánh; cởi (áo)</td><td>The plane took off.</td></tr>
+<tr><td>take over</td><td>tiếp quản</td><td>She took over the project.</td></tr>
+<tr><td>turn down</td><td>từ chối; vặn nhỏ</td><td>He turned down the offer.</td></tr>
+<tr><td>turn up</td><td>xuất hiện; vặn lớn</td><td>He turned up late.</td></tr>
+<tr><td>work out</td><td>tập thể dục; giải ra; diễn ra tốt</td><td>I work out three times a week.</td></tr>
+</tbody></table></div>
+
+<h3 id="ap-colloc">D. Collocation: make, do, take, have</h3>
+<div class="grid2">
+<div class="mini"><h4>make</h4><p>make a decision · make a mistake · make progress · make an effort · make a suggestion · make money · make a plan · make a difference · make sense · make an appointment · make a living</p></div>
+<div class="mini"><h4>do</h4><p>do research · do homework · do the housework · do business · do a favour · do your best · do harm / good · do an exercise · do the shopping · do an experiment</p></div>
+<div class="mini"><h4>take</h4><p>take a break · take a photo · take responsibility · take part in · take advantage of · take place · take care of · take notes · take a look · take risks · take time</p></div>
+<div class="mini"><h4>have</h4><p>have a meeting · have a look · have fun · have a rest · have an idea · have a chance · have an effect on · have difficulty (in) V-ing · have a problem · have a conversation</p></div>
+<div class="mini"><h4>pay, give, keep</h4><p>pay attention · pay a visit · pay a compliment · give advice · give a presentation · give permission · keep in touch · keep a secret · keep calm · keep an eye on</p></div>
+<div class="mini"><h4>Cụm thường gặp trong IT</h4><p>run a program · troubleshoot a problem · back up data · update software · reach a conclusion · meet a deadline · set up a network · handle an incident · release a patch</p></div>
+</div>
+
+<h3 id="ap-ipa">E. Bảng IPA rút gọn (những âm hay nhầm)</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Âm</th><th>Ví dụ</th><th>Gợi ý</th></tr></thead>
+<tbody>
+<tr><td class="ipa">/iː/ và /ɪ/</td><td>seat /siːt/ và sit /sɪt/</td><td>/iː/ dài, /ɪ/ ngắn và thả lỏng</td></tr>
+<tr><td class="ipa">/æ/ và /e/</td><td>bad /bæd/ và bed /bed/</td><td>/æ/ miệng mở rộng</td></tr>
+<tr><td class="ipa">/ɑː/ và /ʌ/</td><td>hard /hɑːrd/ và hut /hʌt/</td><td>/ʌ/ ngắn, miệng mở vừa</td></tr>
+<tr><td class="ipa">/θ/ và /ð/</td><td>think /θɪŋk/, this /ðɪs/</td><td>đặt đầu lưỡi giữa hai hàm răng</td></tr>
+<tr><td class="ipa">/ʃ/ và /s/</td><td>she /ʃiː/ và see /siː/</td><td>/ʃ/ chu môi, hơi xì</td></tr>
+<tr><td class="ipa">/tʃ/ và /dʒ/</td><td>chair /tʃer/ và jar /dʒɑːr/</td><td>/dʒ/ có rung dây thanh</td></tr>
+<tr><td class="ipa">/r/ và /l/</td><td>right /raɪt/ và light /laɪt/</td><td>/r/ cuộn lưỡi, không chạm vòm miệng</td></tr>
+<tr><td class="ipa">âm cuối /s/, /z/, /t/, /d/</td><td>works /wɜːrks/, played /pleɪd/</td><td>phát âm rõ âm cuối</td></tr>
+</tbody></table></div>
+<p>Quy tắc phát âm -ed: sau /t/ và /d/ đọc <span class="ipa">/ɪd/</span> (wanted); sau âm vô thanh (p, k, f, s, ʃ, tʃ) đọc <span class="ipa">/t/</span> (worked); các trường hợp còn lại đọc <span class="ipa">/d/</span> (played). Quy tắc -s: sau s, z, ʃ, tʃ, dʒ đọc <span class="ipa">/ɪz/</span> (watches); sau âm vô thanh khác đọc <span class="ipa">/s/</span> (works); các trường hợp còn lại đọc <span class="ipa">/z/</span> (plays).</p>
+
+<footer>Chúc bạn ôn thi tốt. Gửi mình bài làm hoặc bài nói đã gõ lại, mình sẽ chấm và chỉ ra lỗi cần sửa.</footer>
+</section>
+
+</main>
+<button class="topbtn" id="topBtn" aria-label="Lên đầu trang">&#8593;</button>
+<script>
+/* ========== DỮ LIỆU TỪ VỰNG: [từ, phiên âm, loại từ, nghĩa] ========== */
+const TOPICS = [
+{id:"edu", title:"Giáo dục (Education)", words:[
+["curriculum","/kəˈrɪkjələm/","n","chương trình giảng dạy"],
+["assignment","/əˈsaɪnmənt/","n","bài tập, nhiệm vụ được giao"],
+["scholarship","/ˈskɑːlərʃɪp/","n","học bổng"],
+["tuition","/tuˈɪʃn/","n","học phí"],
+["enroll","/ɪnˈroʊl/","v","đăng ký nhập học"],
+["graduate","/ˈɡrædʒueɪt/ (v), /ˈɡrædʒuət/ (n)","v, n","tốt nghiệp; người tốt nghiệp"],
+["thesis","/ˈθiːsɪs/","n","luận văn"],
+["lecture","/ˈlektʃər/","n","bài giảng"],
+["research","/ˈriːsɜːrtʃ/ (n), /rɪˈsɜːrtʃ/ (v)","n, v","nghiên cứu"],
+["degree","/dɪˈɡriː/","n","bằng cấp"],
+["compulsory","/kəmˈpʌlsəri/","adj","bắt buộc"],
+["deadline","/ˈdedlaɪn/","n","hạn chót"],
+["attend","/əˈtend/","v","tham dự, có mặt"],
+["qualification","/ˌkwɑːlɪfɪˈkeɪʃn/","n","trình độ, bằng cấp"],
+["discipline","/ˈdɪsəplɪn/","n","kỷ luật; ngành học"],
+["plagiarism","/ˈpleɪdʒərɪzəm/","n","đạo văn"],
+["seminar","/ˈsemɪnɑːr/","n","buổi hội thảo chuyên đề"],
+["academic","/ˌækəˈdemɪk/","adj","thuộc học thuật"],
+["revise","/rɪˈvaɪz/","v","ôn tập; sửa lại"],
+["major","/ˈmeɪdʒər/","n","chuyên ngành"]
+]},
+{id:"work", title:"Công việc và nghề nghiệp (Work and Career)", words:[
+["workload","/ˈwɜːrkloʊd/","n","khối lượng công việc"],
+["colleague","/ˈkɑːliːɡ/","n","đồng nghiệp"],
+["promotion","/prəˈmoʊʃn/","n","sự thăng chức; khuyến mãi"],
+["resign","/rɪˈzaɪn/","v","từ chức, xin nghỉ việc"],
+["recruit","/rɪˈkruːt/","v","tuyển dụng"],
+["salary","/ˈsæləri/","n","lương (tính theo tháng, năm)"],
+["overtime","/ˈoʊvərtaɪm/","n","giờ làm thêm"],
+["applicant","/ˈæplɪkənt/","n","ứng viên"],
+["resume","/ˈrezəmeɪ/","n","sơ yếu lý lịch (CV)"],
+["interview","/ˈɪntərvjuː/","n, v","buổi phỏng vấn; phỏng vấn"],
+["employer","/ɪmˈplɔɪər/","n","người sử dụng lao động"],
+["employee","/ɪmˈplɔɪiː/","n","nhân viên"],
+["supervisor","/ˈsuːpərvaɪzər/","n","người giám sát, quản lý trực tiếp"],
+["responsibility","/rɪˌspɑːnsəˈbɪləti/","n","trách nhiệm"],
+["qualified","/ˈkwɑːlɪfaɪd/","adj","đủ trình độ, đủ điều kiện"],
+["flexible","/ˈfleksəbl/","adj","linh hoạt"],
+["career","/kəˈrɪr/","n","sự nghiệp"],
+["achieve","/əˈtʃiːv/","v","đạt được"],
+["collaborate","/kəˈlæbəreɪt/","v","cộng tác, hợp tác"],
+["negotiate","/nɪˈɡoʊʃieɪt/","v","đàm phán, thương lượng"]
+]},
+{id:"tech", title:"Công nghệ và hạ tầng (Technology and IT)", words:[
+["device","/dɪˈvaɪs/","n","thiết bị"],
+["software","/ˈsɔːftwer/","n","phần mềm"],
+["hardware","/ˈhɑːrdwer/","n","phần cứng"],
+["network","/ˈnetwɜːrk/","n","mạng lưới, mạng máy tính"],
+["server","/ˈsɜːrvər/","n","máy chủ"],
+["database","/ˈdeɪtəbeɪs/","n","cơ sở dữ liệu"],
+["encryption","/ɪnˈkrɪpʃn/","n","sự mã hóa"],
+["cybersecurity","/ˌsaɪbərsɪˈkjʊrəti/","n","an ninh mạng"],
+["bandwidth","/ˈbændwɪdθ/","n","băng thông"],
+["latency","/ˈleɪtənsi/","n","độ trễ"],
+["upgrade","/ˈʌpɡreɪd/ (n), /ʌpˈɡreɪd/ (v)","n, v","bản nâng cấp; nâng cấp"],
+["install","/ɪnˈstɔːl/","v","cài đặt, lắp đặt"],
+["backup","/ˈbækʌp/","n","bản sao lưu"],
+["breakthrough","/ˈbreɪkθruː/","n","bước đột phá"],
+["innovation","/ˌɪnəˈveɪʃn/","n","sự đổi mới, sáng kiến"],
+["automation","/ˌɔːtəˈmeɪʃn/","n","tự động hóa"],
+["reliable","/rɪˈlaɪəbl/","adj","đáng tin cậy, ổn định"],
+["obsolete","/ˌɑːbsəˈliːt/","adj","lỗi thời, không còn dùng"],
+["vulnerable","/ˈvʌlnərəbl/","adj","dễ bị tổn thương, có lỗ hổng"],
+["cloud computing","/klaʊd kəmˈpjuːtɪŋ/","n phr","điện toán đám mây"]
+]},
+{id:"ai", title:"Trí tuệ nhân tạo và dữ liệu (AI and Data)", words:[
+["artificial intelligence","/ˌɑːrtɪˈfɪʃl ɪnˈtelɪdʒəns/","n phr","trí tuệ nhân tạo"],
+["machine learning","/məˈʃiːn ˈlɜːrnɪŋ/","n phr","học máy"],
+["algorithm","/ˈælɡərɪðəm/","n","thuật toán"],
+["dataset","/ˈdeɪtəset/","n","tập dữ liệu"],
+["neural network","/ˈnʊrəl ˈnetwɜːrk/","n phr","mạng nơ-ron"],
+["prediction","/prɪˈdɪkʃn/","n","sự dự đoán"],
+["accuracy","/ˈækjərəsi/","n","độ chính xác"],
+["bias","/ˈbaɪəs/","n","thiên kiến, sự lệch lạc"],
+["train","/treɪn/","v","huấn luyện (mô hình); đào tạo"],
+["analyze","/ˈænəlaɪz/","v","phân tích"],
+["pattern","/ˈpætərn/","n","mẫu, quy luật"],
+["insight","/ˈɪnsaɪt/","n","hiểu biết sâu sắc"],
+["ethical","/ˈeθɪkl/","adj","thuộc đạo đức"],
+["transparent","/trænsˈpærənt/","adj","minh bạch"],
+["deploy","/dɪˈplɔɪ/","v","triển khai"],
+["optimize","/ˈɑːptɪmaɪz/","v","tối ưu hóa"],
+["autonomous","/ɔːˈtɑːnəməs/","adj","tự hành, tự chủ"],
+["recognition","/ˌrekəɡˈnɪʃn/","n","sự nhận dạng, nhận biết"],
+["generate","/ˈdʒenəreɪt/","v","tạo ra, sinh ra"],
+["reasoning","/ˈriːzənɪŋ/","n","khả năng suy luận"]
+]},
+{id:"env", title:"Môi trường (Environment)", words:[
+["climate change","/ˈklaɪmət tʃeɪndʒ/","n phr","biến đổi khí hậu"],
+["global warming","/ˌɡloʊbl ˈwɔːrmɪŋ/","n phr","sự nóng lên toàn cầu"],
+["emission","/ɪˈmɪʃn/","n","khí thải, sự phát thải"],
+["pollution","/pəˈluːʃn/","n","sự ô nhiễm"],
+["renewable","/rɪˈnuːəbl/","adj","có thể tái tạo"],
+["sustainable","/səˈsteɪnəbl/","adj","bền vững"],
+["conserve","/kənˈsɜːrv/","v","bảo tồn, tiết kiệm"],
+["endangered","/ɪnˈdeɪndʒərd/","adj","có nguy cơ tuyệt chủng"],
+["habitat","/ˈhæbɪtæt/","n","môi trường sống"],
+["deforestation","/diːˌfɔːrɪˈsteɪʃn/","n","nạn phá rừng"],
+["drought","/draʊt/","n","hạn hán"],
+["flood","/flʌd/","n, v","lũ lụt; làm ngập"],
+["landfill","/ˈlændfɪl/","n","bãi chôn lấp rác"],
+["recycle","/ˌriːˈsaɪkl/","v","tái chế"],
+["fossil fuel","/ˈfɑːsl ˈfjuːəl/","n phr","nhiên liệu hóa thạch"],
+["biodiversity","/ˌbaɪoʊdaɪˈvɜːrsəti/","n","đa dạng sinh học"],
+["ecosystem","/ˈiːkoʊsɪstəm/","n","hệ sinh thái"],
+["contaminate","/kənˈtæmɪneɪt/","v","làm nhiễm bẩn"],
+["preserve","/prɪˈzɜːrv/","v","giữ gìn, bảo quản"],
+["extinction","/ɪkˈstɪŋkʃn/","n","sự tuyệt chủng"]
+]},
+{id:"health", title:"Sức khỏe (Health)", words:[
+["symptom","/ˈsɪmptəm/","n","triệu chứng"],
+["diagnose","/ˈdaɪəɡnoʊs/","v","chẩn đoán"],
+["prescription","/prɪˈskrɪpʃn/","n","đơn thuốc"],
+["recover","/rɪˈkʌvər/","v","hồi phục"],
+["infection","/ɪnˈfekʃn/","n","sự nhiễm trùng"],
+["vaccine","/vækˈsiːn/","n","vắc-xin"],
+["balanced diet","/ˈbælənst ˈdaɪət/","n phr","chế độ ăn cân bằng"],
+["obesity","/oʊˈbiːsəti/","n","béo phì"],
+["addiction","/əˈdɪkʃn/","n","chứng nghiện"],
+["chronic","/ˈkrɑːnɪk/","adj","mãn tính"],
+["immune system","/ɪˈmjuːn ˈsɪstəm/","n phr","hệ miễn dịch"],
+["stress","/stres/","n, v","căng thẳng; gây căng thẳng"],
+["exhausted","/ɪɡˈzɔːstɪd/","adj","kiệt sức"],
+["treatment","/ˈtriːtmənt/","n","sự điều trị"],
+["prevent","/prɪˈvent/","v","ngăn ngừa"],
+["cure","/kjʊr/","n, v","phương thuốc chữa; chữa khỏi"],
+["lifestyle","/ˈlaɪfstaɪl/","n","lối sống"],
+["insomnia","/ɪnˈsɑːmniə/","n","chứng mất ngủ"],
+["allergy","/ˈælərdʒi/","n","dị ứng"],
+["well-being","/ˌwel ˈbiːɪŋ/","n","sức khỏe và hạnh phúc"]
+]},
+{id:"society", title:"Xã hội (Society)", words:[
+["community","/kəˈmjuːnəti/","n","cộng đồng"],
+["inequality","/ˌɪnɪˈkwɑːləti/","n","sự bất bình đẳng"],
+["unemployment","/ˌʌnɪmˈplɔɪmənt/","n","thất nghiệp"],
+["urbanization","/ˌɜːrbənəˈzeɪʃn/","n","đô thị hóa"],
+["immigration","/ˌɪmɪˈɡreɪʃn/","n","sự nhập cư"],
+["tradition","/trəˈdɪʃn/","n","truyền thống"],
+["generation gap","/ˌdʒenəˈreɪʃn ɡæp/","n phr","khoảng cách thế hệ"],
+["poverty","/ˈpɑːvərti/","n","sự nghèo đói"],
+["crime rate","/kraɪm reɪt/","n phr","tỷ lệ tội phạm"],
+["charity","/ˈtʃærəti/","n","tổ chức từ thiện; lòng từ thiện"],
+["volunteer","/ˌvɑːlənˈtɪr/","n, v","tình nguyện viên; tình nguyện"],
+["population","/ˌpɑːpjuˈleɪʃn/","n","dân số"],
+["aging","/ˈeɪdʒɪŋ/","adj","già hóa"],
+["discrimination","/dɪˌskrɪmɪˈneɪʃn/","n","sự phân biệt đối xử"],
+["welfare","/ˈwelfer/","n","phúc lợi"],
+["equality","/iˈkwɑːləti/","n","sự bình đẳng"],
+["minority","/maɪˈnɔːrəti/","n","thiểu số"],
+["citizen","/ˈsɪtɪzn/","n","công dân"],
+["awareness","/əˈwernəs/","n","nhận thức"],
+["behavior","/bɪˈheɪvjər/","n","hành vi, cách cư xử"]
+]},
+{id:"travel", title:"Du lịch và giao thông (Travel and Transport)", words:[
+["destination","/ˌdestɪˈneɪʃn/","n","điểm đến"],
+["itinerary","/aɪˈtɪnəreri/","n","lịch trình"],
+["passport","/ˈpæspɔːrt/","n","hộ chiếu"],
+["luggage","/ˈlʌɡɪdʒ/","n","hành lý (không đếm được)"],
+["delay","/dɪˈleɪ/","n, v","sự chậm trễ; trì hoãn"],
+["commute","/kəˈmjuːt/","v, n","đi lại hằng ngày giữa nhà và nơi làm việc"],
+["traffic jam","/ˈtræfɪk dʒæm/","n phr","kẹt xe"],
+["public transport","/ˈpʌblɪk ˈtrænspɔːrt/","n phr","giao thông công cộng"],
+["accommodation","/əˌkɑːməˈdeɪʃn/","n","chỗ ở"],
+["sightseeing","/ˈsaɪtsiːɪŋ/","n","sự tham quan"],
+["reservation","/ˌrezərˈveɪʃn/","n","sự đặt chỗ"],
+["departure","/dɪˈpɑːrtʃər/","n","sự khởi hành"],
+["arrival","/əˈraɪvl/","n","sự đến nơi"],
+["explore","/ɪkˈsplɔːr/","v","khám phá"],
+["journey","/ˈdʒɜːrni/","n","chuyến đi dài"],
+["abroad","/əˈbrɔːd/","adv","ở nước ngoài, ra nước ngoài"],
+["cancel","/ˈkænsl/","v","hủy"],
+["fare","/fer/","n","tiền vé (xe, tàu, máy bay)"],
+["scenery","/ˈsiːnəri/","n","phong cảnh"],
+["souvenir","/ˌsuːvəˈnɪr/","n","quà lưu niệm"]
+]},
+{id:"biz", title:"Kinh tế và kinh doanh (Business and Economy)", words:[
+["economy","/ɪˈkɑːnəmi/","n","nền kinh tế"],
+["inflation","/ɪnˈfleɪʃn/","n","lạm phát"],
+["revenue","/ˈrevənuː/","n","doanh thu"],
+["profit","/ˈprɑːfɪt/","n","lợi nhuận"],
+["investment","/ɪnˈvestmənt/","n","sự đầu tư"],
+["startup","/ˈstɑːrtʌp/","n","công ty khởi nghiệp"],
+["consumer","/kənˈsuːmər/","n","người tiêu dùng"],
+["demand","/dɪˈmænd/","n, v","nhu cầu; yêu cầu"],
+["supply","/səˈplaɪ/","n, v","nguồn cung; cung cấp"],
+["competitor","/kəmˈpetɪtər/","n","đối thủ cạnh tranh"],
+["budget","/ˈbʌdʒɪt/","n","ngân sách"],
+["expand","/ɪkˈspænd/","v","mở rộng"],
+["export","/ˈekspɔːrt/ (n), /ɪkˈspɔːrt/ (v)","n, v","hàng xuất khẩu; xuất khẩu"],
+["import","/ˈɪmpɔːrt/ (n), /ɪmˈpɔːrt/ (v)","n, v","hàng nhập khẩu; nhập khẩu"],
+["recession","/rɪˈseʃn/","n","suy thoái kinh tế"],
+["shareholder","/ˈʃerhoʊldər/","n","cổ đông"],
+["merger","/ˈmɜːrdʒər/","n","sự sáp nhập"],
+["customer loyalty","/ˈkʌstəmər ˈlɔɪəlti/","n phr","lòng trung thành của khách hàng"],
+["trade","/treɪd/","n, v","thương mại; buôn bán"],
+["afford","/əˈfɔːrd/","v","đủ khả năng chi trả"]
+]},
+{id:"media", title:"Truyền thông (Media and Communication)", words:[
+["broadcast","/ˈbrɔːdkæst/","v, n","phát sóng; chương trình phát sóng"],
+["headline","/ˈhedlaɪn/","n","tiêu đề báo"],
+["journalist","/ˈdʒɜːrnəlɪst/","n","nhà báo"],
+["advertisement","/ˌædvərˈtaɪzmənt/","n","quảng cáo"],
+["influence","/ˈɪnfluəns/","n, v","sự ảnh hưởng; ảnh hưởng"],
+["misinformation","/ˌmɪsɪnfərˈmeɪʃn/","n","thông tin sai lệch"],
+["viral","/ˈvaɪrəl/","adj","lan truyền nhanh (trên mạng)"],
+["subscribe","/səbˈskraɪb/","v","đăng ký theo dõi"],
+["platform","/ˈplætfɔːrm/","n","nền tảng"],
+["audience","/ˈɔːdiəns/","n","khán giả, người xem"],
+["censorship","/ˈsensərʃɪp/","n","sự kiểm duyệt"],
+["interact","/ˌɪntərˈækt/","v","tương tác"],
+["reliable source","/rɪˈlaɪəbl sɔːrs/","n phr","nguồn tin đáng tin cậy"],
+["trend","/trend/","n","xu hướng"],
+["post","/poʊst/","n, v","bài đăng; đăng bài"],
+["content","/ˈkɑːntent/","n","nội dung"],
+["privacy","/ˈpraɪvəsi/","n","quyền riêng tư"],
+["addicted","/əˈdɪktɪd/","adj","nghiện, bị cuốn vào"],
+["persuade","/pərˈsweɪd/","v","thuyết phục"],
+["mass media","/mæs ˈmiːdiə/","n phr","truyền thông đại chúng"]
+]}
+];
+/* ========== THẺ NGỮ PHÁP: t=tiêu đề, s=cấu trúc, u=dùng cho, g=dấu hiệu, e=ví dụ, n=lưu ý ========== */
+const CARDS = {};
+
+CARDS.tenses = [
+{id:"t1", t:"1. Hiện tại đơn (Present Simple)",
+ s:["(+) S + V(s/es)","(-) S + do/does + not + V","(?) Do/Does + S + V?"],
+ u:["Thói quen, hành động lặp đi lặp lại","Sự thật hiển nhiên, chân lý","Lịch trình, thời gian biểu cố định (tàu xe, lịch học)"],
+ g:"always, usually, often, sometimes, rarely, never, every day/week/month, on Mondays, once a week",
+ e:[["I check the server logs every morning.","Sáng nào tôi cũng kiểm tra log của máy chủ."],["Water boils at 100°C.","Nước sôi ở 100°C."],["The train leaves at 7 a.m. tomorrow.","Chuyến tàu khởi hành lúc 7 giờ sáng mai."]],
+ n:"Thêm -s/-es với he/she/it. Động từ tận cùng s, x, ch, sh, o thêm -es (watches, goes). Tận cùng phụ âm + y đổi y thành -ies (studies)."},
+{id:"t2", t:"2. Hiện tại tiếp diễn (Present Continuous)",
+ s:["(+) S + am/is/are + V-ing","(-) S + am/is/are + not + V-ing","(?) Am/Is/Are + S + V-ing?"],
+ u:["Hành động đang diễn ra ngay lúc nói","Việc mang tính tạm thời quanh thời điểm hiện tại","Kế hoạch tương lai đã sắp xếp","Phàn nàn khi đi với always, constantly"],
+ g:"now, at the moment, at present, currently, these days, today, Look!, Listen!, Be quiet!",
+ e:[["I am studying for the B2 exam these days.","Dạo này tôi đang ôn thi B2."],["We are meeting the supervisor at 3 p.m. tomorrow.","Ba giờ chiều mai chúng tôi gặp người hướng dẫn."],["He is always losing his keys.","Anh ấy lúc nào cũng làm mất chìa khóa."]],
+ n:"Động từ chỉ trạng thái (stative verbs) như know, like, love, want, need, believe, understand, belong, own, seem không dùng tiếp diễn. Nói I know, không nói I am knowing."},
+{id:"t3", t:"3. Hiện tại hoàn thành (Present Perfect)",
+ s:["(+) S + have/has + V3","(-) S + have/has + not + V3","(?) Have/Has + S + V3?"],
+ u:["Hành động bắt đầu trong quá khứ và còn kéo dài đến hiện tại","Trải nghiệm trong đời","Hành động vừa xong, kết quả còn ở hiện tại","Thời gian không xác định"],
+ g:"already, yet, just, ever, never, recently, lately, so far, up to now, since + mốc, for + khoảng, This is the first time, how long",
+ e:[["I have worked at VNG for more than a year.","Tôi đã làm ở VNG hơn một năm."],["She has never visited Japan.","Cô ấy chưa từng đến Nhật."],["I have just finished the report.","Tôi vừa làm xong báo cáo."]],
+ n:"Không dùng với mốc thời gian đã qua xác định (yesterday, last week, in 2020, ago). Những trường hợp đó dùng quá khứ đơn. since + mốc thời gian (since 2022, since I was a student), for + khoảng thời gian (for 3 years)."},
+{id:"t4", t:"4. Hiện tại hoàn thành tiếp diễn (Present Perfect Continuous)",
+ s:["(+) S + have/has + been + V-ing","(-) S + have/has + not + been + V-ing","(?) Have/Has + S + been + V-ing?"],
+ u:["Nhấn mạnh quá trình kéo dài từ quá khứ đến nay (có thể còn tiếp tục)","Hành động vừa kết thúc nhưng còn thấy kết quả (mắt đỏ, người mệt)"],
+ g:"all day, all morning, for, since, how long, lately, recently",
+ e:[["I have been learning English for six months.","Tôi đã học tiếng Anh được sáu tháng (và vẫn đang học)."],["She is tired because she has been working all night.","Cô ấy mệt vì đã làm việc suốt đêm."]],
+ n:"So với hiện tại hoàn thành: tiếp diễn nhấn vào quá trình, hoàn thành nhấn vào kết quả hoặc số lượng (I have written three emails)."},
+{id:"t5", t:"5. Quá khứ đơn (Past Simple)",
+ s:["(+) S + V2/V-ed","(-) S + did + not + V","(?) Did + S + V?"],
+ u:["Hành động đã xảy ra và kết thúc tại thời điểm xác định trong quá khứ","Chuỗi hành động nối tiếp trong quá khứ","Thói quen trong quá khứ (đã chấm dứt)"],
+ g:"yesterday, last night/week/year, ago, in 2020, when I was a child, then, the other day",
+ e:[["I graduated from UIT in 2024.","Tôi tốt nghiệp UIT năm 2024."],["He opened the laptop, checked the mail and replied.","Anh mở laptop, kiểm tra thư rồi trả lời."],["We lived in Thu Duc when I was young.","Hồi nhỏ chúng tôi sống ở Thủ Đức."]],
+ n:"Trong câu phủ định và nghi vấn, động từ trở về nguyên mẫu (Did you go?, không nói Did you went?)."},
+{id:"t6", t:"6. Quá khứ tiếp diễn (Past Continuous)",
+ s:["(+) S + was/were + V-ing","(-) S + was/were + not + V-ing","(?) Was/Were + S + V-ing?"],
+ u:["Hành động đang diễn ra tại một thời điểm trong quá khứ","Hành động đang diễn ra thì bị hành động khác xen vào (when + quá khứ đơn)","Hai hành động xảy ra song song (while)"],
+ g:"at 8 p.m. yesterday, at that time, while, when, as, all evening",
+ e:[["At 8 p.m. yesterday, I was fixing a network error.","Lúc 8 giờ tối qua tôi đang sửa lỗi mạng."],["I was cooking when the phone rang.","Tôi đang nấu ăn thì điện thoại reo."],["While she was studying, he was playing games.","Trong lúc cô ấy học, anh ấy chơi game."]],
+ n:"Hành động xen vào dùng quá khứ đơn, hành động bị cắt ngang dùng quá khứ tiếp diễn."},
+{id:"t7", t:"7. Quá khứ hoàn thành (Past Perfect)",
+ s:["(+) S + had + V3","(-) S + had + not + V3","(?) Had + S + V3?"],
+ u:["Hành động xảy ra trước một hành động hoặc mốc thời gian khác trong quá khứ","Tường thuật lại điều xảy ra trước đó (câu gián tiếp)","Điều kiện loại 3"],
+ g:"by the time, before, after, when, already, just, until then, by + mốc quá khứ, no sooner ... than, hardly ... when",
+ e:[["By the time we arrived, the film had already started.","Lúc chúng tôi đến thì phim đã chiếu rồi."],["She said she had finished the report.","Cô ấy nói đã xong báo cáo."]],
+ n:"Cặp thì: hành động xảy ra trước dùng quá khứ hoàn thành, hành động xảy ra sau dùng quá khứ đơn."},
+{id:"t8", t:"8. Quá khứ hoàn thành tiếp diễn (Past Perfect Continuous)",
+ s:["(+) S + had + been + V-ing","(-) S + had + not + been + V-ing","(?) Had + S + been + V-ing?"],
+ u:["Nhấn mạnh quá trình kéo dài trước một mốc hoặc một hành động trong quá khứ"],
+ g:"for, since, how long, before, until, by the time",
+ e:[["He had been waiting for two hours when the bus finally came.","Anh ấy đã đợi hai tiếng thì xe buýt mới đến."]],
+ n:"Hiếm gặp trong đề, thường xuất hiện trong bài đọc."},
+{id:"t9", t:"9. Tương lai đơn (Future Simple)",
+ s:["(+) S + will + V","(-) S + will not (won't) + V","(?) Will + S + V?"],
+ u:["Quyết định tức thời ngay lúc nói","Dự đoán không có căn cứ rõ ràng","Lời hứa, lời đề nghị, lời đe dọa"],
+ g:"tomorrow, next week/month/year, soon, in 2030, I think, I believe, probably, perhaps, maybe",
+ e:[["The phone is ringing. I'll answer it.","Điện thoại reo. Để tôi nghe."],["I think AI will change many jobs.","Tôi nghĩ AI sẽ thay đổi nhiều nghề."],["I promise I will call you tonight.","Tôi hứa tối nay sẽ gọi cho bạn."]],
+ n:"Mệnh đề thời gian (when, as soon as, after, before, until) dùng hiện tại đơn, không dùng will: I will call you when I arrive."},
+{id:"t10", t:"10. Dự định (be going to)",
+ s:["(+) S + am/is/are + going to + V","(-) S + am/is/are + not + going to + V","(?) Am/Is/Are + S + going to + V?"],
+ u:["Dự định đã có từ trước lúc nói","Dự đoán dựa trên dấu hiệu ở hiện tại"],
+ g:"Look at those clouds!, tonight, this weekend, next year (khi đã có kế hoạch)",
+ e:[["I am going to apply for the master's program this year.","Năm nay tôi định nộp hồ sơ thạc sĩ."],["Look at the sky! It is going to rain.","Nhìn trời kìa! Sắp mưa rồi."]]},
+{id:"t11", t:"11. Tương lai tiếp diễn (Future Continuous)",
+ s:["(+) S + will + be + V-ing","(-) S + will not + be + V-ing","(?) Will + S + be + V-ing?"],
+ u:["Hành động đang diễn ra tại một thời điểm xác định trong tương lai","Hỏi lịch sự về kế hoạch của người khác"],
+ g:"at this time tomorrow, at 9 a.m. next Monday, this time next week",
+ e:[["This time next week, I will be taking the exam.","Giờ này tuần sau tôi đang làm bài thi."],["Will you be using the projector this afternoon?","Chiều nay bạn có dùng máy chiếu không?"]]},
+{id:"t12", t:"12. Tương lai hoàn thành (Future Perfect)",
+ s:["(+) S + will + have + V3","(-) S + will not + have + V3","(?) Will + S + have + V3?"],
+ u:["Hành động sẽ hoàn tất trước một mốc trong tương lai"],
+ g:"by + mốc tương lai, by the time + hiện tại đơn, before + mốc, by next year",
+ e:[["By 2028, I will have completed my master's degree.","Đến năm 2028 tôi sẽ hoàn thành bằng thạc sĩ."],["By the time you arrive, we will have finished.","Lúc bạn đến thì chúng tôi đã xong."]],
+ n:"Có thêm Future Perfect Continuous (will have been + V-ing): By June, I will have been working here for two years."}
+];
+
+CARDS.cond = [
+{id:"c0", t:"Loại 0: sự thật luôn đúng",
+ s:["If + S + V(s/es), S + V(s/es)"],
+ u:["Sự thật khoa học, quy luật","Thói quen: nếu A xảy ra thì luôn có B (if có nghĩa gần như whenever)"],
+ g:"cả hai mệnh đề đều dùng hiện tại đơn",
+ e:[["If you heat ice, it melts.","Đun đá thì đá tan."],["If the server overheats, it shuts down automatically.","Nếu máy chủ quá nóng, nó tự tắt."]]},
+{id:"c1", t:"Loại 1: có thể xảy ra ở hiện tại hoặc tương lai",
+ s:["If + S + V(s/es), S + will/can/may/should + V","If + S + V(s/es), V (câu mệnh lệnh)"],
+ u:["Điều kiện có thật, khả năng cao xảy ra","Lời đề nghị, lời hứa, cảnh báo, lời khuyên"],
+ g:"tomorrow, next week, if it is possible, in the future",
+ e:[["If I pass the exam, I will apply for the program.","Nếu đậu kỳ thi, tôi sẽ nộp hồ sơ vào chương trình."],["If you need help, call me.","Cần giúp thì gọi tôi."]],
+ n:"Không dùng will trong mệnh đề if. Sai: If it will rain, we will stay home. Đúng: If it rains, we will stay home."},
+{id:"c2", t:"Loại 2: giả định trái với hiện tại",
+ s:["If + S + V2/were, S + would/could/might + V"],
+ u:["Điều không có thật hoặc khó xảy ra ở hiện tại","Đưa lời khuyên với If I were you"],
+ g:"If I were you, now, imagine, at the moment (khi trái sự thật)",
+ e:[["If I had more time, I would learn French.","Nếu có nhiều thời gian hơn, tôi sẽ học tiếng Pháp (thực tế không có)."],["If I were you, I would accept the offer.","Nếu là bạn, tôi sẽ nhận lời mời đó."]],
+ n:"Dùng were cho mọi ngôi (I were, he were, she were) trong văn viết và đề thi."},
+{id:"c3", t:"Loại 3: giả định trái với quá khứ",
+ s:["If + S + had + V3, S + would/could/might + have + V3"],
+ u:["Điều đã không xảy ra trong quá khứ, thường kèm tiếc nuối hoặc trách móc"],
+ g:"yesterday, last year, in 2020 (kết hợp với had + V3)",
+ e:[["If she had left earlier, she would have caught the train.","Nếu cô ấy đi sớm hơn thì đã kịp tàu."],["If I had known, I would have told you.","Nếu tôi biết thì đã nói với bạn."]]},
+{id:"cm", t:"Câu điều kiện hỗn hợp (Mixed)",
+ s:["Loại 3 + 2: If + had + V3, would + V (quá khứ ảnh hưởng hiện tại)","Loại 2 + 3: If + V2, would have + V3 (hiện tại ảnh hưởng quá khứ)"],
+ u:["Hai vế khác mốc thời gian"],
+ g:"now / today ở mệnh đề kết quả; always / generally ở mệnh đề điều kiện",
+ e:[["If I had studied medicine, I would be a doctor now.","Nếu hồi đó tôi học y thì bây giờ đã là bác sĩ."],["If he were more careful, he wouldn't have broken the screen.","Nếu anh ấy cẩn thận hơn thì đã không làm vỡ màn hình."]]},
+{id:"cu", t:"Unless, as long as, provided that, in case, otherwise",
+ s:["Unless + S + V = If + S + do not + V","as long as / provided (that) / providing (that) / on condition that + S + V (chỉ cần)","in case + S + V (phòng khi)","..., otherwise + S + would + V (nếu không thì)","Suppose / Supposing + S + V2, S + would + V"],
+ u:["Diễn đạt điều kiện theo nhiều cách khác nhau"],
+ g:"unless, as long as, provided that, providing, on condition that, in case, otherwise",
+ e:[["Unless you hurry, you will miss the bus.","Trừ khi bạn nhanh lên, bằng không bạn sẽ lỡ xe."],["You can borrow my laptop as long as you take care of it.","Bạn mượn laptop được, miễn là giữ gìn cẩn thận."],["Take an umbrella in case it rains.","Mang ô phòng khi trời mưa."],["Study hard; otherwise, you will fail.","Học chăm đi, không thì sẽ rớt."]],
+ n:"Unless đã mang nghĩa phủ định nên không dùng thêm not (không nói Unless you don't hurry)."},
+{id:"ci", t:"Đảo ngữ câu điều kiện và if it weren't for",
+ s:["Loại 1: Should + S + V, S + will + V","Loại 2: Were + S + (to V), S + would + V","Loại 3: Had + S + V3, S + would have + V3","If it weren't for + N, S + would + V (loại 2)","But for / Without + N, S + would have + V3 (loại 3)"],
+ u:["Văn phong trang trọng, hay xuất hiện ở phần viết lại câu"],
+ g:"câu bắt đầu bằng Should, Were, Had mà không có if",
+ e:[["Should you need help, please call me.","Nếu cần giúp, xin cứ gọi tôi."],["Were I you, I would accept the offer.","Nếu tôi là bạn, tôi sẽ nhận lời."],["Had I known, I would have told you.","Giá tôi biết, tôi đã nói với bạn."],["But for your help, I would have failed.","Không có sự giúp đỡ của bạn, tôi đã thất bại."]]}
+];
+
+CARDS.passive = [
+{id:"p1", t:"Bị động với động từ tường thuật (say, believe, think...)",
+ s:["It + is/was + V3 + that + S + V","S + is/are + V3 + to V (cùng thời điểm hoặc sau)","S + is/are + V3 + to have + V3 (xảy ra trước)"],
+ u:["Nêu ý kiến chung của mọi người: say, think, believe, report, know, expect, consider, claim, understand, suppose, find, rumour"],
+ g:"People say that ... / It is believed that ...",
+ e:[["People say that he is rich. → He is said to be rich.","Người ta nói anh ấy giàu."],["They believe that she left last night. → She is believed to have left last night.","Người ta tin cô ấy đã đi tối qua."],["It is expected that prices will rise. → Prices are expected to rise.","Dự kiến giá sẽ tăng."]]},
+{id:"p2", t:"Thể sai khiến (Causative): have/get something done",
+ s:["have + O + V3 (nhờ người khác làm cho)","get + O + V3","have + somebody + V (bare)","get + somebody + to V"],
+ u:["Nhờ hoặc thuê người khác làm một việc cho mình","Chuyện không hay xảy ra với mình: He had his phone stolen."],
+ g:"dịch vụ: repair, cut, clean, deliver, check, install",
+ e:[["I had my laptop repaired yesterday.","Hôm qua tôi mang laptop đi sửa."],["She got her hair cut.","Cô ấy đi cắt tóc."],["I had the technician check the server.","Tôi nhờ kỹ thuật viên kiểm tra máy chủ."]]},
+{id:"p3", t:"Need + V-ing và các dạng bị động đặc biệt",
+ s:["S (vật) + need + V-ing = S + need + to be + V3","be + being + V3 (sau love, like, hate, enjoy)","two objects: give / send / show / offer + O1 + O2"],
+ u:["Nói vật cần được làm gì","Hai tân ngữ: có thể bị động theo cả hai hướng"],
+ g:"need, want, require đi với vật (the server, the car, the house)",
+ e:[["The server needs repairing. = The server needs to be repaired.","Máy chủ cần được sửa."],["She hates being interrupted.","Cô ấy ghét bị ngắt lời."],["They gave me a book. → I was given a book. / A book was given to me.","Họ tặng tôi một cuốn sách."]]},
+{id:"p4", t:"Get passive và khi nào bỏ 'by + tác nhân'",
+ s:["get + V3 (văn nói, sự việc bất ngờ)","by + tác nhân (chỉ giữ khi tác nhân quan trọng)"],
+ u:["Bỏ by khi không rõ ai làm, không cần nói, hoặc là người nói chung"],
+ g:"get fired, get married, get lost, get injured, get stolen",
+ e:[["He got fired last month.","Tháng trước anh ấy bị sa thải."],["The Mona Lisa was painted by Leonardo da Vinci.","Bức Mona Lisa do Leonardo da Vinci vẽ (tác nhân quan trọng nên giữ by)."],["My bike was stolen.","Xe đạp của tôi bị trộm (không rõ ai)."]]}
+];
+
+CARDS.wish = [
+{id:"w1", t:"Wish về hiện tại (điều không có thật)",
+ s:["S + wish + S + V2 / were","If only + S + V2 / were"],
+ u:["Ước điều trái với thực tế hiện tại"],
+ g:"hiện tại, hiện nay: I'm sorry I can't ..., It's a pity that ...",
+ e:[["I wish I knew how to swim.","Ước gì tôi biết bơi (thực tế không biết)."],["I wish I were taller.","Ước gì tôi cao hơn."],["If only I had a car.","Giá mà tôi có xe."]],
+ n:"Viết lại: I'm sorry I can't swim = I wish I could swim."},
+{id:"w2", t:"Wish về quá khứ (tiếc nuối)",
+ s:["S + wish + S + had + V3","If only + S + had + V3"],
+ u:["Tiếc về điều đã xảy ra hoặc không xảy ra trong quá khứ"],
+ g:"yesterday, last year, I regret, I'm sorry I didn't, It's a pity that ... didn't",
+ e:[["I wish I had studied harder.","Giá mà tôi đã học chăm hơn."],["If only I hadn't said that.","Giá mà tôi đã không nói vậy."]],
+ n:"Viết lại: I'm sorry I didn't accept the job = I wish I had accepted the job."},
+{id:"w3", t:"Wish + would/could (tương lai hoặc phàn nàn)",
+ s:["S + wish + S + would + V","S + wish + S + could + V"],
+ u:["Mong người khác hoặc sự việc thay đổi (would, chủ ngữ khác nhau)","Mong bản thân làm được (could)"],
+ g:"It's annoying that ..., I'm tired of ...",
+ e:[["I wish it would stop raining.","Ước gì trời tạnh mưa."],["I wish you would listen to me.","Ước gì bạn chịu nghe tôi."],["I wish I could play the guitar.","Ước gì tôi chơi được guitar."]],
+ n:"Không dùng I wish I would. Với chủ ngữ giống nhau, dùng could."},
+{id:"w4", t:"Would rather, it's time, as if",
+ s:["S + would rather + V (cùng chủ ngữ)","S1 + would rather + S2 + V2 (hiện tại, tương lai)","S1 + would rather + S2 + had V3 (quá khứ)","It's (high) time + S + V2","S + V + as if / as though + S + V2 / had V3"],
+ u:["would rather: sở thích, lựa chọn","It's time: đã đến lúc, mang chút trách nhẹ","as if: so sánh như thể (không có thật)"],
+ g:"would rather, it's time, it's high time, as if, as though",
+ e:[["I'd rather stay home tonight.","Tối nay tôi muốn ở nhà hơn."],["I'd rather you didn't smoke here.","Tôi muốn bạn đừng hút thuốc ở đây."],["It's time we went home.","Đã đến lúc về nhà rồi."],["He talks as if he owned the company.","Anh ta nói như thể là chủ công ty (nhưng không phải)."]]}
+];
+
+CARDS.rel = [
+{id:"r1", t:"Đại từ quan hệ và trạng từ quan hệ",
+ s:["who (người, chủ ngữ) / whom (người, tân ngữ)","which (vật) / that (người hoặc vật, mệnh đề xác định)","whose + N (sở hữu)","where (nơi chốn) / when (thời gian) / why (lý do)"],
+ u:["Nối câu, bổ nghĩa cho danh từ đứng trước"],
+ g:"danh từ đứng trước là người, vật, nơi chốn, thời gian, lý do; chỗ trống đứng sau danh từ",
+ e:[["The engineer who fixed the server is my friend.","Kỹ sư sửa máy chủ là bạn tôi."],["The laptop which I bought is very fast.","Chiếc laptop tôi mua rất nhanh."],["The student whose project won the prize is Lan.","Sinh viên có dự án đoạt giải là Lan."],["This is the city where I grew up.","Đây là thành phố nơi tôi lớn lên."],["I remember the day when we met.","Tôi nhớ ngày chúng ta gặp nhau."],["That is the reason why he left.","Đó là lý do anh ấy rời đi."]],
+ n:"that không đứng sau dấu phẩy và không đứng sau giới từ. Sau all, everything, nothing, the only, the first, so sánh nhất thường dùng that."},
+{id:"r2", t:"Mệnh đề xác định và không xác định",
+ s:["Xác định (defining): không có dấu phẩy, cần thiết để hiểu danh từ","Không xác định (non-defining): có dấu phẩy, thông tin thêm, không dùng that, không lược bỏ đại từ"],
+ u:["Xác định: phân biệt người hoặc vật nào đang nói tới","Không xác định: bổ sung thêm thông tin về người hoặc vật đã rõ (tên riêng, my brother)"],
+ g:"dấu phẩy, tên riêng, my + N, this/that + N",
+ e:[["The man who lives next door is a doctor.","Người đàn ông sống bên cạnh là bác sĩ."],["My brother, who works at VNG, lives in Ho Chi Minh City.","Anh trai tôi, người làm ở VNG, sống ở TP.HCM."],["He passed the exam, which surprised everyone.","Anh ấy đỗ kỳ thi, điều làm mọi người ngạc nhiên (which thay cho cả mệnh đề)."]]},
+{id:"r3", t:"Giới từ + đại từ quan hệ và lượng từ + of whom/which",
+ s:["N + preposition + whom/which (trang trọng)","N + (that/which/whom) + S + V + preposition (thân mật)","some / many / all / most / both / none + of whom/which"],
+ u:["Khi động từ trong mệnh đề quan hệ đi với giới từ"],
+ g:"in which, to whom, for which, with whom, of which",
+ e:[["The company for which he works is famous. = The company (which) he works for is famous.","Công ty anh ấy làm việc rất nổi tiếng."],["She has three brothers, two of whom are engineers.","Cô có ba anh trai, hai người trong số đó là kỹ sư."]]},
+{id:"r4", t:"Rút gọn mệnh đề quan hệ",
+ s:["V-ing (chủ động): The man who is standing there → The man standing there","V3 (bị động): The report which was written by Lan → The report written by Lan","to V: sau the first, the second, the last, the only, so sánh nhất","Cụm danh từ (đồng vị): Hanoi, which is the capital of Vietnam → Hanoi, the capital of Vietnam"],
+ u:["Rút gọn khi đại từ quan hệ làm chủ ngữ: bỏ đại từ + be"],
+ g:"đại từ quan hệ + be, hoặc đại từ quan hệ + V chủ động",
+ e:[["The woman sitting next to me is my supervisor.","Người phụ nữ ngồi cạnh tôi là người hướng dẫn."],["The system developed by our team is very stable.","Hệ thống do nhóm chúng tôi phát triển rất ổn định."],["She was the first person to finish the test.","Cô ấy là người đầu tiên làm xong bài."]]}
+];
+
+CARDS.modal = [
+{id:"m1", t:"Modal verb đoán (deduction) ở hiện tại và quá khứ",
+ s:["Hiện tại: must be / can't be / may, might, could be","Quá khứ: must have + V3 / can't have + V3 / may, might, could have + V3"],
+ u:["must: gần như chắc chắn là đúng","can't, couldn't: gần như chắc chắn là sai","may, might, could: có thể"],
+ g:"obviously, certainly, perhaps, probably; he isn't here, the lights are on",
+ e:[["He must be tired after the long flight.","Chắc anh ấy mệt sau chuyến bay dài."],["She can't have forgotten the meeting.","Chắc không phải cô ấy quên cuộc họp."],["They might have missed the bus.","Có thể họ đã lỡ xe buýt."]]},
+{id:"m2", t:"Modal perfect: nên làm, không cần làm, đã có thể làm",
+ s:["should have + V3 (đáng lẽ nên làm mà không làm)","shouldn't have + V3 (đáng lẽ không nên làm mà đã làm)","needn't have + V3 (đã làm nhưng không cần)","could have + V3 (đã có thể làm nhưng không làm)"],
+ u:["Tiếc nuối, trách móc, nhận xét về hành động trong quá khứ"],
+ g:"yesterday, last night, I regret, It was a mistake",
+ e:[["You should have told me earlier.","Lẽ ra bạn nên nói sớm hơn."],["I needn't have brought an umbrella.","Tôi không cần mang ô (nhưng đã mang)."],["She could have won, but she was nervous.","Cô ấy lẽ ra đã thắng, nhưng quá căng thẳng."]]}
+];
+
+CARDS.ger = [
+{id:"gi1", t:"Động từ + V-ing",
+ s:["S + V + V-ing"],
+ u:["enjoy, avoid, suggest, deny, finish, consider, keep, mind, practise, admit, risk, miss, postpone, imagine, recommend, delay"],
+ g:"Cụm: can't help, can't stand, look forward to, be used to, be worth, it's no use, it's no good, spend time/money",
+ e:[["She avoided answering the question.","Cô ấy tránh trả lời câu hỏi."],["I look forward to hearing from you.","Tôi mong sớm nhận được tin của bạn."],["The film is worth seeing.","Bộ phim đáng xem."]],
+ n:"Sau giới từ luôn dùng V-ing: interested in learning, good at solving, instead of waiting."},
+{id:"gi2", t:"Động từ + to V",
+ s:["S + V + to V","S + V + O + to V"],
+ u:["decide, hope, manage, plan, refuse, promise, afford, agree, expect, learn, fail, offer, seem, tend, want, would like","Có tân ngữ: ask, tell, allow, advise, encourage, force, invite, remind, warn, persuade, order"],
+ g:"want to, hope to, plan to, allow somebody to",
+ e:[["He decided to apply for the program.","Anh ấy quyết định nộp hồ sơ vào chương trình."],["The teacher advised us to review the grammar.","Giáo viên khuyên chúng tôi ôn lại ngữ pháp."],["They allowed her to leave early.","Họ cho phép cô về sớm."]]},
+{id:"gi3", t:"Động từ + V nguyên mẫu (không to)",
+ s:["modal + V","make / let / have + O + V","had better + V","help + (O) + V / to V"],
+ u:["Sau modal verb, make, let, had better, perceive verbs (see, hear, watch, notice + O + V)"],
+ g:"must, can, should, may, make, let, had better",
+ e:[["The boss made us work overtime.","Sếp bắt chúng tôi làm thêm giờ."],["Let me help you.","Để tôi giúp bạn."],["You had better see a doctor.","Bạn nên đi khám bác sĩ."]]},
+{id:"gi4", t:"Động từ đổi nghĩa theo V-ing hoặc to V",
+ s:["remember / forget + to V (nhớ, quên phải làm) / + V-ing (nhớ, quên đã làm)","stop + to V (dừng lại để làm) / + V-ing (ngừng hẳn)","try + to V (cố gắng) / + V-ing (thử)","regret + to V (tiếc phải báo) / + V-ing (hối tiếc đã làm)","go on + to V (chuyển sang việc khác) / + V-ing (tiếp tục)","mean + to V (có ý định) / + V-ing (có nghĩa là)"],
+ u:["Hai dạng, hai nghĩa khác nhau"],
+ g:"đọc nghĩa của câu để chọn",
+ e:[["Remember to lock the door.","Nhớ khóa cửa nhé."],["I remember locking the door.","Tôi nhớ là đã khóa cửa rồi."],["He stopped to drink water.","Anh dừng lại để uống nước."],["He stopped drinking coffee.","Anh bỏ uống cà phê."],["Try restarting the router.","Thử khởi động lại router xem."]]},
+{id:"gi5", t:"Chỉ mục đích: to, in order to, so as to, so that",
+ s:["to V / in order to V / so as to V","so that + S + can/could/will/would + V"],
+ u:["Giải thích hành động để làm gì"],
+ g:"to, in order to, so as to, so that",
+ e:[["She studies every day in order to pass the exam.","Cô học mỗi ngày để đậu kỳ thi."],["He spoke slowly so that everyone could understand.","Anh nói chậm để mọi người hiểu."]],
+ n:"Phủ định: in order not to V, so as not to V (không dùng not to V để chỉ mục đích trong bài viết trang trọng)."}
+];
+
+CARDS.comp = [
+{id:"co1", t:"So sánh bằng, hơn, nhất",
+ s:["Bằng: as + adj/adv + as; not as/so + adj + as","Hơn (tính từ ngắn): adj-er + than; (dài): more + adj + than","Nhất (ngắn): the adj-est; (dài): the most + adj","Kém: less + adj + than; the least + adj"],
+ u:["Tính từ ngắn: 1 âm tiết, hoặc 2 âm tiết tận cùng -y, -er, -ow, -le"],
+ g:"than, as ... as, the + so sánh nhất + in/of",
+ e:[["This phone is as expensive as that one.","Chiếc này đắt bằng chiếc kia."],["Python is easier to learn than C++.","Python dễ học hơn C++."],["She is the most hardworking student in the class.","Cô ấy là sinh viên chăm chỉ nhất lớp."]]},
+{id:"co2", t:"So sánh kép và các dạng đặc biệt",
+ s:["The + so sánh hơn + S + V, the + so sánh hơn + S + V","so sánh hơn + and + so sánh hơn (càng ngày càng)","twice / three times / half as + adj + as","the same + N + as, different from, similar to"],
+ u:["Diễn đạt sự thay đổi song song hoặc tăng dần"],
+ g:"the more ... the more, more and more, twice as ... as",
+ e:[["The harder you work, the better the results are.","Càng chăm chỉ, kết quả càng tốt."],["Technology is becoming more and more important.","Công nghệ ngày càng quan trọng."],["My laptop is twice as expensive as yours.","Laptop của tôi đắt gấp đôi của bạn."]]},
+{id:"co3", t:"Bất quy tắc và từ nhấn mạnh so sánh",
+ s:["good / well → better → best","bad / badly → worse → worst","far → farther, further → farthest, furthest","little → less → least","many / much → more → most","nhấn mạnh: much, far, a lot, a bit, slightly + so sánh hơn"],
+ u:["Ghi nhớ bảng bất quy tắc, nhấn mạnh mức độ chênh lệch bằng much, far, a lot"],
+ g:"much better, far more expensive, slightly cheaper",
+ e:[["This route is much shorter than that one.","Đường này ngắn hơn nhiều."],["Her English is far better than mine.","Tiếng Anh của cô ấy tốt hơn tôi nhiều."]]}
+];
+
+CARDS.noun = [
+{id:"n1", t:"Mạo từ a, an, the, không mạo từ",
+ s:["a / an: danh từ đếm được số ít, nói lần đầu hoặc chung chung","the: đã xác định (đã nhắc, duy nhất, có cụm bổ nghĩa, so sánh nhất, first, only)","không mạo từ: danh từ số nhiều hoặc không đếm được nói chung, tên nước, môn học, bữa ăn"],
+ u:["Chọn mạo từ đúng trong Cloze"],
+ g:"the sun, the internet, the best, the only; go to school, have lunch, play football",
+ e:[["I saw a laptop. The laptop was very cheap.","Tôi thấy một chiếc laptop. Chiếc laptop đó rất rẻ."],["She is an engineer.","Cô ấy là kỹ sư."],["Life is hard.","Cuộc sống khó khăn (nói chung)."]]},
+{id:"n2", t:"Danh từ không đếm được thường gặp",
+ s:["information, advice, news, knowledge, furniture, equipment, luggage, homework, progress, research, evidence, traffic, weather, money, music"],
+ u:["Không thêm -s, không dùng a/an, đi với much, a little, some, any; dùng a piece of / an item of để đếm"],
+ g:"much, a little, little, an amount of, a piece of",
+ e:[["She gave me some useful advice.","Cô ấy cho tôi lời khuyên hữu ích."],["The news is good.","Tin tức này tốt (động từ số ít)."]]},
+{id:"n3", t:"Lượng từ (quantifiers)",
+ s:["many, a few, few, several + N đếm được số nhiều","much, a little, little + N không đếm được","a lot of, lots of, some, any, plenty of, all, most + cả hai","each, every + N số ít; both, either, neither"],
+ u:["few, little mang nghĩa rất ít, gần như không có; a few, a little mang nghĩa có một chút"],
+ g:"few / a few, little / a little, many / much",
+ e:[["He has few friends, so he feels lonely.","Anh ấy có rất ít bạn nên thấy cô đơn."],["I have a few ideas for the project.","Tôi có vài ý tưởng cho dự án."],["There is little time left.","Còn rất ít thời gian."]]}
+];
+
+CARDS.adjorder = [
+{id:"ao1", t:"Trật tự tính từ: OSASCOMP",
+ s:["Opinion - Size - Age - Shape - Colour - Origin - Material - Purpose + N","Ghi nhớ nhanh: ý kiến (nice, ugly) → kích cỡ (big) → tuổi (old) → hình dạng (round) → màu (red) → xuất xứ (Italian) → chất liệu (wooden) → mục đích (dining)"],
+ u:["Khi có từ hai tính từ trở lên đứng trước danh từ"],
+ g:"một cụm danh từ có 2 đến 4 tính từ liên tiếp",
+ e:[["a beautiful small old round brown Italian wooden dining table","một chiếc bàn ăn bằng gỗ kiểu Ý, màu nâu, tròn, cũ, nhỏ, đẹp"],["a lovely long silk dress","chiếc váy lụa dài đáng yêu"],["a powerful new gaming laptop","một chiếc laptop chơi game mạnh mẽ mới"]],
+ n:"Hiếm khi dùng quá 3 tính từ trong cùng một cụm. Hai tính từ cùng loại thì nối bằng and hoặc dấu phẩy: a dark, cold night."},
+{id:"ao2", t:"Tính từ -ed và -ing, tính từ ghép",
+ s:["-ing: tính chất của sự vật hoặc sự việc (gây ra cảm xúc)","-ed: cảm xúc của người","Tính từ ghép: number + noun (số ít) + noun: a five-year-old child, a ten-minute walk"],
+ u:["Chọn đúng dạng tính từ trong Cloze và Vocabulary"],
+ g:"bored / boring, interested / interesting, tired / tiring, surprised / surprising, excited / exciting",
+ e:[["The lecture was boring, so the students were bored.","Bài giảng chán nên sinh viên thấy chán."],["I'm interested in AI because it is an interesting field.","Tôi quan tâm đến AI vì đây là lĩnh vực thú vị."],["She has a three-year-old son.","Cô có một cậu con trai ba tuổi."]]},
+{id:"ao3", t:"Tính từ sau động từ nối (linking verbs)",
+ s:["be, seem, look, feel, sound, taste, smell, become, get, stay, remain + adj"],
+ u:["Sau các động từ này dùng tính từ, không dùng trạng từ"],
+ g:"look + adj, sound + adj, get + adj",
+ e:[["The idea sounds great.","Ý tưởng nghe hay đấy."],["She looks tired.","Cô ấy trông mệt."]],
+ n:"Sai: She looks tiredly. Đúng: She looks tired."}
+];
+
+CARDS.adv = [
+{id:"av1", t:"Các loại trạng từ và vị trí trong câu",
+ s:["Cách thức (manner): carefully, quickly, well → sau động từ hoặc tân ngữ","Nơi chốn (place): here, there, abroad, upstairs → sau động từ hoặc tân ngữ","Thời gian (time): yesterday, now, soon, last week → cuối câu hoặc đầu câu","Tần suất (frequency): always, usually, often, sometimes, rarely, never → trước động từ thường, sau be","Mức độ (degree): very, quite, rather, extremely, too, fairly → trước tính từ hoặc trạng từ","Quan điểm (sentence adverbs): fortunately, obviously, apparently → đầu câu"],
+ u:["Bổ nghĩa cho động từ, tính từ, trạng từ khác hoặc cả câu"],
+ g:"đuôi -ly (phần lớn), đứng gần động từ hoặc tính từ",
+ e:[["She always arrives early.","Cô ấy luôn đến sớm."],["He is never late.","Anh ấy không bao giờ trễ."],["They worked very hard.","Họ làm việc rất chăm."],["Fortunately, nobody was hurt.","May mắn là không ai bị thương."]]},
+{id:"av2", t:"Trật tự trạng từ: Manner - Place - Time",
+ s:["S + V + (O) + manner + place + time","Khi có nhiều trạng từ: cách thức → nơi chốn → thời gian"],
+ u:["Sắp xếp nhiều trạng từ trong cùng một câu"],
+ g:"một câu có hai hoặc ba trạng từ cuối câu",
+ e:[["She sang beautifully at the party last night.","Tối qua cô hát rất hay ở bữa tiệc (manner, place, time)."],["He drove carefully to the office this morning.","Sáng nay anh lái xe cẩn thận đến văn phòng."]],
+ n:"Với động từ chuyển động (go, come, travel), thứ tự thường là place trước manner: He went to the airport quickly."},
+{id:"av3", t:"Cách tạo trạng từ và các từ dễ nhầm",
+ s:["adj + -ly: slow → slowly, careful → carefully","-y → -ily: happy → happily, easy → easily","-le → -ly: gentle → gently, possible → possibly","-ic → -ically: basic → basically (trừ public → publicly)","Cùng dạng tính từ và trạng từ: fast, hard, late, early, high, daily"],
+ u:["Phân biệt các cặp từ có hai nghĩa khác nhau"],
+ g:"hard / hardly, late / lately, near / nearly, high / highly, good / well",
+ e:[["He works hard. (chăm chỉ) / He hardly works. (hầu như không làm)","Hai từ khác nghĩa hoàn toàn."],["She arrived late. / I haven't seen her lately.","late: muộn; lately: gần đây."],["He speaks English well.","Anh ấy nói tiếng Anh giỏi (well là trạng từ của good)."]]},
+{id:"av4", t:"Too, enough, so, such",
+ s:["too + adj/adv (+ for O) + to V","adj/adv + enough (+ for O) + to V; enough + N","so + adj/adv + that + S + V","such + (a/an) + adj + N + that + S + V"],
+ u:["Nói quá mức hoặc đủ mức, chỉ kết quả"],
+ g:"too, enough, so ... that, such ... that",
+ e:[["The box is too heavy to carry.","Cái hộp quá nặng để mang."],["She is old enough to vote.","Cô đủ tuổi để bầu cử."],["It was so cold that we stayed home.","Trời lạnh đến mức chúng tôi ở nhà."],["It was such a cold day that we stayed home.","Đó là một ngày lạnh đến mức chúng tôi ở nhà."]]}
+];
+
+CARDS.reported = [
+{id:"rp1", t:"Câu tường thuật: tường thuật câu kể",
+ s:["S + said (that) + S + V (lùi thì)","S + told + O + (that) + S + V (lùi thì)"],
+ u:["Thuật lại lời người khác; đổi thì, đại từ, trạng từ thời gian và nơi chốn"],
+ g:"say, tell, tell + người, lùi thì, đổi đại từ",
+ e:[["\"I am tired,\" she said. → She said (that) she was tired.","Cô ấy nói rằng cô ấy mệt."],["\"I will call you tomorrow,\" he said. → He said he would call me the next day.","Anh nói ngày hôm sau sẽ gọi cho tôi."],["\"We have finished,\" they told me. → They told me they had finished.","Họ nói với tôi là họ đã xong."]]},
+{id:"rp2", t:"Tường thuật câu hỏi",
+ s:["Yes/No: asked + (O) + if / whether + S + V (lùi thì)","Wh-question: asked + (O) + wh-word + S + V (lùi thì, không đảo ngữ)"],
+ u:["Câu hỏi trở thành mệnh đề khẳng định, không còn dấu hỏi"],
+ g:"asked, wondered, wanted to know",
+ e:[["\"Do you like coffee?\" she asked. → She asked if I liked coffee.","Cô hỏi tôi có thích cà phê không."],["\"Where do you live?\" he asked. → He asked where I lived.","Anh hỏi tôi sống ở đâu."]]},
+{id:"rp3", t:"Tường thuật câu mệnh lệnh, yêu cầu, lời khuyên",
+ s:["told / asked / ordered / advised + O + (not) + to V"],
+ u:["Câu mệnh lệnh, lời yêu cầu, lời khuyên"],
+ g:"Please ..., Don't ..., You should ..., Could you ...?",
+ e:[["\"Close the door,\" he said. → He told me to close the door.","Anh bảo tôi đóng cửa."],["\"Don't be late,\" she said. → She told us not to be late.","Cô dặn chúng tôi đừng đến trễ."],["\"You should see a doctor,\" he said. → He advised me to see a doctor.","Anh khuyên tôi đi khám bác sĩ."]]}
+];
+/* ========== ỨNG DỤNG: render thẻ, từ vựng, mục lục, tiến độ ========== */
+(function(){
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* ---- 1. Thẻ ngữ pháp ---- */
+  function card(o){
+    const sig = o.g ? o.g.split(',').map(x => `<span class="sig">${esc(x.trim())}</span>`).join(' ') : '';
+    const ex = (o.e||[]).map(p => `<li><span class="en">${esc(p[0])}</span><span class="vi">${esc(p[1])}</span></li>`).join('');
+    return `<article class="gcard"${o.id ? ` id="${o.id}"` : ''}>
+      <h4>${esc(o.t)}</h4>
+      <div class="kv">
+        <div class="k">Cấu trúc</div><div class="v">${(o.s||[]).map(x => `<code class="formula">${esc(x)}</code>`).join('')}</div>
+        <div class="k">Dùng cho</div><div class="v"><ul>${(o.u||[]).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+        ${sig ? `<div class="k">Dấu hiệu</div><div class="v">${sig}</div>` : ''}
+        <div class="k">Ví dụ</div><div class="v"><ul class="exs">${ex}</ul></div>
+      </div>
+      ${o.n ? `<div class="note"><b>Lưu ý:</b> ${esc(o.n)}</div>` : ''}
+    </article>`;
+  }
+  $$('[data-cards]').forEach(el => {
+    const list = CARDS[el.dataset.cards] || [];
+    el.innerHTML = list.map(card).join('');
+  });
+
+  /* ---- 2. Từ vựng ---- */
+  const KEY = 'uitb2.vocab.done.v1';
+  let done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { done = {}; }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e) {} };
+  const SPK = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';
+
+  const root = $('#vocab-root');
+  let html = '';
+  TOPICS.forEach((t, ti) => {
+    const rows = t.words.map((w, i) => {
+      const k = t.id + '|' + w[0];
+      return `<tr data-k="${esc(k)}" class="${done[k] ? 'done' : ''}">
+        <td class="n">${i+1}</td>
+        <td class="w">${esc(w[0])}<button class="spk" data-say="${esc(w[0])}" title="Nghe phát âm" aria-label="Nghe phát âm ${esc(w[0])}">${SPK}</button></td>
+        <td><span class="ipa">${esc(w[1])}</span></td>
+        <td class="pos">${esc(w[2])}</td>
+        <td class="mean"><span>${esc(w[3])}</span></td>
+        <td class="ck"><input type="checkbox" ${done[k] ? 'checked' : ''} aria-label="Đã thuộc ${esc(w[0])}"></td>
+      </tr>`;
+    }).join('');
+    html += `<h3 id="v-${t.id}">1.${ti+1} ${esc(t.title)}<span class="tcount" data-count="${t.id}"></span></h3>
+      <div class="tablewrap"><table class="vt" data-topic="${t.id}">
+      <thead><tr><th>#</th><th>Từ</th><th>Phiên âm</th><th>Loại từ</th><th>Nghĩa</th><th>Thuộc</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  });
+  root.innerHTML = html;
+
+  function updateCounts(){
+    let total = 0, got = 0;
+    TOPICS.forEach(t => {
+      const n = t.words.filter(w => done[t.id + '|' + w[0]]).length;
+      total += t.words.length; got += n;
+      const el = $(`[data-count="${t.id}"]`);
+      if (el) el.textContent = ` ${n}/${t.words.length} đã thuộc`;
+    });
+    $('#vstat').textContent = `Đã thuộc ${got}/${total} từ`;
+  }
+  updateCounts();
+
+  root.addEventListener('change', e => {
+    if (e.target.type !== 'checkbox') return;
+    const tr = e.target.closest('tr'); const k = tr.dataset.k;
+    if (e.target.checked) done[k] = 1; else delete done[k];
+    tr.classList.toggle('done', e.target.checked);
+    save(); updateCounts(); applyFilter();
+  });
+  root.addEventListener('click', e => {
+    const b = e.target.closest('.spk');
+    if (b) {
+      try {
+        const u = new SpeechSynthesisUtterance(b.dataset.say);
+        u.lang = 'en-US'; u.rate = 0.9;
+        speechSynthesis.cancel(); speechSynthesis.speak(u);
+      } catch(err) {}
+      return;
+    }
+    const sp = e.target.closest('td.mean span');
+    if (sp) sp.closest('tr').classList.toggle('peek');
+  });
+
+  function applyFilter(){
+    const q = $('#vsearch').value.trim().toLowerCase();
+    const hideDone = $('#hideDone').checked;
+    $$('.vt tbody tr').forEach(tr => {
+      const txt = tr.textContent.toLowerCase();
+      const hide = (q && !txt.includes(q)) || (hideDone && tr.classList.contains('done'));
+      tr.classList.toggle('hide', !!hide);
+    });
+  }
+  $('#vsearch').addEventListener('input', applyFilter);
+  $('#hideDone').addEventListener('change', applyFilter);
+  $('#quizMode').addEventListener('change', e => document.body.classList.toggle('quiz', e.target.checked));
+
+  /* ---- 3. Mục lục (outline) ---- */
+  const toc = $('#toc');
+  const h2s = $$('main h2');
+  const groups = [];
+  h2s.forEach(h2 => {
+    const sec = h2.closest('section');
+    const g = document.createElement('div'); g.className = 'toc-group';
+    const a = document.createElement('a'); a.className = 'toc-h2'; a.href = '#' + h2.id;
+    a.textContent = h2.textContent.replace(/^(PL|\d+)(?=\S)/, m => m + '. ');
+    g.appendChild(a);
+    const sub = document.createElement('div'); sub.className = 'toc-sub';
+    const subs = $$('h3', sec).map(h3 => {
+      const l = document.createElement('a'); l.href = '#' + h3.id;
+      l.textContent = h3.textContent.replace(/\s*\d+\/\d+ đã thuộc\s*$/, '');
+      sub.appendChild(l);
+      return {h: h3, a: l};
+    });
+    g.appendChild(sub);
+    toc.appendChild(g);
+    groups.push({h: h2, a, g, subs});
+  });
+  // cập nhật text mục lục cho từ vựng khi đếm thay đổi (bỏ phần đếm)
+  const items = [];
+  groups.forEach(gr => { items.push({h: gr.h, a: gr.a, gr, lvl: 2}); gr.subs.forEach(s => items.push({h: s.h, a: s.a, gr, lvl: 3})); });
+
+  /* ---- 4. Tiến độ và vị trí hiện tại ---- */
+  const bar = $('#bar'), pct = $('#pct'), where = $('#where'), topBtn = $('#topBtn');
+  let ticking = false;
+  function onScroll(){
+    ticking = false;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 0;
+    bar.style.width = p + '%';
+    pct.textContent = Math.round(p) + '%';
+    topBtn.style.display = window.scrollY > 600 ? 'block' : 'none';
+    // heading hiện tại
+    let cur = items[0];
+    for (const it of items) { if (it.h.getBoundingClientRect().top <= 110) cur = it; else break; }
+    if (cur) {
+      items.forEach(it => it.a.classList.toggle('active', it === cur || (it.lvl === 2 && it.gr === cur.gr)));
+      groups.forEach(gr => gr.g.classList.toggle('open', gr === cur.gr));
+      const t2 = cur.gr.h.textContent.replace(/^(PL|\d+)/, '').trim();
+      const t3 = cur.lvl === 3 ? cur.h.textContent.replace(/\s*\d+\/\d+ đã thuộc\s*$/, '') : '';
+      where.textContent = t3 ? `${t2}  ›  ${t3}` : t2;
+      // giữ mục đang xem trong tầm nhìn sidebar
+      const act = cur.a; const sb = $('#sidebar');
+      const r = act.getBoundingClientRect(), sr = sb.getBoundingClientRect();
+      if (r.top < sr.top + 40 || r.bottom > sr.bottom - 40) sb.scrollTop += r.top - sr.top - sr.height / 3;
+    }
+  }
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ---- 5. Điều khiển giao diện ---- */
+  const body = document.body;
+  $('#menuBtn').addEventListener('click', () => body.classList.toggle('nav-open'));
+  $('#overlay').addEventListener('click', () => body.classList.remove('nav-open'));
+  toc.addEventListener('click', e => { if (e.target.closest('a')) body.classList.remove('nav-open'); });
+  topBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+})();
+
+</script>
+</body>
+</html>
