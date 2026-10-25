@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đề thi thử số 2 - B2 UIT</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--panel:#fff;--ink:#1d2433;--muted:#5b6475;--line:#e6e1d6;--accent:#1f6f8b;--accent-d:#14526a;--accent-soft:#e3f1f5;--hl:#fff4cc;--ok:#2f855a;--ok-soft:#e6f4ec;--warn:#a15c07;--warn-soft:#fdf0dc;--bad:#b4332f;--bad-soft:#fbe9e8;--side:230px;--top:56px}
+*{box-sizing:border-box}
+html{scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Be Vietnam Pro","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--top);background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 18px;z-index:60}
+.brand{font-weight:700;white-space:nowrap}
+.where{color:var(--muted);font-size:14px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.25rem;color:var(--accent-d);min-width:76px;text-align:right}
+.timer.low{color:var(--bad)}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--accent),#3aa0b8)}
+.side{position:fixed;top:var(--top);left:0;bottom:0;width:var(--side);overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:14px 12px 40px;z-index:50}
+.side h5{margin:4px 4px 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.grid a{display:block;text-align:center;padding:4px 0;border:1px solid var(--line);border-radius:8px;font-size:13px;text-decoration:none;color:var(--ink);background:#fff}
+.grid a.ans{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-d);font-weight:600}
+.grid a.ok{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.grid a.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.side .cnt{font-size:13px;color:var(--muted);margin:0 4px 10px}
+main{margin-left:var(--side);padding:calc(var(--top) + 24px) 28px 80px;max-width:calc(var(--side) + 900px)}
+h1{font-size:1.7rem;margin:.2em 0}
+h2{font-size:1.3rem;margin:2em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h3{font-size:1.05rem;margin:1.4em 0 .2em;color:var(--accent-d)}
+.note{color:var(--muted);font-size:.95rem}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0}
+.box ul{margin:.3em 0;padding-left:1.2em}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 18px;margin:12px 0}
+.q .n{font-weight:700;color:var(--accent-d);margin-right:6px}
+.q .t{font-weight:500}
+.opts{display:grid;gap:6px;margin-top:8px}
+.opt{display:flex;gap:10px;padding:7px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#fff}
+.opt:hover{border-color:var(--accent)}
+.opt input{margin-top:6px}
+.opt b{color:var(--muted);min-width:18px}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.locked .opt{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.passage{background:#fffdf7;border:1px solid #ecdfae;border-radius:12px;padding:6px 18px;margin:10px 0}
+.blank{background:var(--hl);padding:0 6px;border-radius:5px;font-weight:600}
+.tx{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.tx .st{font-weight:600;background:var(--hl);padding:2px 8px;border-radius:6px}
+.tx input{flex:1;min-width:220px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font:inherit}
+.btn{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:10px;padding:8px 20px;font:inherit;cursor:pointer}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:#fff;color:var(--accent-d)}
+.btn.sm{padding:3px 12px;font-size:.88rem}
+.btn.danger{background:var(--bad);border-color:var(--bad)}
+.res{margin-top:10px;border-radius:10px;padding:8px 14px;font-size:.94rem}
+.res.ok{background:var(--ok-soft);border-left:4px solid var(--ok)}
+.res.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.res.skip{background:var(--warn-soft);border-left:4px solid var(--warn)}
+.res p{margin:3px 0}
+.score{background:#fff;border:2px solid var(--accent);border-radius:14px;padding:16px 22px;margin:14px 0}
+.score .big{font-size:2rem;font-weight:700;color:var(--accent-d)}
+table{border-collapse:collapse;width:100%;margin:8px 0}
+td,th{border:1px solid var(--line);padding:6px 10px;text-align:left}
+th{background:#f3f1ea}
+.sp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 18px;margin:10px 0}
+.sp ol{margin:.3em 0}
+.sticky-act{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+@media(max-width:900px){.side{display:none}main{margin-left:0;padding:calc(var(--top) + 18px) 16px 80px}.where{display:none}}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand">Đề thi thử số 2</span><span class="where" id="where">B2 UIT 2026 · Đọc và Viết</span><span class="timer" id="timer">90:00</span><button class="btn sm" id="topSubmit" hidden>Nộp bài</button><div class="progress" id="prog"></div></div>
+<aside class="side" id="side"><h5>Bảng câu hỏi</h5><div class="cnt" id="cnt"></div><div id="navwrap"></div></aside>
+<main>
+<h1>UIT B2 - Đề thi thử số 2</h1>
+<p class="note">Phần Đọc và Viết (Paper 1 + Paper 2): 50 câu, 60 điểm, thời gian 90 phút. Listening bỏ qua; Speaking ở cuối trang, làm riêng.</p>
+<div class="box" id="intro">
+<b>Trước khi bắt đầu</b>
+<ul>
+<li>Đồng hồ 90 phút chạy từ lúc bấm Bắt đầu và không dừng lại. Hết giờ, bài tự nộp.</li>
+<li>Paper 1: Vocabulary 10 câu + Reading 10 câu (1 điểm/câu). Paper 2: Sentence completion 15 câu + Cloze 10 câu (1 điểm/câu) + Viết lại câu 5 câu (3 điểm/câu).</li>
+<li>Không tra từ điển, không xem tài liệu. Thứ tự đáp án A-D được xáo ngẫu nhiên mỗi lần làm.</li>
+<li>Chỉ khi nộp bài mới hiện đáp án, điểm và giải thích. Đang làm dở, đóng tab rồi mở lại vẫn giữ bài và đồng hồ.</li>
+</ul>
+<div class="sticky-act"><button class="btn" id="startBtn">Bắt đầu làm bài (90 phút)</button><span class="note">Làm ở nơi yên tĩnh, có giấy nháp.</span></div>
+</div>
+<div id="exam" hidden>
+<div id="resultTop"></div>
+<div id="paper"></div>
+<div class="box"><div class="sticky-act"><button class="btn" id="submitBtn">Nộp bài</button><button class="btn ghost" id="resetBtn" hidden>Làm lại đề này</button><span class="note" id="submitNote"></span></div></div>
+</div>
+<div id="speaking">
+<h2 id="sp">Paper 4: Speaking (tùy chọn, làm riêng)</h2>
+<p class="note">Thi thật nói khoảng 10 phút sau 5 đến 7 phút chuẩn bị. Ghi âm lại, gõ nội dung bạn nói rồi gửi cho mình để chấm theo barem.</p>
+<h3>Part 1: Self-introduction (khoảng 1 phút)</h3>
+<div class="sp">Giới thiệu bản thân: tên, trường và ngành đã học, kinh nghiệm làm việc, lý do chọn UIT và dự định sau khi tốt nghiệp. Dùng đoạn mẫu trong file tài liệu ôn tập làm khung.</div>
+<h3>Part 2: Guided conversation (chọn 1 trong 3 card, mỗi câu trả lời 3 đến 5 câu có lý do và ví dụ)</h3>
+<div class="sp"><b>Card G: Technology</b><ol><li>Which piece of technology do you use most in your daily life, and why?</li><li>Do you think technology makes people more or less sociable?</li><li>Describe a time when technology failed you at a bad moment.</li><li>How do you think artificial intelligence will change education?</li></ol></div>
+<div class="sp"><b>Card H: Study and career</b><ol><li>Why did you decide to continue studying after your bachelor's degree?</li><li>What skills are most important for an engineer today?</li><li>Would you prefer a stable job or a risky but exciting one? Why?</li><li>Where do you see yourself in ten years?</li></ol></div>
+<div class="sp"><b>Card I: Travel and culture</b><ol><li>Describe a place you have visited that you would recommend to others.</li><li>Do you prefer travelling alone or with other people?</li><li>What traditions in your country do you think are worth keeping?</li><li>How has tourism changed the place where you live?</li></ol></div>
+</div>
+</main>
+<script>
+const SECTIONS=[
+{h2:'Paper 1: Vocabulary and Reading Comprehension (20 điểm)',parts:[
+{h3:'Part A: Vocabulary (10 câu, 1 điểm/câu)',intro:'Choose the best answer A, B, C or D.',code:'1A',pts:1,items:[
+{q:'The manager asked us to ______ the final report by Friday.',o:['submit','subscribe','substitute','subtract'],e:'submit a report = nộp báo cáo. Subscribe = đăng ký dài hạn, substitute = thay thế, subtract = trừ đi.'},
+{q:'The football match was ______ because of the heavy rain.',o:['called off','called out','called up','called in'],e:'call off = hủy (sự kiện). Call out = gọi to/kêu gọi, call up = gọi điện/triệu tập, call in = gọi đến.'},
+{q:'She has a great ______ of humour, so everyone loves working with her.',o:['sense','feeling','meaning','mind'],e:'Collocation cố định: a sense of humour.'},
+{q:'House prices have ______ sharply since last year.',o:['risen','raised','arisen','lifted'],e:'rise là nội động từ (không có tân ngữ): prices have risen. Raise cần tân ngữ (raise prices).'},
+{q:'He was ______ of stealing the money, but he was later proved innocent.',o:['accused','blamed','criticised','punished'],e:'accuse someone of doing sth. Blame đi với "for", criticise cũng đi "for".'},
+{q:'We are still looking for a ______ to this serious problem.',o:['solution','solving','solvent','solve'],e:'Cần danh từ sau mạo từ "a": a solution to a problem. Solvent là chất hòa tan.'},
+{q:'The two companies decided to ______ forces to develop the new software.',o:['join','make','hold','put'],e:'Cụm cố định: join forces (with) = hợp lực, bắt tay hợp tác.'},
+{q:'Her explanation was so ______ that nobody understood it.',o:['confusing','confused','confuse','confusion'],e:'-ing tả bản chất sự vật (explanation gây bối rối); -ed tả cảm giác người (students were confused).'},
+{q:'You should not jump to ______ before you check all the facts.',o:['conclusions','decisions','results','ideas'],e:'Thành ngữ: jump to conclusions = kết luận vội vàng.'},
+{q:'The scientists made a major ______ in cancer research last year.',o:['breakthrough','breakdown','breakout','breakup'],e:'breakthrough = bước đột phá. Breakdown = hỏng/suy sụp, breakup = chia tay.'}]},
+{h3:'Part B: Reading (10 câu, 1 điểm/câu)',intro:'Read the passages and choose the best answer A, B, C or D.',code:'1B',pts:1,items:[
+{pass:'<b>Passage 1: Working from home, a lasting change?</b><p>Before 2020, only a small minority of employees worked from home regularly. The pandemic forced millions of companies to try it, and many were surprised by the results. Surveys suggest that most workers saved nearly an hour a day by avoiding the commute, and several firms reported that productivity stayed the same or even rose.</p><p>However, remote work is not suitable for everyone. Younger employees often miss the guidance of experienced colleagues, and those who live in small flats find it hard to concentrate. Managers also worry that new ideas appear less often when people no longer meet by chance in the corridor. As a result, a growing number of companies have chosen a "hybrid" model, in which staff come to the office two or three days a week. Experts believe this compromise is likely to last, because it offers flexibility without losing the benefits of face-to-face contact.</p>'},
+{q:'What was one effect of working from home for most workers?',o:['They saved time because they did not travel to work.','They earned higher salaries.','They worked fewer hours.','They changed jobs more often.'],e:'Đoạn 1: "saved nearly an hour a day by avoiding the commute".'},
+{q:'What did several firms report about productivity?',o:['It stayed the same or even increased.','It fell sharply.','It improved only for managers.','It could not be measured.'],e:'"productivity stayed the same or even rose".'},
+{q:'Why do younger employees sometimes find remote work difficult?',o:['They miss the guidance of experienced colleagues.','They do not own computers.','They dislike flexible hours.','They live too far from the office.'],e:'"Younger employees often miss the guidance of experienced colleagues".'},
+{q:'The word "compromise" in paragraph 2 is closest in meaning to ______.',o:['a middle solution between two options','a serious argument','a strict rule','a final decision'],e:'Hybrid là giải pháp nằm giữa làm việc tại nhà và tại văn phòng, tức compromise = thỏa hiệp/giải pháp dung hòa.'},
+{q:'What does the writer say about the hybrid model?',o:['It will probably remain common.','Only small firms like it.','It is more expensive than the office.','Employees strongly dislike it.'],e:'"Experts believe this compromise is likely to last".'},
+{pass:'<b>Passage 2: Why we need sleep</b><p>Many people think of sleep as wasted time, but scientists have shown that it is anything but. During sleep the brain sorts the information gathered during the day, storing important facts and discarding the rest. Students who sleep well after studying usually remember more than those who stay up all night to revise.</p><p>Despite this, surveys show that a third of adults regularly get less than the seven hours recommended by doctors. Common causes include late-night use of phones, caffeine in the evening and irregular working hours. Lack of sleep does not only make people tired; it is linked to weaker concentration, a higher risk of accidents and even heart disease. Doctors therefore advise going to bed at the same time every night, keeping screens out of the bedroom and avoiding coffee after lunch. These habits are simple, but they can make a remarkable difference to both health and performance.</p>'},
+{q:'What does the brain do during sleep?',o:['It organises the information from the day.','It stops working completely.','It forgets everything it has learnt.','It makes people dream about exams.'],e:'"the brain sorts the information gathered during the day".'},
+{q:'What is said about students?',o:['Those who sleep well after studying remember more.','Studying all night is the most effective method.','They need less sleep than adults.','They usually sleep for seven hours.'],e:'"Students who sleep well after studying usually remember more than those who stay up all night".'},
+{q:'How many adults regularly sleep less than the recommended time?',o:['About one third','About a half','About a quarter','Most of them'],e:'"a third of adults regularly get less than the seven hours".'},
+{q:'Which of these is NOT mentioned as a cause of poor sleep?',o:['Noisy neighbours','Using phones late at night','Caffeine in the evening','Irregular working hours'],e:'Bài nêu phone, caffeine, irregular working hours; không nhắc hàng xóm ồn ào.'},
+{q:'What is the writer\'s opinion of the doctors\' advice?',o:['Simple but very effective','Complicated but useful','Too strict for most people','Unnecessary for healthy adults'],e:'"These habits are simple, but they can make a remarkable difference".'}]}]},
+{h2:'Paper 2: Grammar and Use of English Writing (40 điểm)',parts:[
+{h3:'Part A: Sentence completion (15 câu, 1 điểm/câu)',intro:'Choose the best answer A, B, C or D.',code:'2A',pts:1,items:[
+{q:'By the time we arrived, the film ______.',o:['had already started','already started','has already started','was already starting'],e:'By the time + quá khứ đơn, mệnh đề chính dùng quá khứ hoàn thành (hành động xảy ra trước).'},
+{q:'If I were you, I ______ that offer.',o:['would accept','will accept','had accepted','accepted'],e:'Điều kiện loại 2: If + quá khứ (were), would + V.'},
+{q:'This is the first time I ______ such a beautiful place.',o:['have visited','visit','visited','was visiting'],e:'It/This is the first time + hiện tại hoàn thành.'},
+{q:'The report ______ by the time you return next week.',o:['will have been finished','will finish','is finishing','finished'],e:'By the time + hiện tại đơn (tương lai), chủ ngữ là "report" nên dùng tương lai hoàn thành bị động.'},
+{q:'She suggested ______ to the museum on Sunday.',o:['going','to go','go','to going'],e:'suggest + V-ing.'},
+{q:'The man ______ car was stolen called the police.',o:['whose','who','whom','which'],e:'Sở hữu (car của người đàn ông) nên dùng whose.'},
+{q:'You ______ have told me earlier; now it is too late to change the plan.',o:['should','must','can','might'],e:'should have + V3 = lẽ ra nên (không làm). Must have = chắc chắn đã.'},
+{q:'He is the ______ student in our class.',o:['most intelligent','more intelligent','intelligentest','much intelligent'],e:'Tính từ dài, so sánh nhất: the most + adj.'},
+{q:'Hardly ______ the station when the train left.',o:['had we reached','we had reached','we reached','did we reach'],e:'Hardly + had + S + V3 + when + quá khứ đơn (đảo ngữ).'},
+{q:'I\'d rather you ______ smoke in here.',o:['didn\'t','don\'t','wouldn\'t','not'],e:'would rather + S + quá khứ đơn (nói về hiện tại/tương lai) = muốn ai đó làm/không làm.'},
+{q:'She is not used to ______ up early.',o:['getting','get','got','be getting'],e:'be used to + V-ing (quen với). Khác với used to + V (đã từng).'},
+{q:'Neither the teachers nor the principal ______ aware of the problem.',o:['was','were','are','have been'],e:'Neither...nor: động từ chia theo chủ ngữ gần nhất (principal, số ít), câu ở quá khứ nên was.'},
+{q:'______ the heavy traffic, we arrived on time.',o:['Despite','Although','Because','However'],e:'Despite + cụm danh từ. Although + mệnh đề; however là trạng từ nối đứng đầu câu có dấu phẩy.'},
+{q:'He asked me where ______.',o:['I lived','did I live','do I live','I do live'],e:'Câu hỏi gián tiếp/tường thuật: trật tự khẳng định, lùi thì: I lived.'},
+{q:'She apologised ______ late for the meeting.',o:['for being','to be','of being','being'],e:'apologise for + V-ing.'}]},
+{h3:'Part B: Cloze (10 câu, 1 điểm/câu)',intro:'Read the text and choose the best word for each blank.',code:'2B',pts:1,items:[
+{pass:'Social media has become <span class="blank">(36)</span> important part of daily life. Millions of people use it to stay <span class="blank">(37)</span> touch with friends and to share news. It can also be a useful tool <span class="blank">(38)</span> learning, as many teachers now post videos and exercises online. <span class="blank">(39)</span>, there are serious concerns. Spending too much time on these platforms can <span class="blank">(40)</span> people feel lonely, because they compare their own lives with the carefully chosen images <span class="blank">(41)</span> others post. Parents are particularly worried <span class="blank">(42)</span> the effect on teenagers, <span class="blank">(43)</span> often check their phones more than a hundred times a day. Experts suggest that users <span class="blank">(44)</span> set limits on screen time and <span class="blank">(45)</span> more time on real activities.'},
+{q:'Blank (36)',o:['an','a','the','one'],e:'"important" bắt đầu bằng nguyên âm nên dùng "an important part". Chỗ này chưa xác định nên không dùng the.'},
+{q:'Blank (37)',o:['in','at','on','with'],e:'Cụm: stay in touch with = giữ liên lạc.'},
+{q:'Blank (38)',o:['for','to','of','by'],e:'a tool for + V-ing/danh từ = công cụ để làm gì.'},
+{q:'Blank (39)',o:['However','Therefore','Otherwise','Moreover'],e:'Ý trước tích cực, ý sau nêu mối lo ngại: tương phản, nên dùng However.'},
+{q:'Blank (40)',o:['make','let','allow','enable'],e:'make + O + V (bare) = khiến ai cảm thấy. Allow/enable cần to-V; let không hợp nghĩa.'},
+{q:'Blank (41)',o:['that','what','who','whose'],e:'Đại từ quan hệ thay cho "images" (vật), làm tân ngữ của "post": that/which; trong lựa chọn chỉ có that.'},
+{q:'Blank (42)',o:['about','of','at','by'],e:'be worried about = lo lắng về.'},
+{q:'Blank (43)',o:['who','which','whom','whose'],e:'Thay cho "teenagers" (người) làm chủ ngữ của "check": who.'},
+{q:'Blank (44)',o:['should','ought','need','used'],e:'suggest (that) S + (should) + V. Ought/need/used cần to hoặc cấu trúc khác.'},
+{q:'Blank (45)',o:['spend','pass','take','waste'],e:'spend time on sth = dành thời gian cho. Waste sai nghĩa; pass/take không đi với on theo nghĩa này.'}]},
+{h3:'Part C: Sentence transformation (5 câu, 3 điểm/câu)',intro:'Rewrite each sentence so that it has the same meaning as the original. Begin with the words given and write the whole sentence. Do not change the meaning. (Gõ phần còn lại sau các từ cho sẵn.)',code:'2C',pts:3,tx:true,items:[
+{q:'People think that he is the best player in the team.',start:'He is thought',acc:['He is thought to be the best player in the team','He is thought to be the best player on the team'],e:'Passive tường thuật: People think that S + V -> S is thought to + V (cùng thì nên dùng to be).'},
+{q:'I started learning English five years ago.',start:'I have',acc:['I have been learning English for five years','I have learned English for five years','I have learnt English for five years','I have studied English for five years'],e:'Quá khứ đơn + ago chuyển thành hiện tại hoàn thành (tiếp diễn) + for + khoảng thời gian.'},
+{q:'It is a pity that I didn\'t bring my umbrella.',start:'I wish',acc:['I wish I had brought my umbrella','I wish I had taken my umbrella'],e:'Wish về quá khứ: wish + S + had + V3.'},
+{q:'She was so shy that she couldn\'t speak to strangers.',start:'She was too',acc:['She was too shy to speak to strangers'],e:'so + adj + that + S + can\'t = too + adj + (for O) + to V.'},
+{q:'"I will call you tomorrow," she said to me.',start:'She told me',acc:['She told me she would call me the next day','She told me she would call me the following day','She told me that she would call me the next day','She told me that she would call me the following day','She told me she would call me the day after','She told me that she would call me the day after'],e:'Tường thuật: said to -> told me; will -> would; you -> me; tomorrow -> the next/following day.'}]}]}
+];
+(function(){
+const KEY='uitb2.mock2.v1', TOTAL=90*60;
+const $=s=>document.querySelector(s);
+let S;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||typeof S!=='object')S=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function norm(s){s=String(s).toLowerCase().replace(/[’‘`]/g,"'");
+s=s.replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not').replace(/\bwon't\b/g,'will not').replace(/n't\b/g,' not').replace(/'ll\b/g,' will').replace(/'ve\b/g,' have').replace(/'re\b/g,' are').replace(/'m\b/g,' am').replace(/'d\b/g,' would');
+return s.replace(/[.,!?;:"“”()]/g,' ').replace(/\s+/g,' ').trim()}
+// flatten questions
+const Q=[];let n=0;
+SECTIONS.forEach(sec=>sec.parts.forEach(p=>p.items.forEach(it=>{if(it.pass)return;n++;
+const num=(p.code==='1A')?n:(p.code==='1B')?n:(p.code==='2A')?10+10+n-20:n;
+it.id=n;it.code=p.code;it.pts=p.pts;it.tx=!!p.tx;Q.push(it)})));
+// numbering shown: 1..50 continuous
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function build(){
+const rnd=mulberry(S.seed);
+let html='';
+SECTIONS.forEach(sec=>{html+='<h2>'+sec.h2+'</h2>';
+sec.parts.forEach(p=>{html+='<h3>'+p.h3+'</h3><p class="note">'+p.intro+'</p>';
+let inCloze=p.code==='2B';
+p.items.forEach(it=>{
+if(it.pass){html+='<div class="passage">'+(it.pass.startsWith('<b>')?it.pass:'<p>'+it.pass+'</p>')+'</div>';return}
+if(!it.ord){const idx=[0,1,2,3];for(let i=3;i>0;i--){const j=Math.floor(rnd()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]]}it.ord=idx}
+html+='<div class="q" id="q'+it.id+'"><div><span class="n">Câu '+it.id+'.</span><span class="t">'+(it.tx?esc(it.q):esc(it.q))+'</span></div>';
+if(it.tx){html+='<div class="tx"><span class="st">'+esc(it.start)+'</span><input type="text" data-id="'+it.id+'" autocomplete="off" spellcheck="false" placeholder="...gõ phần còn lại của câu"></div>'}
+else{html+='<div class="opts">';it.ord.forEach((oi,k)=>{html+='<label class="opt" data-id="'+it.id+'" data-k="'+oi+'"><input type="radio" name="r'+it.id+'"><b>'+'ABCD'[k]+'.</b><span>'+esc(it.o[oi])+'</span></label>'});html+='</div>'}
+html+='<div class="fb"></div></div>'})})});
+$('#paper').innerHTML=html;
+// nav
+let nav='<div class="grid">';Q.forEach(q=>{nav+='<a href="#q'+q.id+'" data-n="'+q.id+'">'+q.id+'</a>'});nav+='</div><a href="#sp" class="note">Speaking (tùy chọn)</a>';
+$('#navwrap').innerHTML=nav;
+}
+function ansCount(){return Q.filter(q=>q.tx?(S.tx[q.id]||'').trim():S.ans[q.id]!==undefined).length}
+function refresh(){
+$('#cnt').textContent='Đã làm '+ansCount()+'/'+Q.length;
+Q.forEach(q=>{const a=document.querySelector('.grid a[data-n="'+q.id+'"]');if(!a||S.submitted)return;
+const done=q.tx?(S.tx[q.id]||'').trim():S.ans[q.id]!==undefined;a.classList.toggle('ans',!!done)});
+document.querySelectorAll('.opt').forEach(o=>{const id=+o.dataset.id;o.classList.toggle('sel',!S.submitted&&S.ans[id]===+o.dataset.k);const r=o.querySelector('input');r.checked=S.ans[id]===+o.dataset.k;r.disabled=!!S.submitted});
+document.querySelectorAll('.tx input').forEach(i=>{i.disabled=!!S.submitted})}
+function isRight(q){
+if(q.tx){const raw=(S.tx[q.id]||'').trim();if(!raw)return false;
+let full=norm(q.start+' '+raw);const nr=norm(raw),ns=norm(q.start);if(nr.indexOf(ns)===0)full=nr;
+return q.acc.some(a=>norm(a)===full)||!!(S.ov&&S.ov[q.id])}
+return S.ans[q.id]===0}
+function grade(){
+const parts={};let tot=0;
+Q.forEach(q=>{const ok=isRight(q);const g=(parts[q.code]=parts[q.code]||{got:0,max:0,c:0,n:0});g.n++;g.max+=q.pts;if(ok){g.got+=q.pts;g.c++}tot+=ok?q.pts:0});
+return{parts,tot}}
+function showResults(){
+const g=grade();const used=Math.min(TOTAL,S.endAt?Math.round((S.endAt-S.start)/1000):TOTAL);
+const names={'1A':'Paper 1 · Part A Vocabulary','1B':'Paper 1 · Part B Reading','2A':'Paper 2 · Part A Sentence completion','2B':'Paper 2 · Part B Cloze','2C':'Paper 2 · Part C Sentence transformation'};
+let t='<table><tr><th>Phần</th><th>Đúng</th><th>Điểm</th></tr>';
+Object.keys(names).forEach(k=>{const p=g.parts[k];t+='<tr><td>'+names[k]+'</td><td>'+p.c+'/'+p.n+'</td><td>'+p.got+'/'+p.max+'</td></tr>'});
+t+='</table>';
+const pct=Math.round(g.tot/60*100);
+const mm=Math.floor(used/60),ss=String(used%60).padStart(2,'0');
+$('#resultTop').innerHTML='<div class="score" id="score"><div class="big">'+g.tot+' / 60 điểm ('+pct+'%)</div><p>Thời gian làm: '+mm+':'+ss+' / 90:00. Nếu Nghe và Nói cũng đạt cùng tỉ lệ, điểm quy đổi thang 100 khoảng <b>'+pct+'</b> (ngưỡng đậu 50).</p>'+t+
+'<p class="note">Phần viết lại câu chấm tự động theo các cách viết phổ biến. Nếu câu của bạn đúng nhưng bị đánh sai, bấm "Câu của tôi cũng đúng" ở câu đó để tính 3 điểm. Đối chiếu điểm yếu bằng giải thích ở từng câu bên dưới, rồi gửi mình đáp án để mình chấm lại và phân tích chi tiết.</p></div>';
+Q.forEach(q=>{
+const box=$('#q'+q.id),fb=box.querySelector('.fb');box.classList.add('locked');
+const ok=isRight(q);let h='';
+const a=document.querySelector('.grid a[data-n="'+q.id+'"]');a.classList.remove('ans');a.classList.add(ok?'ok':'no');
+if(q.tx){const raw=(S.tx[q.id]||'').trim();
+h='<div class="res '+(ok?'ok':(raw?'no':'skip'))+'"><p><b>'+(ok?'Đúng (+3)':raw?'Chưa đúng':'Chưa trả lời')+'</b>'+(raw?' · Bạn viết: '+esc(q.start+' '+raw):'')+'</p><p>Đáp án mẫu: <b>'+esc(q.acc[0])+'.</b></p>'+(q.acc.length>1?'<p class="note">Cũng chấp nhận: '+q.acc.slice(1).map(esc).join(' / ')+'</p>':'')+'<p>'+q.e+'</p>'+(!ok&&raw?'<p><button class="btn ghost sm" data-ov="'+q.id+'">Câu của tôi cũng đúng</button></p>':'')+((S.ov&&S.ov[q.id])?'<p class="note">Đã tính theo xác nhận của bạn.</p>':'')+'</div>';
+}else{
+box.querySelectorAll('.opt').forEach(o=>{const k=+o.dataset.k;if(k===0)o.classList.add('right');else if(S.ans[q.id]===k)o.classList.add('wrong')});
+const L='ABCD'[q.ord.indexOf(0)];
+h='<div class="res '+(ok?'ok':(S.ans[q.id]===undefined?'skip':'no'))+'"><p><b>'+(ok?'Đúng (+1)':S.ans[q.id]===undefined?'Chưa trả lời':'Sai')+'</b>'+(ok?'':' · Đáp án đúng: '+L+'. '+esc(q.o[0]))+'</p><p>'+q.e+'</p></div>'}
+fb.innerHTML=h});
+$('#resetBtn').hidden=false;$('#submitBtn').hidden=true;$('#topSubmit').hidden=true;$('#submitNote').textContent='';
+$('#where').textContent='Đã nộp bài · '+g.tot+'/60 điểm';$('#timer').textContent=g.tot+'/60';$('#timer').classList.remove('low');
+window.scrollTo({top:0})}
+function submit(auto){
+if(S.submitted)return;S.submitted=true;S.endAt=Date.now();save();refresh();showResults()}
+function tick(){
+if(!S||!S.start||S.submitted)return;
+const el=Math.floor((Date.now()-S.start)/1000),left=Math.max(0,TOTAL-el);
+const m=Math.floor(left/60),s=String(left%60).padStart(2,'0');
+$('#timer').textContent=m+':'+s;$('#timer').classList.toggle('low',left<600);
+$('#prog').style.width=Math.min(100,el/TOTAL*100)+'%';
+if(left<=0)submit(true)}
+function startExam(){
+$('#intro').hidden=true;$('#exam').hidden=false;$('#topSubmit').hidden=false;$('#where').textContent='Đọc và Viết · 50 câu · 60 điểm';
+build();refresh();
+if(S.submitted){showResults();return}
+tick();
+}
+let armed=false;
+function askSubmit(){
+const left=Q.length-ansCount();
+if(!armed){armed=true;$('#submitNote').textContent=(left?'Còn '+left+' câu chưa làm. ':'')+'Bấm Nộp bài lần nữa để xác nhận.';setTimeout(()=>{armed=false;if(!S.submitted)$('#submitNote').textContent=''},6000);window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});return}
+armed=false;submit(false)}
+document.addEventListener('click',e=>{
+const o=e.target.closest('.opt');
+if(o&&!S.submitted&&S.start){S.ans[+o.dataset.id]=+o.dataset.k;save();refresh();return}
+const ov=e.target.closest('[data-ov]');
+if(ov){S.ov=S.ov||{};S.ov[ov.dataset.ov]=1;save();showResults()}});
+document.addEventListener('input',e=>{const i=e.target.closest('.tx input');if(i&&!S.submitted){S.tx[i.dataset.id]=i.value;save();refresh()}});
+$('#submitBtn').onclick=askSubmit;$('#topSubmit').onclick=askSubmit;
+$('#startBtn').onclick=()=>{S={start:Date.now(),seed:Math.floor(Math.random()*1e9),ans:{},tx:{},ov:{},submitted:false};save();startExam()};
+$('#resetBtn').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}location.reload()};
+if(S&&S.start){startExam();
+// restore typed text
+document.querySelectorAll('.tx input').forEach(i=>{i.value=S.tx[i.dataset.id]||''})}
+setInterval(tick,1000);
+})();
+</script></body></html>
